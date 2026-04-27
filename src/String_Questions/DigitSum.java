@@ -20,20 +20,23 @@ import java.util.Scanner;
 //    }
 //}
 
-public class DigitSum{
-    public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
-        String input = sc.nextLine();
-        System.out.println(input);
-        int sum =0;
-        for(int i=0;i<input.length();i++){
-            char ch = input.charAt(i);
-            if(Character.isDigit(ch)){
-                int temp = ch - '0';
-                sum = sum + temp;
-            }
+//public class DigitSum{
+//    public static void main(String[] args){
+//        Scanner sc = new Scanner(System.in);
+//        String input = sc.nextLine();
+//        System.out.println(input);
+//        int sum =0;
+//        for(int i=0;i<input.length();i++){
+//            char ch = input.charAt(i);
+//            if(Character.isDigit(ch)){
+//                int temp = ch - '0';
+//                sum = sum + temp;
+//            }
+//
+//        }
+//        System.out.println(sum);
+//    }
+//}
 
-        }
-        System.out.println(sum);
-    }
-}
+
+
