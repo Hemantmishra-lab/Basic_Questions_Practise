@@ -1,44 +1,111 @@
-package GreedyApproach;
+package GreedyApproach;//package GreedyApproach;
+//
+//import java.util.ArrayList;
+//import java.util.Collections;
+//import java.util.Scanner;
+//class jobseq{
+//    int jobId;
+//    int deadline;
+//    int profit;
+//    int pos;
+//    public jobseq(int jobId,int deadline,int profit,int pos){
+//        this.jobId = jobId;
+//        this.deadline = deadline;
+//        this.profit  = profit;
+//        this.pos = pos;
+//    }
+//}
+//public class JobSequencingProblem {
+//    public static void MaxProfit(int[]jobId,int[]deadline,int[]profit,int n){
+//        ArrayList<jobseq> JobSeq = new ArrayList<>();
+//        for(int i=0;i<n;i++){
+//            JobSeq.add(new jobseq(jobId[i],deadline[i],profit[i],i+1 ));
+//        }
+//        Collections.sort(JobSeq,(a,b)-> b.profit- a.profit);
+//        int maxProfit = JobSeq.get(0).profit;
+//
+//    }
+//    public static void main(String[] args){
+//        Scanner sc = new Scanner(System.in);
+//        int n = sc.nextInt();
+//        int []jobId = new int[n];
+//        int[] deadline = new int[n];
+//        int [] profit = new int[n];
+//        for(int i=0;i<n;i++){
+//            System.out.println("jobID"+i);
+//            jobId[i] = sc.nextInt();
+//            System.out.println("Deadline"+i);
+//            deadline[i] = sc.nextInt();
+//            System.out.println("Profit Generates"+i);
+//            profit[i] = sc.nextInt();
+//
+//        }
+//    }
+//}
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
-class jobseq{
+
+class job{
     int jobId;
-    int deadline;
+    int  deadline;
     int profit;
-    int pos;
-    public jobseq(int jobId,int deadline,int profit,int pos){
+    public job(int jobId,int deadline,int profit){
         this.jobId = jobId;
         this.deadline = deadline;
-        this.profit  = profit;
-        this.pos = pos;
+        this.profit = profit;
     }
 }
-public class JobSequencingProblem {
-    public static void MaxProfit(int[]jobId,int[]deadline,int[]profit,int n){
-        ArrayList<jobseq> JobSeq = new ArrayList<>();
+public class JobSequencingProblem{
+    public static void maxProfit(int[] jobId,int[] deadline,int[] profit,int n){
+        ArrayList<job> JobIdProfitList = new ArrayList<>();
+        int maxdeadline = 0;
         for(int i=0;i<n;i++){
-            JobSeq.add(new jobseq(jobId[i],deadline[i],profit[i],i+1 ));
+            JobIdProfitList.add(new job(jobId[i],deadline[i],profit[i] ));
+            maxdeadline = Math.max(maxdeadline,deadline[i]);
         }
-        Collections.sort(JobSeq,(a,b)-> b.profit- a.profit);
-        int maxProfit = JobSeq.get(0).profit;
-
+        Collections.sort(JobIdProfitList,(a,b)->b.profit - a.profit);
+        int []result = new int[maxdeadline+1];
+        for(int i=0;i<=maxdeadline;i++){
+            result[i]= -1;
+        }
+        int countJob = 0;
+        int totalProfit = 0;
+        for(int i=0;i<n;i++){
+            for(int j=JobIdProfitList.get(i).deadline;j>0;j--){
+                if(result[j] == -1){
+                    result[j] = JobIdProfitList.get(i).jobId;
+                    totalProfit = totalProfit + JobIdProfitList.get(i).profit;
+                    countJob++;
+                    break;
+                }
+            }
+        }
+        System.out.println("Execute Summary");
+        System.out.println("Number of Jobs Done "+countJob);
+        System.out.println("Total Profit generated : "+totalProfit);
+        System.out.println("Job Sequence :");
+        for(int i=1;i<=maxdeadline;i++){
+            if(result[i] != -1){
+                System.out.println(result[i] +" ");
+            }
+        }
     }
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int []jobId = new int[n];
-        int[] deadline = new int[n];
-        int [] profit = new int[n];
+        int []deadline = new int[n];
+        int []profit = new int[n];
         for(int i=0;i<n;i++){
-            System.out.println("jobID"+i);
-            jobId[i] = sc.nextInt();
-            System.out.println("Deadline"+i);
+            System.out.println("Job ID: " +i);
+            jobId[i]=sc.nextInt();
+            System.out.println("DeadLine : "+i);
             deadline[i] = sc.nextInt();
-            System.out.println("Profit Generates"+i);
+            System.out.println("profit : "+i);
             profit[i] = sc.nextInt();
-
         }
+        maxProfit(jobId,deadline,profit,n);
     }
 }

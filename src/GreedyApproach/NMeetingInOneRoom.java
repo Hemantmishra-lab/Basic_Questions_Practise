@@ -84,6 +84,47 @@ import java.util.Scanner;
 //    }
 //}
 
+//class Meeting{
+//    int start;
+//    int end;
+//    int pos;
+//    public Meeting(int start,int end,int pos){
+//        this.start = start;
+//        this.end = end;
+//        this.pos = pos;
+//    }
+//}
+//public class NMeetingInOneRoom{
+//    public static int MaxMeeting(int[]start,int[]end,int n){
+//        ArrayList<Meeting> maxmeeting = new ArrayList<>();
+//        for(int i=0;i<n;i++){
+//            maxmeeting.add(new Meeting(start[i],end[i],i+1));
+//        }
+//        Collections.sort(maxmeeting,(a,b)->a.end - b.end);
+//        int count = 1;
+//        int endmeeting = maxmeeting.get(0).end;
+//        for(int i=0;i<n;i++){
+//            if(maxmeeting.get(i).start > endmeeting){
+//                count++;
+//                endmeeting = maxmeeting.get(i).end;
+//            }
+//        }
+//        return count;
+//    }
+//    public static void main(String[] args){
+//        Scanner sc = new Scanner(System.in);
+//        int n = sc.nextInt();
+//        int []start = new int[n];
+//        int []end = new int[n];
+//        for(int i=0;i<n;i++){
+//            System.out.println("Start"+i);
+//            start[i] = sc.nextInt();
+//            System.out.println("end"+i);
+//            end[i] = sc.nextInt();
+//        }
+//        System.out.println(MaxMeeting(start,end,n));
+//    }
+//}
 class Meeting{
     int start;
     int end;
@@ -95,18 +136,18 @@ class Meeting{
     }
 }
 public class NMeetingInOneRoom{
-    public static int MaxMeeting(int[]start,int[]end,int n){
-        ArrayList<Meeting> maxmeeting = new ArrayList<>();
+    public static int MaxMeeting(int[] start,int[] end,int n){
+        ArrayList<Meeting> maxMeetingList = new ArrayList<>();
         for(int i=0;i<n;i++){
-            maxmeeting.add(new Meeting(start[i],end[i],i+1));
+            maxMeetingList.add(new Meeting(start[i],end[i],i+1));
         }
-        Collections.sort(maxmeeting,(a,b)->a.end - b.end);
+        Collections.sort(maxMeetingList,(a,b)->a.end - b.end);
         int count = 1;
-        int endmeeting = maxmeeting.get(0).end;
-        for(int i=0;i<n;i++){
-            if(maxmeeting.get(i).start > endmeeting){
+        int endtime = maxMeetingList.get(0).end;
+        for(int i=1;i<n;i++){
+            if(maxMeetingList.get(i).start > endtime){
                 count++;
-                endmeeting = maxmeeting.get(i).end;
+                endtime = maxMeetingList.get(i).end;
             }
         }
         return count;
@@ -118,9 +159,9 @@ public class NMeetingInOneRoom{
         int []end = new int[n];
         for(int i=0;i<n;i++){
             System.out.println("Start"+i);
-            start[i] = sc.nextInt();
+            start[i]=sc.nextInt();
             System.out.println("end"+i);
-            end[i] = sc.nextInt();
+            end [i] = sc.nextInt();
         }
         System.out.println(MaxMeeting(start,end,n));
     }

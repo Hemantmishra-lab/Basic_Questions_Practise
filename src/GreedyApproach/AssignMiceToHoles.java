@@ -1,35 +1,62 @@
 package GreedyApproach;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class AssignMiceToHoles {
-    public static int assignmice(int[]mouse,int[]holes){
-        Arrays.sort(mouse);
-        Arrays.sort(holes);
-        int n = mouse.length;
-        int totalTime = 0;
-        int maxTime = 0;
-        for(int i=0;i<n;i++){
-            int diff = Math.abs(mouse[i] - holes[i]);
+//public class AssignMiceToHoles {
+//    public static int assignmice(int[]mouse,int[]holes){
+//        Arrays.sort(mouse);
+//        Arrays.sort(holes);
+//        int n = mouse.length;
+//
+//        int maxTime = 0;
+//        for(int i=0;i<n;i++){
+//            int diff = Math.abs(mouse[i] - holes[i]);
+//
+//            // The total time is determined by the mouse that has the longest walk
+//            maxTime = Math.max(maxTime, diff);;
+//        }
+//        return maxTime;
+//    }
+//    public static void main(String[] args){
+//        Scanner sc = new Scanner(System.in);
+//        int n = sc.nextInt();
+//        int []mouse =new int[n];
+//        int []holes = new int[n];
+//        for(int i =0;i<n;i++){
+//            System.out.println("Mouse array"+i+1+"th");
+//            mouse[i] = sc.nextInt();
+//            System.out.println("holes array"+i+1+"th");
+//            holes[i] = sc.nextInt();
+//        }
+//        int sum = assignmice(mouse,holes);
+//        System.out.println(sum);
+//    }
+//}
 
-            // The total time is determined by the mouse that has the longest walk
-            maxTime = Math.max(maxTime, diff);;
+public class AssignMiceToHoles{
+    public static int MaxTimeMiceHole(int[]mice,int[]holes,int n){
+        Arrays.sort(mice);
+        Arrays.sort(holes);
+        int MaxTime = 0;
+        for(int i=0;i<n;i++){
+            int time = Math.abs(mice[i] - holes[i]);
+            MaxTime=Math.max(MaxTime,time);
         }
-        return maxTime;
+        return MaxTime;
     }
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        int []mouse =new int[n];
+        int []mice = new int[n];
         int []holes = new int[n];
-        for(int i =0;i<n;i++){
-            System.out.println("Mouse array"+i+1+"th");
-            mouse[i] = sc.nextInt();
-            System.out.println("holes array"+i+1+"th");
+        for(int i =0 ; i<n;i++){
+            System.out.println("Mice"+i);
+            mice[i]=sc.nextInt();
+            System.out.println("Holes"+i);
             holes[i] = sc.nextInt();
         }
-        int sum = assignmice(mouse,holes);
-        System.out.println(sum);
+        System.out.println(MaxTimeMiceHole(mice,holes,n));
     }
 }

@@ -57,27 +57,54 @@ import java.util.Scanner;
 //    }
 //}
 
+//public class MinNumberOfCoins{
+//    public static int minNumber(int n,int[]arr){
+//        Arrays.sort(arr);
+//        int count = 0;
+//        for(int i = arr.length-1;i >= 0; i--){
+//            while (arr[i] <= n) {
+//                n = n - arr[i];
+//                count++;
+//            }
+//        }
+//        return n == 0 ? count : -1;
+//    }
+//    public static void main(String[] args){
+//        Scanner sc = new Scanner(System.in);
+//        int n = sc.nextInt();
+//        int m = sc.nextInt();
+//        int arr[]= new int[m];
+//        for(int i=0;i<m;i++){
+//            arr[i]=sc.nextInt();
+//        }
+//        int result = minNumber(n,arr);
+//        System.out.println(result);
+//    }
+//}
+
 public class MinNumberOfCoins{
-    public static int minNumber(int n,int[]arr){
-        Arrays.sort(arr);
+    public static int minNoCoin(int[] CoinCollection,int k){
+        Arrays.sort(CoinCollection);
+        int n = CoinCollection.length;
         int count = 0;
-        for(int i = arr.length-1;i >= 0; i--){
-            while (arr[i] <= n) {
-                n = n - arr[i];
+        for(int i = n-1;i>=0;i--){
+            while(CoinCollection[i] <= k){
                 count++;
+                k = k - CoinCollection[i];
             }
         }
-        return n == 0 ? count : -1;
+        return  k==0?count:-1;
     }
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        int m = sc.nextInt();
-        int arr[]= new int[m];
-        for(int i=0;i<m;i++){
-            arr[i]=sc.nextInt();
+        int []CoinCollection = new int[n];
+
+        for(int i=0;i<n;i++){
+            CoinCollection[i] = sc.nextInt();
         }
-        int result = minNumber(n,arr);
-        System.out.println(result);
+        System.out.println("Target ? : ");
+        int k = sc.nextInt();
+        System.out.println(minNoCoin(CoinCollection,k));
     }
 }
