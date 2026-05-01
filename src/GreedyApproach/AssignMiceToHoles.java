@@ -35,28 +35,48 @@ import java.util.Scanner;
 //    }
 //}
 
+//public class AssignMiceToHoles{
+//    public static int MaxTimeMiceHole(int[]mice,int[]holes,int n){
+//        Arrays.sort(mice);
+//        Arrays.sort(holes);
+//        int MaxTime = 0;
+//        for(int i=0;i<n;i++){
+//            int time = Math.abs(mice[i] - holes[i]);
+//            MaxTime=Math.max(MaxTime,time);
+//        }
+//        return MaxTime;
+//    }
+//    public static void main(String[] args){
+//        Scanner sc = new Scanner(System.in);
+//        int n = sc.nextInt();
+//        int []mice = new int[n];
+//        int []holes = new int[n];
+//        for(int i =0 ; i<n;i++){
+//            System.out.println("Mice"+i);
+//            mice[i]=sc.nextInt();
+//            System.out.println("Holes"+i);
+//            holes[i] = sc.nextInt();
+//        }
+//        System.out.println(MaxTimeMiceHole(mice,holes,n));
+//    }
+//}
+
 public class AssignMiceToHoles{
-    public static int MaxTimeMiceHole(int[]mice,int[]holes,int n){
+    public static int MaxTimeHole(int[] mice,int[] holes){
         Arrays.sort(mice);
         Arrays.sort(holes);
-        int MaxTime = 0;
-        for(int i=0;i<n;i++){
-            int time = Math.abs(mice[i] - holes[i]);
-            MaxTime=Math.max(MaxTime,time);
+        int maxTime = 0;
+        for(int i=0;i<mice.length;i++){
+            int Time = Math.abs(mice[i]-holes[i]);
+            maxTime=Math.max(maxTime,Time);
         }
-        return MaxTime;
+        return  maxTime;
     }
     public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int []mice = new int[n];
-        int []holes = new int[n];
-        for(int i =0 ; i<n;i++){
-            System.out.println("Mice"+i);
-            mice[i]=sc.nextInt();
-            System.out.println("Holes"+i);
-            holes[i] = sc.nextInt();
-        }
-        System.out.println(MaxTimeMiceHole(mice,holes,n));
+        int[] holes ={4,0,5};
+        int[] mice = {4,-4,2};
+        int maxTime = MaxTimeHole(mice,holes);
+        System.out.println(maxTime);
     }
+
 }

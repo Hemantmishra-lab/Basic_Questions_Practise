@@ -82,29 +82,81 @@ import java.util.Scanner;
 //    }
 //}
 
+//public class MinNumberOfCoins{
+//    public static int minNoCoin(int[] CoinCollection,int k){
+//        Arrays.sort(CoinCollection);
+//        int n = CoinCollection.length;
+//        int count = 0;
+//        for(int i = n-1;i>=0;i--){
+//            while(CoinCollection[i] <= k){
+//                count++;
+//                k = k - CoinCollection[i];
+//            }
+//        }
+//        return  k==0?count:-1;
+//    }
+//    public static void main(String[] args){
+//        Scanner sc = new Scanner(System.in);
+//        int n = sc.nextInt();
+//        int []CoinCollection = new int[n];
+//
+//        for(int i=0;i<n;i++){
+//            CoinCollection[i] = sc.nextInt();
+//        }
+//        System.out.println("Target ? : ");
+//        int k = sc.nextInt();
+//        System.out.println(minNoCoin(CoinCollection,k));
+//    }
+//}
+
+//public class MinNumberOfCoins{
+//    public static int minNoCoin(int[] CoinCollector,int amt){
+//        Arrays.sort(CoinCollector);
+//        int n = CoinCollector.length;
+//        int count = 0;
+//        for(int i=0;i<n;i++){
+//            while(CoinCollector[i] <= amt){
+//                count++;
+//                amt = amt - CoinCollector[i];
+//            }
+//        }
+//        return  amt == 0 ? count:-1;
+//    }
+//    public static void main(String[] args){
+//        Scanner sc = new Scanner(System.in);
+//        System.out.println("Target Amount : ");
+//        int amt = sc.nextInt();
+//        int n = sc.nextInt();
+//        int[]CoinCollector = new int[n];
+//        for(int i= 0;i<n;i++){
+//            CoinCollector[i] = sc.nextInt();
+//        }
+//    }
+//}
+
 public class MinNumberOfCoins{
-    public static int minNoCoin(int[] CoinCollection,int k){
-        Arrays.sort(CoinCollection);
-        int n = CoinCollection.length;
+    public static int MinCoin(int[]CoinValues,int amt){
+        Arrays.sort(CoinValues);
+        int n = CoinValues.length;
+        int CurrentValue = 0;
         int count = 0;
-        for(int i = n-1;i>=0;i--){
-            while(CoinCollection[i] <= k){
+        int orgAmt = amt;
+        for(int i=n-1;i>=0;i--){
+            while(CoinValues[i] <= amt){
+                CurrentValue  = CurrentValue + CoinValues[i];
                 count++;
-                k = k - CoinCollection[i];
+                amt = amt - CoinValues[i];
+
             }
         }
-        return  k==0?count:-1;
+        if(orgAmt == CurrentValue)
+            return count;
+        return  -1;
     }
     public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int []CoinCollection = new int[n];
-
-        for(int i=0;i<n;i++){
-            CoinCollection[i] = sc.nextInt();
-        }
-        System.out.println("Target ? : ");
-        int k = sc.nextInt();
-        System.out.println(minNoCoin(CoinCollection,k));
+        int []CoinValues = {50,90,500,27,26,77,88};
+        int amt = 153;
+        System.out.println(MinCoin(CoinValues,amt));
     }
 }
+
