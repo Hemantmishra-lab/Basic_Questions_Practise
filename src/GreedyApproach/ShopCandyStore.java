@@ -172,42 +172,75 @@ import java.util.concurrent.ThreadPoolExecutor;
 
 
 
-class TBook{
-    int TPrice;
-    String TName;
-    public TBook(int TPrice,String TName){
-        this.TPrice = TPrice;
-        this.TName = TName;
-    }
-}
+//class TBook{
+//    int TPrice;
+//    String TName;
+//    public TBook(int TPrice,String TName){
+//        this.TPrice = TPrice;
+//        this.TName = TName;
+//    }
+//}
+//public class ShopCandyStore{
+//    public static List<String> Output(int[]TPrice,String[]TName,int k){
+//        int n = TPrice.length;
+//        List<TBook> tlist = new ArrayList<>();
+//        for(int i=0;i<n;i++){
+//            tlist.add(new TBook(TPrice[i],TName[i]));
+//        }
+//        Collections.sort(tlist,(a,b)->Integer.compare(a.TPrice,b.TPrice));
+//        List<String> buyTName = new ArrayList<>();
+//        int forward = 0;
+//        int backward = n-1;
+//        int tBuyPrice = 0;
+//        while(forward <= backward){
+//            tBuyPrice += tlist.get(forward).TPrice;
+//            buyTName.add(tlist.get(forward).TName);
+//            forward++;
+//            backward = backward -k;
+//        }
+//        return buyTName;
+//    }
+//    public static void main(String[] args){
+//        int[] TPrice = {6,4,1,2,10};
+//        String[] TName = {"eclairs","Dairy Milk","Parle-G","LondonDairy","Cadbuary"};
+//        int k = 2;
+//        List<String> tBuyName = Output(TPrice,TName,k);
+//        System.out.println(tBuyName);
+//    }
+//
+//}
+
+
+record TBook (int TPrice,String TName) {}
+record give(List<String> buyTList,int MinMoney){}
 public class ShopCandyStore{
-    public static List<String> Output(int[]TPrice,String[]TName,int k){
+    public static give buyT(int []TPrice,String []TName,int k){
         int n = TPrice.length;
-        List<TBook> tlist = new ArrayList<>();
+        List<TBook> listBook = new ArrayList<>();
         for(int i=0;i<n;i++){
-            tlist.add(new TBook(TPrice[i],TName[i]));
+            listBook.add(new TBook(TPrice[i],TName[i]));
         }
-        Collections.sort(tlist,(a,b)->Integer.compare(a.TPrice,b.TPrice));
-        List<String> buyTName = new ArrayList<>();
+//        Collections.sort(listBook,(a,b)->Integer.compare(a.TPrice() , b.TPrice()));
+        listBook.sort(Comparator.comparingInt(TBook::TPrice));
+        List<String> buyTList = new ArrayList<>();
         int forward = 0;
         int backward = n-1;
-        int tBuyPrice = 0;
-        while(forward <= backward){
-            tBuyPrice += tlist.get(forward).TPrice;
-            buyTName.add(tlist.get(forward).TName);
+        int buyTMoney = 0;
+        while(backward>=forward){
+            buyTMoney += listBook.get(forward).TPrice();
+            buyTList.add(listBook.get(forward).TName());
             forward++;
-            backward = backward -k;
+            backward = backward - k;
+
         }
-        return buyTName;
+        return new give(buyTList,buyTMoney);
     }
     public static void main(String[] args){
+        String[] TName = {"Eclairs","Dairy-Milk","Parle-G","LondonDairy","Cadbuary"};
         int[] TPrice = {6,4,1,2,10};
-        String[] TName = {"eclairs","Dairy Milk","Parle-G","LondonDairy","Cadbuary"};
         int k = 2;
-        List<String> tBuyName = Output(TPrice,TName,k);
-        System.out.println(tBuyName);
+        System.out.println(buyT(TPrice,TName,k));
     }
-
 }
 
 
