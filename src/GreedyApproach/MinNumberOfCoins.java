@@ -1,9 +1,6 @@
 package GreedyApproach;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 //public class MinNumberOfCoins{
 //    public static List<Integer> getMinimumCoin(int n,int [] arr){
@@ -134,29 +131,59 @@ import java.util.Scanner;
 //    }
 //}
 
-public class MinNumberOfCoins{
-    public static int MinCoin(int[]CoinValues,int amt){
-        Arrays.sort(CoinValues);
-        int n = CoinValues.length;
-        int CurrentValue = 0;
-        int count = 0;
-        int orgAmt = amt;
-        for(int i=n-1;i>=0;i--){
-            while(CoinValues[i] <= amt){
-                CurrentValue  = CurrentValue + CoinValues[i];
-                count++;
-                amt = amt - CoinValues[i];
+//public class MinNumberOfCoins{
+//    public static int MinCoin(int[]CoinValues,int amt){
+//        Arrays.sort(CoinValues);
+//        int n = CoinValues.length;
+//        int CurrentValue = 0;
+//        int count = 0;
+//        int orgAmt = amt;
+//        for(int i=n-1;i>=0;i--){
+//            while(CoinValues[i] <= amt){
+//                CurrentValue  = CurrentValue + CoinValues[i];
+//                count++;
+//                amt = amt - CoinValues[i];
+//
+//            }
+//        }
+//        if(orgAmt == CurrentValue)
+//            return count;
+//        return  -1;
+//    }
+//    public static void main(String[] args){
+//        int []CoinValues = {50,90,500,27,26,77,88};
+//        int amt = 153;
+//        System.out.println(MinCoin(CoinValues,amt));
+//    }
+//}
 
-            }
-        }
-        if(orgAmt == CurrentValue)
-            return count;
-        return  -1;
-    }
-    public static void main(String[] args){
-        int []CoinValues = {50,90,500,27,26,77,88};
-        int amt = 153;
-        System.out.println(MinCoin(CoinValues,amt));
-    }
-}
+//record OutputReturnFormat(List<Integer> CoinSelSeq,int NoOfCoinsUsed){}
+//record ListClass(int moneycoll){}
+//public class MinNumberOfCoins{
+//    public static OutputReturnFormat Output(int[] moneycoll,int N){
+//        List<ListClass> listCoin = new ArrayList<>();
+//        int n = moneycoll.length;
+//        for(int i=0;i<n;i++){
+//            listCoin.add(new ListClass(moneycoll[i]));
+//        }
+//        Collections.sort(listCoin,(a,b)->Integer.compare(b.moneycoll(), a.moneycoll()));
+//        int IncreMoney = 0;
+//        int currentIndex = 0;
+//        int count = 0;
+//        List<Integer> CoinSelSeq = new ArrayList<>();
+//        while(listCoin.get(currentIndex).moneycoll() <= N){
+//            IncreMoney += listCoin.get(currentIndex).moneycoll();
+//            N = N - listCoin.get(currentIndex).moneycoll();
+//            CoinSelSeq.add(listCoin.get(currentIndex).moneycoll());
+//            count++;
+//            currentIndex++;
+//        }
+//        return new OutputReturnFormat(CoinSelSeq,count) ;
+//    }
+//    public static void main(String[] args){
+//        int []moneycoll = {500,2,183,97,67,45,5};
+//        int N = 145;
+//        System.out.println(Output(moneycoll,N));
+//    }
+//}
 
