@@ -157,33 +157,32 @@ import java.util.*;
 //    }
 //}
 
-//record OutputReturnFormat(List<Integer> CoinSelSeq,int NoOfCoinsUsed){}
-//record ListClass(int moneycoll){}
-//public class MinNumberOfCoins{
-//    public static OutputReturnFormat Output(int[] moneycoll,int N){
-//        List<ListClass> listCoin = new ArrayList<>();
-//        int n = moneycoll.length;
-//        for(int i=0;i<n;i++){
-//            listCoin.add(new ListClass(moneycoll[i]));
-//        }
-//        Collections.sort(listCoin,(a,b)->Integer.compare(b.moneycoll(), a.moneycoll()));
-//        int IncreMoney = 0;
-//        int currentIndex = 0;
-//        int count = 0;
-//        List<Integer> CoinSelSeq = new ArrayList<>();
-//        while(listCoin.get(currentIndex).moneycoll() <= N){
-//            IncreMoney += listCoin.get(currentIndex).moneycoll();
-//            N = N - listCoin.get(currentIndex).moneycoll();
-//            CoinSelSeq.add(listCoin.get(currentIndex).moneycoll());
-//            count++;
-//            currentIndex++;
-//        }
-//        return new OutputReturnFormat(CoinSelSeq,count) ;
-//    }
-//    public static void main(String[] args){
-//        int []moneycoll = {500,2,183,97,67,45,5};
-//        int N = 145;
-//        System.out.println(Output(moneycoll,N));
-//    }
-//}
 
+
+
+/*
+ * PROBLEM:
+ * Find the minimum number of coins needed to make a total amount 'N'.
+ * Example: moneycoll = {2, 5, 10, 1}, Target N = 18.
+ *
+ * STRATEGY:
+ * 1. Sort coins in Descending Order (Greedy choice: pick largest first).
+ * 2. Use a 'for' loop to check each coin type.
+ * 3. Use a 'while' loop to pick the same coin multiple times if it fits in N.
+ *
+ * ANALYSIS:
+ * - Time Complexity: O(M log M) [Due to sorting M coin types].
+ * - Space Complexity: O(M) [To store the coin list and result].
+ *
+ * DRY RUN (N = 18):
+ * 1. Sorted Coins: [10, 5, 2, 1]
+ * 2. Try 10: 10 <= 18? Yes -> N becomes 8 | Seq: [10] | Count: 1
+ * 3. Try 10: 10 <= 8?  No  -> Move to next coin.
+ * 4. Try 5:  5 <= 8?  Yes -> N becomes 3 | Seq: [10, 5] | Count: 2
+ * 5. Try 5:  5 <= 3?  No  -> Move to next coin.
+ * 6. Try 2:  2 <= 3?  Yes -> N becomes 1 | Seq: [10, 5, 2] | Count: 3
+ * 7. Try 2:  2 <= 1?  No  -> Move to next coin.
+ * 8. Try 1:  1 <= 1?  Yes -> N becomes 0 | Seq: [10, 5, 2, 1] | Count: 4
+ *
+ * Result: 4 coins used.
+ */
