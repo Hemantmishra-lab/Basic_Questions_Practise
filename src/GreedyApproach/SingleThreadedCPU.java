@@ -195,66 +195,87 @@ import java.util.*;
 //    }
 //}
 
-class Task{
-    int enqueue;
-    int PTime;
-    int ProcessId;
-    public Task(int enqueue,int PTime,int ProcessId){
-        this.enqueue = enqueue;
-        this.PTime = PTime;
-        this.ProcessId = ProcessId;
-    }
-}
+//class Task{
+//    int enqueue;
+//    int PTime;
+//    int ProcessId;
+//    public Task(int enqueue,int PTime,int ProcessId){
+//        this.enqueue = enqueue;
+//        this.PTime = PTime;
+//        this.ProcessId = ProcessId;
+//    }
+//}
+//public class SingleThreadedCPU{
+//    public static int[] GetOrder(int []enqueue,int[] PTime,int[] ProcessId){
+//        List<Task> taskslist = new ArrayList<>();
+//        int n = enqueue.length;
+//        for(int i=0;i<n;i++){
+//            taskslist.add(new Task(enqueue[i],PTime[i],ProcessId[i]));
+//        }
+//        Collections.sort(taskslist,(a,b)-> a.enqueue-b.enqueue);
+//        int taskIndex = 0;
+//        PriorityQueue<Task> minheap = new PriorityQueue<>((a,b)->{
+//            if(a.PTime != b.PTime)
+//                return a.PTime - b.PTime;
+//            return  a.ProcessId - b.ProcessId;
+//        });
+//        int currentTime=0;
+//        int result[] = new int[n];
+//        int resultIndex = 0;
+//        while(!minheap.isEmpty() || taskIndex < n){
+//            if(minheap.isEmpty() && currentTime < taskslist.get(taskIndex).enqueue){
+//                currentTime = taskslist.get(taskIndex).enqueue;
+//            }
+//            while(currentTime >= taskslist.get(taskIndex).enqueue && taskIndex < n) {
+//                minheap.add(taskslist.get(taskIndex));
+//                taskIndex++;
+//            }
+//
+//            Task currentTask = minheap.poll();
+//            result[resultIndex++] = currentTask.ProcessId;
+//            currentTime = currentTime + currentTask.enqueue;
+//
+//        }
+//        return  result;
+//    }
+//    public static void main(String[] args){
+//        Scanner sc = new Scanner(System.in);
+//        int n  = sc.nextInt();
+//        int []enqueue = new int[n];
+//        int []PTime = new int[n];
+//        int []ProcessId = new int[n];
+//        for(int i=0;i<n;i++){
+//            System.out.println("Enqueue: "+i);
+//            enqueue[i] = sc.nextInt();
+//            System.out.println("PTime: "+i);
+//            PTime[i] = sc.nextInt();
+//            System.out.println("ProcessId: "+i);
+//            ProcessId[i] = sc.nextInt();
+//        }
+//        int[] result = GetOrder(enqueue,PTime,ProcessId);
+//        for(int i=0;i<n;i++){
+//            System.out.println(result[i]);
+//        }
+//    }
+//}
+
+//class SingleThreadedCPU{
+//    public static void main(String[] args){
+//        int []
+//    }
+//}
+
+record ListFormatClassThread(int enqueue,int PTime,int PId){}
 public class SingleThreadedCPU{
-    public static int[] GetOrder(int []enqueue,int[] PTime,int[] ProcessId){
-        List<Task> taskslist = new ArrayList<>();
-        int n = enqueue.length;
-        for(int i=0;i<n;i++){
-            taskslist.add(new Task(enqueue[i],PTime[i],ProcessId[i]));
-        }
-        Collections.sort(taskslist,(a,b)-> a.enqueue-b.enqueue);
-        int taskIndex = 0;
-        PriorityQueue<Task> minheap = new PriorityQueue<>((a,b)->{
-            if(a.PTime != b.PTime)
-                return a.PTime - b.PTime;
-            return  a.ProcessId - b.ProcessId;
-        });
-        int currentTime=0;
-        int result[] = new int[n];
-        int resultIndex = 0;
-        while(!minheap.isEmpty() || taskIndex < n){
-            if(minheap.isEmpty() && currentTime < taskslist.get(taskIndex).enqueue){
-                currentTime = taskslist.get(taskIndex).enqueue;
-            }
-            while(currentTime >= taskslist.get(taskIndex).enqueue && taskIndex < n) {
-                minheap.add(taskslist.get(taskIndex));
-                taskIndex++;
-            }
-
-            Task currentTask = minheap.poll();
-            result[resultIndex++] = currentTask.ProcessId;
-            currentTime = currentTime + currentTask.enqueue;
+    public static List<Integer> ProcessExeSeq(int[]enqueue,int []PTime,int []PId){
+        List<ListFormatClassThread> list = new ArrayList<>();
+        for(int i=0;i< enqueue.length;i++){
 
         }
-        return  result;
     }
     public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
-        int n  = sc.nextInt();
-        int []enqueue = new int[n];
-        int []PTime = new int[n];
-        int []ProcessId = new int[n];
-        for(int i=0;i<n;i++){
-            System.out.println("Enqueue: "+i);
-            enqueue[i] = sc.nextInt();
-            System.out.println("PTime: "+i);
-            PTime[i] = sc.nextInt();
-            System.out.println("ProcessId: "+i);
-            ProcessId[i] = sc.nextInt();
-        }
-        int[] result = GetOrder(enqueue,PTime,ProcessId);
-        for(int i=0;i<n;i++){
-            System.out.println(result[i]);
-        }
+        int []enqueue = {1,2,2};
+        int []PTime = {2,4,3};
+        int []PId = {0,1,2};
     }
 }

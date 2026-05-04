@@ -179,84 +179,84 @@ import java.util.List;
 //        MaxProfit(jobId,deadline,profit,n);
 //    }
 //}
-//record ClassRowList(int deadline,int profit,String JobId){}
-//record OutputClass(List<String> jbId,int TotalProfit){}
-//public class JobSequencingProblem{
-//    public static OutputClass MaxProfit(int []deadline,int []profit,String[]JobId){
-//        List<ClassRowList> DetailJobL = new ArrayList<>();
-//        int maxDeadline = 0;
-//        int n = profit.length;
-//        List<String> outputStr = new ArrayList<>();
-//        for(int i=0;i<n;i++){
-//            DetailJobL.add(new ClassRowList(deadline[i],profit[i],JobId[i]));
-//            maxDeadline=Math.max(maxDeadline,deadline[i]);
-//        }
-//        Collections.sort(DetailJobL,(a,b)->Integer.compare(b.profit(), a.profit()));
-//        int[] maxDeadlineArray = new int[maxDeadline+1];
-//        for(int i=0;i<maxDeadlineArray.length;i++){
-//            maxDeadlineArray[i] = -1;
-//        }
-//        int maxProfit = 0;
-//        for(int i=0;i<n;i++){
-////            maxProfit += DetailJobL.get(i).profit();
-//            int x = DetailJobL.get(i).deadline();
-//            if(maxDeadlineArray[x] == -1){
-//                maxProfit += DetailJobL.get(i).profit();
-//                outputStr.add(DetailJobL.get(i).JobId());
-//            }
-//            else{
-//                for(int m = x-1;m>=1;m--){
-//
-//                }
-//            }
-//        }
-//        return new OutputClass(outputStr,maxProfit);
-//    }
-//    public static void main(String[] args){
-//        int []deadline = {2,1,3,2,1,3};
-//        int []profit = {100,19,27,25,15,35};
-//        String []JobId = {"J1","J2","J3","J4","J5","J6"};
-//    }
-//}
-
-record OutputFormatClass(String[] JobId,int TotalProfit){}
-record ListFormat(int deadline,int profit ,String jobId){}
+record ClassRowList(int deadline,int profit,String JobId){}
+record OutputClass(List<String> jbId,int TotalProfit){}
 public class JobSequencingProblem{
-    public static OutputFormatClass MaxProfit(int []deadline,int [] profit,String []jobId){
-        List<ListFormat> list = new ArrayList<>();
-        int n = deadline.length;
-        int maxdeadline = 0;
+    public static OutputClass MaxProfit(int []deadline,int []profit,String[]JobId){
+        List<ClassRowList> DetailJobL = new ArrayList<>();
+        int maxDeadline = 0;
+        int n = profit.length;
+        List<String> outputStr = new ArrayList<>();
         for(int i=0;i<n;i++){
-            list.add(new ListFormat(deadline[i],profit[i],jobId[i]));
-            maxdeadline = Math.max(maxdeadline,list.get(i).deadline());
+            DetailJobL.add(new ClassRowList(deadline[i],profit[i],JobId[i]));
+            maxDeadline=Math.max(maxDeadline,deadline[i]);
         }
-        int []maxDeadlineArray = new int[maxdeadline];
-        for(int i=0;i<n;i++){
+        Collections.sort(DetailJobL,(a,b)->Integer.compare(b.profit(), a.profit()));
+        int[] maxDeadlineArray = new int[maxDeadline+1];
+        for(int i=0;i<maxDeadlineArray.length;i++){
             maxDeadlineArray[i] = -1;
         }
-        String []JobId = new String[maxdeadline];
-        int TotalProfit = 0;
-        Collections.sort(list,(a,b)-> Integer.compare(b.profit(),a.profit()));
+        int maxProfit = 0;
         for(int i=0;i<n;i++){
-            int deadl = list.get(i).deadline();
-            if(maxDeadlineArray[deadl] == -1){
-                TotalProfit += list.get(i).profit();
-                JobId[deadl] = list.get(i).jobId();
+//            maxProfit += DetailJobL.get(i).profit();
+            int x = DetailJobL.get(i).deadline();
+            if(maxDeadlineArray[x] == -1){
+                maxProfit += DetailJobL.get(i).profit();
+                outputStr.add(DetailJobL.get(i).JobId());
             }
-            else {
-                while(deadl >= 1){
-                    TotalProfit += list.get(i).profit();
-                    JobId[deadl] = list.get(i).jobId();
-                    deadl--;
+            else{
+                for(int m = x-1;m>=1;m--){
+
                 }
             }
         }
-        return new OutputFormatClass(JobId,TotalProfit);
+        return new OutputClass(outputStr,maxProfit);
     }
     public static void main(String[] args){
-        int [] deadline = {2,1,3,2,1,3};
-        int [] profit = {100,19,27,25,15,35};
-        String[] jobId = {"J1","J2","J3","J4","J5","J6"};
-        System.out.print(MaxProfit(deadline,profit,jobId));
+        int []deadline = {2,1,3,2,1,3};
+        int []profit = {100,19,27,25,15,35};
+        String []JobId = {"J1","J2","J3","J4","J5","J6"};
     }
 }
+//
+//record OutputFormatClass(String[] JobId,int TotalProfit){}
+//record ListFormat(int deadline,int profit ,String jobId){}
+//public class JobSequencingProblem{
+//    public static OutputFormatClass MaxProfit(int []deadline,int [] profit,String []jobId){
+//        List<ListFormat> list = new ArrayList<>();
+//        int n = deadline.length;
+//        int maxdeadline = 0;
+//        for(int i=0;i<n;i++){
+//            list.add(new ListFormat(deadline[i],profit[i],jobId[i]));
+//            maxdeadline = Math.max(maxdeadline,list.get(i).deadline());
+//        }
+//        int []maxDeadlineArray = new int[maxdeadline];
+//        for(int i=0;i<n;i++){
+//            maxDeadlineArray[i] = -1;
+//        }
+//        String []JobId = new String[maxdeadline];
+//        int TotalProfit = 0;
+//        Collections.sort(list,(a,b)-> Integer.compare(b.profit(),a.profit()));
+//        for(int i=0;i<n;i++){
+//            int deadl = list.get(i).deadline();
+//            if(maxDeadlineArray[deadl] == -1){
+//                TotalProfit += list.get(i).profit();
+//                JobId[deadl] = list.get(i).jobId();
+//            }
+//            else {
+//                while(deadl >= 1){
+//                    TotalProfit += list.get(i).profit();
+//                    JobId[deadl] = list.get(i).jobId();
+//                    deadl--;
+//                }
+//            }
+//        }
+//        return new OutputFormatClass(JobId,TotalProfit);
+//    }
+//    public static void main(String[] args){
+//        int [] deadline = {2,1,3,2,1,3};
+//        int [] profit = {100,19,27,25,15,35};
+//        String[] jobId = {"J1","J2","J3","J4","J5","J6"};
+//        System.out.print(MaxProfit(deadline,profit,jobId));
+//    }
+//}

@@ -1,12 +1,5 @@
 package GreedyApproach;
 
-
-
-
-
-
-
-
 /*
  * PROBLEM:
  * Find the minimum number of coins needed to make a total amount 'N'.
@@ -46,9 +39,25 @@ package GreedyApproach;
  * Result: 4 coins used.
  */
 
-public class MinNumberOfCoins{
-    public static void main(String[] args){
-        int []moneyColl = {10,2,5,1};
-
-    }
-}
+//import java.util.Arrays;
+//
+//public class MinNumberOfCoins{
+//    public static int MinCoinUsed(int[]moneycoll,int N){
+//        Arrays.sort(moneycoll);
+//        int currentCoin ;
+//        int count = 0;
+//        for(int i = moneycoll.length-1;i>=0;i--){
+//            currentCoin = moneycoll[i];
+//            while(currentCoin <= N){
+//                count++;
+//                N -= currentCoin;
+//            }
+//        }
+//        return count;
+//    }
+//    public static void main(String[] args){
+//        int []moneycoll = {10,2,5,1};
+//        int N = 15;
+//        System.out.println(MinCoinUsed(moneycoll,N));
+//    }
+//}

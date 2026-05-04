@@ -61,22 +61,42 @@ import java.util.Scanner;
 //    }
 //}
 
-public class AssignMiceToHoles{
-    public static int MaxTimeHole(int[] mice,int[] holes){
-        Arrays.sort(mice);
-        Arrays.sort(holes);
-        int maxTime = 0;
-        for(int i=0;i<mice.length;i++){
-            int Time = Math.abs(mice[i]-holes[i]);
-            maxTime=Math.max(maxTime,Time);
-        }
-        return  maxTime;
-    }
-    public static void main(String[] args){
-        int[] holes ={4,0,5};
-        int[] mice = {4,-4,2};
-        int maxTime = MaxTimeHole(mice,holes);
-        System.out.println(maxTime);
-    }
+//public class AssignMiceToHoles{
+//    public static int MaxTimeHole(int[] mice,int[] holes){
+//        Arrays.sort(mice);
+//        Arrays.sort(holes);
+//        int maxTime = 0;
+//        for(int i=0;i<mice.length;i++){
+//            int Time = Math.abs(mice[i]-holes[i]);
+//            maxTime=Math.max(maxTime,Time);
+//        }
+//        return  maxTime;
+//    }
+//    public static void main(String[] args){
+//        int[] holes ={4,0,5};
+//        int[] mice = {4,-4,2};
+//        int maxTime = MaxTimeHole(mice,holes);
+//        System.out.println(maxTime);
+//    }
+//
+//}
 
-}
+//public class AssignMiceToHoles{
+//    public static int MinTime(int []mice,int[]holes){
+//        Arrays.sort(mice);
+//        Arrays.sort(holes);
+//        int diff;
+//        int max =0;
+//        for(int i=0;i< mice.length;i++){
+//            diff = Math.abs(mice[i]-holes[i]);
+//            max = Math.max(diff,max);
+//        }
+//        return max;
+//    }
+//    public static void main(String[] args){
+//        int []mice = {4,-4,2};
+//        int []holes = {4,0,5};
+//        System.out.println(MinTime(mice,holes));
+//    }
+//}
+

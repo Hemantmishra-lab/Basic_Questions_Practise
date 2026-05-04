@@ -1,7 +1,6 @@
 package GreedyApproach;
 //
-import java.util.Arrays;
-import java.util.Scanner;
+import java.util.*;
 //
 //class Item{
 //    int value,weight;
@@ -45,54 +44,89 @@ import java.util.Scanner;
 //    }
 //}
 
-class Items{
-    int value;
-    int weight;
-    double ratio;
-    public Items(int value,int weight){
-        this.value = value;
-        this.weight  = weight;
-        this.ratio = (double) value / (double)weight;
+//class Items{
+//    int value;
+//    int weight;
+//    double ratio;
+//    public Items(int value,int weight){
+//        this.value = value;
+//        this.weight  = weight;
+//        this.ratio = (double) value / (double)weight;
+//    }
+//}
+//public class FractionalKnapsack{
+//
+//    public static double MaxValue(int[]value,int[] weight,int capacity){
+//        int n= value.length;
+//        Items []items = new Items[n];
+//
+//        for(int i=0;i<n;i++){
+//            items[i] = new Items(value[i],weight[i]);
+//        }
+//        Arrays.sort(items,(a,b)->Double.compare(a.ratio , b.ratio));
+//        double MaxMoney = 0.0;
+//        for(int i=0;i<n;i++){
+//            Items currentItem = items[i];
+//            if(capacity -  currentItem.weight >= 0 ){
+//                capacity = capacity - currentItem.weight;
+//                MaxMoney = MaxMoney + currentItem.value;
+//            }
+//            else{
+//                double fraction = (double) capacity / (double) currentItem.weight;
+//                MaxMoney = MaxMoney + (fraction * currentItem.value);
+//                break;
+//            }
+//        }
+//        return MaxMoney;
+//    }
+//    public static void main(String[] args){
+//        Scanner sc = new Scanner(System.in);
+//        int n = sc.nextInt();
+//        int []value = new int[n];
+//        int[] weight = new int[n];
+//        System.out.println("Enter the Capacity For the Bag : ");
+//        int capacity = sc.nextInt();
+//        for(int i=0;i<n;i++){
+//            System.out.print("Value "+i);
+//            value[i]=sc.nextInt();
+//            System.out.println("Weight "+i);
+//            weight[i] = sc.nextInt();
+//        }
+//        System.out.println(MaxValue(value,weight,capacity));
+//    }
+//}
+record ListFormatClass(int value,int weight,double ratio){
+    public ListFormatClass(int value,int weight){
+        this(value,weight,(double) value / (double) weight);
     }
 }
 public class FractionalKnapsack{
-
-    public static double MaxValue(int[]value,int[] weight,int capacity){
-        int n= value.length;
-        Items []items = new Items[n];
-
-        for(int i=0;i<n;i++){
-            items[i] = new Items(value[i],weight[i]);
+    public static double MaxPriceItem(int []value,int []weight,int N){
+        List<ListFormatClass> list = new ArrayList<>();
+        for(int i=0;i< value.length;i++){
+            list.add(new ListFormatClass(value[i],weight[i]));
         }
-        Arrays.sort(items,(a,b)->Double.compare(a.ratio , b.ratio));
-        double MaxMoney = 0.0;
-        for(int i=0;i<n;i++){
-            Items currentItem = items[i];
-            if(capacity -  currentItem.weight >= 0 ){
-                capacity = capacity - currentItem.weight;
-                MaxMoney = MaxMoney + currentItem.value;
+        Collections.sort(list,(a,b)->Double.compare(b.ratio(), a.ratio()));
+        int CWeight = 0;
+        double MaxValue = 0.0;
+        for(int i=0;i<value.length;i++){
+            CWeight=list.get(i).weight();
+            if(N >= CWeight){
+                MaxValue += list.get(i).value();
+                N -= CWeight;
             }
             else{
-                double fraction = (double) capacity / (double) currentItem.weight;
-                MaxMoney = MaxMoney + (fraction * currentItem.value);
+                double fraction = (double) N /(double) CWeight;
+                MaxValue += (fraction * list.get(i).value());
                 break;
             }
         }
-        return MaxMoney;
+        return MaxValue;
     }
     public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int []value = new int[n];
-        int[] weight = new int[n];
-        System.out.println("Enter the Capacity For the Bag : ");
-        int capacity = sc.nextInt();
-        for(int i=0;i<n;i++){
-            System.out.print("Value "+i);
-            value[i]=sc.nextInt();
-            System.out.println("Weight "+i);
-            weight[i] = sc.nextInt();
-        }
-        System.out.println(MaxValue(value,weight,capacity));
+        int [] value = {60,100,120};
+        int []weight = {10,20,30};
+        int N = 50;
+        System.out.println(MaxPriceItem(value,weight,N));
     }
 }
