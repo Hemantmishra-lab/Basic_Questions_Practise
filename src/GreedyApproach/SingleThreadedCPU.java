@@ -268,7 +268,7 @@ import java.util.*;
 record ListFormatClassThread(int enqueue,int PTime,int PId){}
 public class SingleThreadedCPU{
     public static List<Integer> ProcessExeSeq(int[]enqueue,int []PTime,int []PId){
-        List<ListFormatClassThread> list = new ArrayList<>();
+        List<ListFormatClassThread  > list = new ArrayList<>();
         for(int i=0;i< enqueue.length;i++){
 
         }
