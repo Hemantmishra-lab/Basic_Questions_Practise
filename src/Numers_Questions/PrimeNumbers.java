@@ -27,5 +27,23 @@ import java.util.Scanner;
 //
 //    }
 //}
+//
 
-
+public class PrimeNumbers{
+    public static boolean primeNumber(int N){
+        if(N <= 1){
+            return false;
+        }
+        else{
+            for(int i=2;i<=Math.sqrt(N);i++){
+                if(N%i == 0)
+                    return false;
+            }
+        }
+        return true;
+    }
+    public static void main(String[] args){
+        int N = 7;
+        System.out.println(primeNumber(N));
+    }
+}

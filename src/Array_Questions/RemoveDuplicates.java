@@ -1,3 +1,27 @@
+//    package Array_Questions;
+//
+//    import java.util.HashSet;
+//    import java.util.Scanner;
+//    import java.util.Set;
+//
+//    public class RemoveDuplicates {
+//
+//        public static void main(String[] args){
+//            Set<Integer> set = new HashSet<>();
+//            Scanner sc = new Scanner(System.in);
+//            int n = sc.nextInt();
+//            int arr[] = new int[n];
+//            for(int i=0;i<n;i++){
+//                arr[i]=sc.nextInt();
+//            }
+//            for(int i=0;i<arr.length;i++){
+//                set.add(arr[i]);
+//            }
+//            System.out.println(set);
+//        }
+//    }
+
+
 package Array_Questions;
 
 import java.util.HashSet;
@@ -5,18 +29,24 @@ import java.util.Scanner;
 import java.util.Set;
 
 public class RemoveDuplicates {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
-    public static void main(String[] args){
-        Set<Integer> set = new HashSet<>();
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int arr[] = new int[n];
-        for(int i=0;i<n;i++){
-            arr[i]=sc.nextInt();
+        System.out.print("Enter number of elements: ");
+        int count = scanner.nextInt();
+
+        // Using a Set to automatically handle uniqueness
+        Set<Integer> uniqueNumbers = new HashSet<>();
+
+        System.out.println("Enter " + count + " numbers:");
+        for (int i = 0; i < count; i++) {
+            // We can add directly to the set without an intermediate array
+            // unless you need the original array for something else.
+            uniqueNumbers.add(scanner.nextInt());
         }
-        for(int i=0;i<arr.length;i++){
-            set.add(arr[i]);
-        }
-        System.out.println(set);
+
+        System.out.println("Unique Elements: " + uniqueNumbers);
+
+        scanner.close();
     }
 }

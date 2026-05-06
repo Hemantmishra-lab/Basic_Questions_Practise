@@ -33,3 +33,18 @@ import java.util.Scanner;
 //        System.out.println("The Sum Digit of this Number is : "+digitsum(num));
 //    }
 //}
+
+public class DigitSum{
+    public static int digitSum(int N){
+        int digit,sum=0;
+        while(N>0){
+            digit = N % 10;
+            sum += digit;
+            N = N / 10;
+        }
+        return sum;
+    }
+    public static void main(String[] args){
+        int N = 123;
+    }
+}

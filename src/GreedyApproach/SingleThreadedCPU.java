@@ -264,18 +264,18 @@ import java.util.*;
 //        int []
 //    }
 //}
-
-record ListFormatClassThread(int enqueue,int PTime,int PId){}
-public class SingleThreadedCPU{
-    public static List<Integer> ProcessExeSeq(int[]enqueue,int []PTime,int []PId){
-        List<ListFormatClassThread  > list = new ArrayList<>();
-        for(int i=0;i< enqueue.length;i++){
-
-        }
-    }
-    public static void main(String[] args){
-        int []enqueue = {1,2,2};
-        int []PTime = {2,4,3};
-        int []PId = {0,1,2};
-    }
-}
+//
+//record ListFormatClassThread(int enqueue,int PTime,int PId){}
+//public class SingleThreadedCPU{
+//    public static List<Integer> ProcessExeSeq(int[]enqueue,int []PTime,int []PId){
+//        List<ListFormatClassThread  > list = new ArrayList<>();
+//        for(int i=0;i< enqueue.length;i++){
+//
+//        }
+//    }
+//    public static void main(String[] args){
+//        int []enqueue = {1,2,2};
+//        int []PTime = {2,4,3};
+//        int []PId = {0,1,2};
+//    }
+//}

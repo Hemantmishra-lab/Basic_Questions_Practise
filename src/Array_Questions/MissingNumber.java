@@ -16,22 +16,40 @@ import java.util.Scanner;
 //    }
 //}
 
+//public class MissingNumber{
+//    public static void main(String[] args){
+//        Scanner sc = new Scanner(System.in);
+//        int n = sc.nextInt();
+//        int [] arr = new int[n];
+//        for(int i=0;i<n;i++){
+//            arr[i] = sc.nextInt();
+//        }
+//        int t = n+1;
+//        int expectedSum = t*(t+1)/2;
+//        System.out.println(expectedSum);
+//        int actualSum = 0;
+//        for(int i=0;i<arr.length;i++){
+//            actualSum = actualSum + arr[i];
+//        }
+//        int missingNumber = expectedSum - actualSum;
+//        System.out.println(missingNumber);
+//    }
+//}
+
 public class MissingNumber{
-    public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int [] arr = new int[n];
+    public static int missingnumber(int []arr){
+        int n = arr.length;
+        int sum = 0;
         for(int i=0;i<n;i++){
-            arr[i] = sc.nextInt();
+            sum += arr[i];
         }
-        int t = n+1;
-        int expectedSum = t*(t+1)/2;
-        System.out.println(expectedSum);
-        int actualSum = 0;
-        for(int i=0;i<arr.length;i++){
-            actualSum = actualSum + arr[i];
-        }
-        int missingNumber = expectedSum - actualSum;
-        System.out.println(missingNumber);
+        int N = n+1;
+        int expectedSum = N * (N+1)/2;
+        int missingno = expectedSum - sum ;
+        return missingno;
+    }
+    public static void main(String[] args){
+        int []arr = {1,3,4,5};
+        System.out.println(missingnumber(arr));
     }
 }
