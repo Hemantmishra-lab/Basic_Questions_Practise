@@ -38,4 +38,19 @@ import java.util.Scanner;
 //    }
 //}
 
+public class DigitSum{
+        public static int digitSum(String input){
+            int sum = 0;
+            for(int i=0;i<input.length();i++){
+                char ch = input.charAt(i);
+                if(Character.isDigit(ch))
+                    sum += ch - '0';
 
+            }
+            return sum;
+        }
+    public static void main(String[] args){
+        String input = "a1b2c3";
+        System.out.println(digitSum(input));
+    }
+}

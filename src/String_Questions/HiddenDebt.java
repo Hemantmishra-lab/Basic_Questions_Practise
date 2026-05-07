@@ -21,3 +21,21 @@ public class HiddenDebt {
         sc.close();
     }
 }
+
+//public class HiddenDebt{
+//    public static int HiddenDebt(String input){
+//        Pattern pt = Pattern.compile("-?\\d+");
+//        int sum = 0;
+//        Matcher mt = pt.matcher(input);
+//        while(mt.find()){
+//            String Strnum =mt.group();
+//            int num = Integer.parseInt(Strnum);
+//            sum += num;
+//        }
+//        return sum;
+//    }
+//    public static void main(String[] args){
+//        String input = "Credited : 1000 Debited : -200";
+//        System.out.println(HiddenDebt(input));
+//    }
+//}

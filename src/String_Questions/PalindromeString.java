@@ -52,3 +52,21 @@ import java.util.Scanner;
 //    }
 //}
 
+//public class PalindromeString{
+//    public static boolean palindromeStr(String input){
+//        int start = 0;
+//        int end = input.length()-1;
+//        while(start<end){
+//            if(input.charAt(start) != input.charAt(end))
+//                return false;
+//            start++;
+//            end--;
+//        }
+//        return true;
+//    }
+//    public static void main(String[] args){
+//        String input = "wow";
+//        System.out.println(palindromeStr(input));
+//    }
+//}
+
