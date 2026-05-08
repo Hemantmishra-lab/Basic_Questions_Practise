@@ -95,38 +95,70 @@ import java.util.*;
 //        System.out.println(MaxValue(value,weight,capacity));
 //    }
 //}
-record ListFormatClass(int value,int weight,double ratio){
-    public ListFormatClass(int value,int weight){
-        this(value,weight,(double) value / (double) weight);
-    }
-}
-public class FractionalKnapsack{
-    public static double MaxPriceItem(int []value,int []weight,int N){
-        List<ListFormatClass> list = new ArrayList<>();
-        for(int i=0;i< value.length;i++){
-            list.add(new ListFormatClass(value[i],weight[i]));
-        }
-        Collections.sort(list,(a,b)->Double.compare(b.ratio(), a.ratio()));
-        int CWeight = 0;
-        double MaxValue = 0.0;
-        for(int i=0;i<value.length;i++){
-            CWeight=list.get(i).weight();
-            if(N >= CWeight){
-                MaxValue += list.get(i).value();
-                N -= CWeight;
-            }
-            else{
-                double fraction = (double) N /(double) CWeight;
-                MaxValue += (fraction * list.get(i).value());
-                break;
-            }
-        }
-        return MaxValue;
-    }
-    public static void main(String[] args){
-        int [] value = {60,100,120};
-        int []weight = {10,20,30};
-        int N = 50;
-        System.out.println(MaxPriceItem(value,weight,N));
-    }
-}
+//record ListFormatClass(int value,int weight,double ratio){
+//    public ListFormatClass(int value,int weight){
+//        this(value,weight,(double) value / (double) weight);
+//    }
+//}
+//public class FractionalKnapsack{
+//    public static double MaxPriceItem(int []value,int []weight,int N){
+//        List<ListFormatClass> list = new ArrayList<>();
+//        for(int i=0;i< value.length;i++){
+//            list.add(new ListFormatClass(value[i],weight[i]));
+//        }
+//        Collections.sort(list,(a,b)->Double.compare(b.ratio(), a.ratio()));
+//        int CWeight = 0;
+//        double MaxValue = 0.0;
+//        for(int i=0;i<value.length;i++){
+//            CWeight=list.get(i).weight();
+//            if(N >= CWeight){
+//                MaxValue += list.get(i).value();
+//                N -= CWeight;
+//            }
+//            else{
+//                double fraction = (double) N /(double) CWeight;
+//                MaxValue += (fraction * list.get(i).value());
+//                break;
+//            }
+//        }
+//        return MaxValue;
+//    }
+//    public static void main(String[] args){
+//        int [] value = {60,100,120};
+//        int []weight = {10,20,30};
+//        int N = 50;
+//        System.out.println(MaxPriceItem(value,weight,N));
+//    }
+//}
+//
+//record ListClassOutput(int value,int weight,double ratio){
+//    public ListClassOutput(int value,int weight){this(value,weight,(double)value/(double) weight);}
+//}
+//public class FractionalKnapsack{
+//    public static double calFractionalKnapsack(int []value,int []weight,int N){
+//        List<ListClassOutput> list = new ArrayList<>();
+//        for(int i=0;i<value.length;i++){
+//            list.add(new ListClassOutput(value[i],weight[i]));
+//        }
+//        Collections.sort(list,(a,b)->Double.compare(b.ratio(),a.ratio()));
+//        double MoneyTotal = 0;
+//        for(int i=0;i<list.size();i++){
+//            if(N>list.get(i).weight()){
+//                N -= list.get(i).weight();
+//                MoneyTotal += list.get(i).value();
+//            }
+//            else{
+//                double fraction = N / list.get(i).weight();
+//                MoneyTotal += fraction * list.get(i).value();
+//                N=0;
+//            }
+//        }
+//        return MoneyTotal;
+//    }
+//    public static void main(String[] args){
+//        int []value = {60,100,120};
+//        int []weight = {10,20,30};
+//        int N = 50;
+//        System.out.println(calFractionalKnapsack(value,weight,N));
+//    }
+//}

@@ -275,3 +275,22 @@ import java.util.HashMap;
 //        int k = 30;
 //    }
 //}
+
+public class ForEach{
+    public static void duplicates(String[] str){
+        HashMap<String,Integer> map = new HashMap<>();
+        for(String x : str){
+            map.put(x,map.getOrDefault(x,0)+1);
+        }
+        for (Map.Entry<String, Integer> stringIntegerEntry : map.entrySet()) {
+            if(stringIntegerEntry.getValue()>1){
+                System.out.println(stringIntegerEntry.getKey());
+            }
+        }
+
+    }
+    public static void main(String[] args){
+        String []str = {"Ram","Shyam","Ram"};
+        duplicates(str);
+    }
+}
