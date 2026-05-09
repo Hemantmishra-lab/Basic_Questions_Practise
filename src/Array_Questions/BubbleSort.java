@@ -80,3 +80,25 @@ import java.util.Scanner;
 //}
 
 
+public class BubbleSort{
+    public static int bubbleSort(int []arr,int low,int high,int N){
+        if (low > high) {
+            return -1;
+        }
+        int mid = (low+high)/2;
+        if(arr[mid] == N){
+            return mid;
+        }
+        if(arr[mid]>N){
+            return bubbleSort(arr,low,mid-1,N);
+        }
+        return bubbleSort(arr,mid+1,high,N);
+    }
+    public static void main(String[] args){
+        int []arr = {10,20,30,40,50,60};
+        int N = 40;
+        int low = 0;
+        int high = arr.length-1;
+        System.out.println(bubbleSort(arr,low,high,N));
+    }
+}
