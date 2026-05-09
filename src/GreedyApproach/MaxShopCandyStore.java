@@ -60,3 +60,27 @@ import java.util.*;
 //        System.out.println(PriceCalc(TName,TPrice,k));
 //    }
 //}
+
+//record ListFormatClass(int TPrice,String TName){}
+//public class MaxShopCandyStore{
+//    public static int calMaxShopCandyStore(int []TPrice,String[] TName,int k){
+//        List<ListFormatClass> list = new ArrayList<>();
+//        for(int i=0;i<TPrice.length;i++){
+//            list.add(new ListFormatClass(TPrice[i],TName[i]));
+//        }
+//        Collections.sort(list,(a,b)->Integer.compare(a.TPrice(),b.TPrice()));
+//        int forward = 0, backward = TPrice.length-1,TMoney=0;
+//        while(forward <= backward){
+//            TMoney += list.get(forward).TPrice();
+//            forward++;
+//            backward-=k;
+//        }
+//        return TMoney;
+//    }
+//    public static void main(String[] args){
+//        String []TName = {"Parle-G","LondonDairy","Eclairs","KitKat","Cadbuary"};
+//        int [] TPrice = {1,2,4,6,10};
+//        int k =2;
+//        System.out.println(calMaxShopCandyStore(TPrice,TName,k));
+//    }
+//}

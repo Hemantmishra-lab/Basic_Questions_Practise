@@ -162,3 +162,34 @@ import java.util.*;
 //        System.out.println(calFractionalKnapsack(value,weight,N));
 //    }
 //}
+
+//record ListFormatClass(int value,int weight,double ratio){
+//    public ListFormatClass(int value,int weight){this(value,weight,(double)value/(double) weight);}
+//}
+//public class FractionalKnapsack{
+//    public static double calcFractionalKnapsack(int[]value,int []weight,int N){
+//        List<ListFormatClass> list = new ArrayList<>();
+//        for(int i=0;i<value.length;i++){
+//            list.add(new ListFormatClass(value[i],weight[i]));
+//        }
+//        double maxValue = 0.0;
+//        Collections.sort(list,(a,b)->Double.compare(b.ratio(),a.ratio()));
+//        for(int i=0;i<list.size();i++){
+//            if(N >= list.get(i).weight()){
+//                N -= list.get(i).weight();
+//                maxValue += list.get(i).value();
+//            } else if (N < list.get(i).weight()) {
+//                double fraction = (double) N / list.get(i).weight();
+//                double money = fraction * list.get(i).value();
+//                maxValue += money;
+//            }
+//        }
+//        return maxValue;
+//    }
+//    public static void main(String[] args){
+//        int value[]= {60,100,120};
+//        int [] weight = {10,20,30};
+//        int N = 50;
+//        System.out.println(calcFractionalKnapsack(value,weight,N));
+//    }
+//}

@@ -195,3 +195,29 @@ import java.util.Scanner;
 //    }
 //
 //}
+//
+//record ListFormatClass(int start,int end){}
+//public class NMeetingInOneRoom{
+//    public static int countNMeetingInOneRoom(int []start,int []end){
+//        List<ListFormatClass> list = new ArrayList<>();
+//        for(int i=0;i<start.length;i++){
+//            list.add(new ListFormatClass(start[i],end[i]));
+//        }
+//        Collections.sort(list,(a,b)->Integer.compare(a.end(),b.end()));
+//        int count = 1;
+//        int endTime = list.get(0).end();
+//        for(int i=1;i<list.size();i++){
+//            int startTime = list.get(i).start();
+//            if(endTime <= startTime){
+//                count ++;
+//                endTime = list.get(i).end();
+//            }
+//        }
+//        return count;
+//    }
+//    public static void main(String[] args){
+//        int []start = {1,3,0,5,8,5};
+//        int []end = {2,4,6,7,9,9};
+//        System.out.println(countNMeetingInOneRoom(start,end));
+//    }
+//}

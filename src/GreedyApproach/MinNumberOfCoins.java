@@ -39,6 +39,8 @@ package GreedyApproach;
  * Result: 4 coins used.
  */
 
+import java.util.Arrays;
+
 //import java.util.Arrays;
 //
 //public class MinNumberOfCoins{
@@ -59,5 +61,24 @@ package GreedyApproach;
 //        int []moneycoll = {10,2,5,1};
 //        int N = 15;
 //        System.out.println(MinCoinUsed(moneycoll,N));
+//    }
+//}
+//public class MinNumberOfCoins{
+//    public static int calcMinNoCoins(int[]moneyColl,int N){
+//        Arrays.sort(moneyColl);
+//        int count = 0;
+//        for(int i=moneyColl.length-1;i>=0;i--){
+//            int currentCoin = moneyColl[i];
+//            while(N>=currentCoin){
+//                N -= currentCoin;
+//                count++;
+//            }
+//        }
+//        return count;
+//    }
+//    public static void main(String[] args){
+//        int []moneyColl = {2,5,10,1};
+//        int N = 19;
+//        System.out.println(calcMinNoCoins(moneyColl,N));
 //    }
 //}

@@ -110,6 +110,7 @@ package GreedyApproach;//package GreedyApproach;
 //    }
 //}
 
+import javax.management.relation.InvalidRelationTypeException;
 import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -339,4 +340,39 @@ import java.util.List;
 //        System.out.println(x);
 //    }
 //}
+
+//record ListFormatClass(int deadline,int profit,String jobId){}
+//public class JobSequencingProblem{
+//    public static int calcMaxProfit(int []deadline,int[] profit,String[] jobId){
+//        List<ListFormatClass> list = new ArrayList<>();
+//        int MaxDead = 0,MaxProfit =0;
+//        for(int i=0;i<profit.length;i++){
+//            list.add(new ListFormatClass(deadline[i],profit[i],jobId[i]));
+//            MaxDead = Math.max(MaxDead,list.get(i).deadline());
+//        }
+//        Collections.sort(list,(a,b)-> Integer.compare(b.profit(),a.profit()));
+//        String result[] = new String[MaxDead+1];
+//        Arrays.fill(result,null);
+//        int dead = 0;
+//        for(int i=0;i<list.size();i++){
+//            for(int j=list.get(i).deadline();j>=1;j--){
+//                if(result[j] == null){
+//                    result[j] = list.get(i).jobId();
+//                    MaxProfit += list.get(i).profit();
+//                    break;
+//                }
+//            }
+//        }
+//        return MaxProfit;
+//
+//
+//    }
+//    public static void main(String[] args){
+//        int []deadline ={2,1,3,2,1,3};
+//        int [] profit ={100,19,27,25,15,35};
+//        String []jobId = {"J1","J2","J3","J4","J5","J6"};
+//        System.out.println(calcMaxProfit(deadline,profit,jobId));
+//    }
+//}
+
 

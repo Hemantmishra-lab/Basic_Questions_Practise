@@ -50,4 +50,20 @@ import java.util.Scanner;
 //        System.out.println(MinRotation(curr,des));
 //    }
 //}
-
+//
+//public class  MinRotationUnlockCircularLock{
+//    public static int calcMinRotation(int[]curr,int[]des){
+//        int MaxTime = 0;
+//        for(int i=0;i<curr.length;i++){
+//           int diff = Math.abs(curr[i] - des[i]);
+//           int cirDiff = 10 - diff;
+//           MaxTime = Math.max(MaxTime,Math.min(diff,cirDiff));
+//        }
+//        return MaxTime;
+//    }
+//    public static void main(String[] args){
+//        int[]curr = {2,8,5};
+//        int []des = {5,2,9};
+//        System.out.println(calcMinRotation(curr,des));
+//    }
+//}
