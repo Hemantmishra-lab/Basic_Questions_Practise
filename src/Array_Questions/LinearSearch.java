@@ -59,30 +59,46 @@ import java.util.Scanner;
 //            System.out.println("No Such element");
 //    }
 //}
+//
+//public class LinearSearch{
+//    public static int LinearS(int []arr,int target){
+//        for(int i=0;i<arr.length;i++){
+//            if(arr[i]==target){
+//                return i;
+//            }
+//        }
+//        return -1;
+//    }
+//    public static void main(String[] args){
+//        Scanner sc = new Scanner(System.in);
+//        int n = sc.nextInt();
+//        int [] arr= new int[n];
+//        for(int i=0;i<n;i++){
+//            arr[i]=sc.nextInt();
+//        }
+//        int target = sc.nextInt();
+//        int result = LinearS(arr,target);
+//        if(result != -1){
+//            System.out.println("It exists at "+result);
+//        }
+//        else {
+//            System.out.println("It does not exists "+result);
+//        }
+//    }
+//}
 
-public class LinearSearch{
-    public static int LinearS(int []arr,int target){
-        for(int i=0;i<arr.length;i++){
-            if(arr[i]==target){
-                return i;
-            }
-        }
-        return -1;
-    }
-    public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int [] arr= new int[n];
-        for(int i=0;i<n;i++){
-            arr[i]=sc.nextInt();
-        }
-        int target = sc.nextInt();
-        int result = LinearS(arr,target);
-        if(result != -1){
-            System.out.println("It exists at "+result);
-        }
-        else {
-            System.out.println("It does not exists "+result);
-        }
-    }
-}
+//public class LinearSearch{
+//    public static int calclinearSearch(int []arr,int N){
+//        for(int i=0;i<arr.length;i++){
+//            if(arr[i] == N){
+//                return i;
+//            }
+//        }
+//        return -1;
+//    }
+//    public static void main(String[] args){
+//        int []arr = {10,2,5,10,99};
+//        int N = 99;
+//        System.out.println(calclinearSearch(arr,N));
+//    }
+//}

@@ -36,20 +36,36 @@ import java.util.Scanner;
 //    }
 //}
 
-public class MissingNumber{
-    public static int missingnumber(int []arr){
-        int n = arr.length;
-        int sum = 0;
-        for(int i=0;i<n;i++){
-            sum += arr[i];
-        }
-        int N = n+1;
-        int expectedSum = N * (N+1)/2;
-        int missingno = expectedSum - sum ;
-        return missingno;
-    }
-    public static void main(String[] args){
-        int []arr = {1,3,4,5};
-        System.out.println(missingnumber(arr));
-    }
-}
+//public class MissingNumber{
+//    public static int missingnumber(int []arr){
+//        int n = arr.length;
+//        int sum = 0;
+//        for(int i=0;i<n;i++){
+//            sum += arr[i];
+//        }
+//        int N = n+1;
+//        int expectedSum = N * (N+1)/2;
+//        int missingno = expectedSum - sum ;
+//        return missingno;
+//    }
+//    public static void main(String[] args){
+//        int []arr = {1,3,4,5};
+//        System.out.println(missingnumber(arr));
+//    }
+//}
+//
+//public class MissingNumber{
+//    public static int calcMissingNumber(int arr[]){
+//        int actualSum = 0;
+//        for(int X : arr){
+//            actualSum += X;
+//        }
+//        int expectedSum = (arr.length+1)*(arr.length+2)/2;
+//        int missingNumber = expectedSum - actualSum;
+//        return missingNumber;
+//    }
+//    public static void main(String[] args){
+//        int []arr = {1,3,4,5};
+//        System.out.println(calcMissingNumber(arr));
+//    }
+//}

@@ -32,20 +32,37 @@ package Array_Questions;//package Array_Questions;
 
 import java.sql.SQLOutput;
 
-public class ArrayReverse{
-    public static int[] reverse(int []arr){
-        int n = arr.length;
-        int []revarr = new int[n];
-        for(int i=0;i<n;i++){
-            revarr[i] = arr[n-1-i];
-        }
-        return revarr;
-    }
-    public static void main(String[] args){
-        int []arr = {10,20,30,40,50};
-        int []revarr = reverse(arr);
-        for(int i=0;i< arr.length;i++){
-            System.out.println(revarr[i]);
-        }
-    }
-}
+//public class ArrayReverse{
+//    public static int[] reverse(int []arr){
+//        int n = arr.length;
+//        int []revarr = new int[n];
+//        for(int i=0;i<n;i++){
+//            revarr[i] = arr[n-1-i];
+//        }
+//        return revarr;
+//    }
+//    public static void main(String[] args){
+//        int []arr = {10,20,30,40,50};
+//        int []revarr = reverse(arr);
+//        for(int i=0;i< arr.length;i++){
+//            System.out.println(revarr[i]);
+//        }
+//    }
+//}
+
+//public class ArrayReverse{
+//    public static int[] calcReverseArray(int []arr){
+//        int rev [] = new int[arr.length];
+//        for(int i=0;i<arr.length;i++){
+//            rev[i] = arr[arr.length-i-1];
+//        }
+//        return rev;
+//    }
+//    public static void main(String[] args){
+//        int arr []= {10,20,30,40,50};
+//        int []rev=calcReverseArray(arr);
+//        for(int X : rev){
+//            System.out.print(X +" ");
+//        }
+//    }
+//}

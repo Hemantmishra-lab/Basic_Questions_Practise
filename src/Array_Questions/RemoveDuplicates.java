@@ -24,29 +24,45 @@
 
 package Array_Questions;
 
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
 
-public class RemoveDuplicates {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+//public class RemoveDuplicates {
+//    public static void main(String[] args) {
+//        Scanner scanner = new Scanner(System.in);
+//
+//        System.out.print("Enter number of elements: ");
+//        int count = scanner.nextInt();
+//
+//        // Using a Set to automatically handle uniqueness
+//        Set<Integer> uniqueNumbers = new HashSet<>();
+//
+//        System.out.println("Enter " + count + " numbers:");
+//        for (int i = 0; i < count; i++) {
+//            // We can add directly to the set without an intermediate array
+//            // unless you need the original array for something else.
+//            uniqueNumbers.add(scanner.nextInt());
+//        }
+//
+//        System.out.println("Unique Elements: " + uniqueNumbers);
+//
+//        scanner.close();
+//    }
+//}
 
-        System.out.print("Enter number of elements: ");
-        int count = scanner.nextInt();
+//public class RemoveDuplicates{
+//    public static void calcRemoveDuplicates(int []arr){
+//        Set<Integer> uniqueElements = new HashSet<>();
+//        for(int X : arr){
+//            uniqueElements.add(X);
+//        }
+//        System.out.println(uniqueElements);
+//    }
+//    public static void main(String[] args){
+//        int []arr = {10,20,10,100};
+//        calcRemoveDuplicates(arr);
+//    }
+//}
 
-        // Using a Set to automatically handle uniqueness
-        Set<Integer> uniqueNumbers = new HashSet<>();
-
-        System.out.println("Enter " + count + " numbers:");
-        for (int i = 0; i < count; i++) {
-            // We can add directly to the set without an intermediate array
-            // unless you need the original array for something else.
-            uniqueNumbers.add(scanner.nextInt());
-        }
-
-        System.out.println("Unique Elements: " + uniqueNumbers);
-
-        scanner.close();
-    }
-}
