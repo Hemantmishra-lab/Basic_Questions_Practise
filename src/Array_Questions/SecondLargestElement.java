@@ -1,4 +1,6 @@
 package Array_Questions;
+import GreedyApproach.MinRotationLetterUnlockCircularLock;
+
 import java.util.Scanner;
 //Very Important : Wrraper class use Integer.Min_value
 //public class SecondLargestElement {
@@ -52,22 +54,42 @@ import java.util.Scanner;
 //    }
 //}
 
-public class SecondLargestElement{
-    public static int secLargestNo(int []arr){
-        int Max = Integer.MIN_VALUE;
-        int SecMax = Integer.MAX_VALUE;
-        for(int i=0;i< arr.length;i++){
-            if(arr[i]>Max){
-                SecMax = Max;
-                Max = arr[i];
-            } else if (arr[i]<Max && arr[i]>SecMax) {
-                SecMax = arr[i];
-            }
-        }
-        return SecMax;
-    }
-    public static void main(String[] args){
-        int []arr = {10,8,4,3};
-        System.out.println(secLargestNo(arr));
-    }
-}
+//public class SecondLargestElement{
+//    public static int secLargestNo(int []arr){
+//        int Max = Integer.MIN_VALUE;
+//        int SecMax = Integer.MAX_VALUE;
+//        for(int i=0;i< arr.length;i++){
+//            if(arr[i]>Max){
+//                SecMax = Max;
+//                Max = arr[i];
+//            } else if (arr[i]<Max && arr[i]>SecMax) {
+//                SecMax = arr[i];
+//            }
+//        }
+//        return SecMax;
+//    }
+//    public static void main(String[] args){
+//        int []arr = {10,8,4,3};
+//        System.out.println(secLargestNo(arr));
+//    }
+//}
+//
+//public class SecondLargestElement{
+//    public static int calcSecondLargestElement(int arr[]){
+//        int Max = Integer.MIN_VALUE, SecMax = Integer.MAX_VALUE;
+//        for(int i=0;i<arr.length;i++){
+//            if(Max < arr[i]){
+//                SecMax = Max;
+//                Max = arr[i];
+//            } else if (Max > arr[i] && SecMax < arr[i] ) {
+//                SecMax = arr[i];
+//            }
+//        }
+//        return SecMax;
+//    }
+//    public static void main(String[] args){
+//        int []arr = {10,2,4,8};
+//        System.out.println(calcSecondLargestElement(arr));
+//
+//    }
+//}

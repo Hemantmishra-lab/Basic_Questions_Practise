@@ -66,21 +66,40 @@ import java.util.Scanner;
 //    }
 //}
 
-public class Armstrong{
-    public static boolean armstrong(int num){
-        int len = (String.valueOf(num)).length();
-        int temp = num;
-        int digit,sum = 0;
-        while(num>0){
-            digit = num % 10;
-            sum += (int) Math.pow(digit,len);
-            num = num/10;
-        }
-        if(temp == sum) return true;
-        return false;
-    }
-    public static void main(String[] args){
-        int num = 153;
-        System.out.println(armstrong(num));
-    }
-}
+//public class Armstrong{
+//    public static boolean armstrong(int num){
+//        int len = (String.valueOf(num)).length();
+//        int temp = num;
+//        int digit,sum = 0;
+//        while(num>0){
+//            digit = num % 10;
+//            sum += (int) Math.pow(digit,len);
+//            num = num/10;
+//        }
+//        if(temp == sum) return true;
+//        return false;
+//    }
+//    public static void main(String[] args){
+//        int num = 153;
+//        System.out.println(armstrong(num));
+//    }
+//}
+
+//public class Armstrong{
+//    public static boolean calcArmstrong(int num){
+//        int org = num;
+//        int len = String.valueOf(num).length();
+//        int sum = 0;
+//        while(num>0){
+//            int digit = num %10;
+//            sum += Math.pow(digit,len);
+//            num = num / 10;
+//        }
+//        if(org == sum) return true;
+//        return false;
+//    }
+//    public static void main(String[] args){
+//        int num = 153;
+//        System.out.println(calcArmstrong(num));
+//    }
+//}

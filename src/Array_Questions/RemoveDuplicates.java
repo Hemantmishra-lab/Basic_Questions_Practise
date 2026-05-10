@@ -24,10 +24,8 @@
 
 package Array_Questions;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Scanner;
-import java.util.Set;
+import java.sql.Array;
+import java.util.*;
 
 //public class RemoveDuplicates {
 //    public static void main(String[] args) {
@@ -63,6 +61,37 @@ import java.util.Set;
 //    public static void main(String[] args){
 //        int []arr = {10,20,10,100};
 //        calcRemoveDuplicates(arr);
+//    }
+//}
+
+//public class RemoveDuplicates{
+//    public static List<Integer> calcRemoveDuplicates(int arr[]){
+//        List<Integer> list = new ArrayList<>();
+//        for(int i=0;i<arr.length;i++){
+//            if(!list.contains(arr[i])){
+//                list.add(arr[i]);
+//            }
+//        }
+//        return list;
+//    }
+//    public static void main(String[] args){
+//        int []arr = {10,20,10,30};
+//        System.out.println(calcRemoveDuplicates(arr));
+//    }
+//}
+
+//public class RemoveDuplicates{
+//    public static List<Integer> calcRemoveDuplicates(int []arr){
+//        List<Integer> list = new ArrayList<>();
+//        for(int i=0;i<arr.length;i++){
+//            if(!list.contains(arr[i]))
+//                list.add(arr[i]);
+//        }
+//        return list;
+//    }
+//    public static void main(String[] args){
+//        int []arr = {10,20,20,30,10};
+//        System.out.print(calcRemoveDuplicates(arr));
 //    }
 //}
 

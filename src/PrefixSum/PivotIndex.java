@@ -36,27 +36,47 @@ package PrefixSum;
  * Result: Pivot Index is 3.
  */
 
-
-public class PivotIndex {
-    public static int pivotIndex(int []arr){
-        int n = arr.length;
-        int []parr = new int[n];
-        int totalSum = 0;
-        for (int value : arr) {
-            totalSum += value;
-        }
-
-        int leftsum = 0;
-        for(int i=0;i<n;i++){
-            if(leftsum == totalSum-leftsum-arr[i])
-                return i;
-            leftsum += arr[i];
-        }
-        return -1;
-
-    }
-    public static void main(String[] args){
-        int []arr = {1, 7, 3, 6, 5, 6};
-        System.out.println(pivotIndex(arr));
-    }
-}
+//
+//public class PivotIndex {
+//    public static int pivotIndex(int []arr){
+//        int n = arr.length;
+//        int []parr = new int[n];
+//        int totalSum = 0;
+//        for (int value : arr) {
+//            totalSum += value;
+//        }
+//
+//        int leftsum = 0;
+//        for(int i=0;i<n;i++){
+//            if(leftsum == totalSum-leftsum-arr[i])
+//                return i;
+//            leftsum += arr[i];
+//        }
+//        return -1;
+//
+//    }
+//    public static void main(String[] args){
+//        int []arr = {1, 7, 3, 6, 5, 6};
+//        System.out.println(pivotIndex(arr));
+//    }
+//}
+//
+//public class PivotIndex{
+//    public static int calcPivotIndex(int []arr){
+//        int leftSum = 0,total = 0;
+//        for(int x : arr){
+//            total += x;
+//        }
+//        for(int i=0;i<arr.length;i++){
+//            if(leftSum == total - leftSum -arr[i]){
+//                return i;
+//            }
+//            leftSum += arr[i];
+//        }
+//        return -1;
+//    }
+//    public static void main(String[] args){
+//        int []arr = {1, 7, 3, 6, 5, 6};
+//        System.out.print(calcPivotIndex(arr));
+//    }
+//}
