@@ -69,3 +69,20 @@ import java.util.Scanner;
 //        System.out.println(calDigitSum(str));
 //    }
 //}
+
+//public class DigitSum{
+//    public static int calDigitSum(String str){
+//        int sum = 0;
+//        for(int i=0;i<str.length();i++){
+//            if(Character.isDigit(str.charAt(i))){
+//                sum += (str.charAt(i) - '0');
+//            }
+//        }
+//        return sum;
+//    }
+//    public static void main(String[] args){
+//        String str = "a1b2c3";
+//        System.out.print(calDigitSum(str));
+//    }
+//}
+

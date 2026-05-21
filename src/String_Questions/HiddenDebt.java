@@ -56,3 +56,37 @@ import java.util.regex.Pattern;
 //        System.out.println(calcHiddenDebt(str));
 //    }
 //}
+//
+//public class HiddenDebt{
+//    public static int calcHidddenDebt(String str){
+//        Pattern pt = Pattern.compile("-?\\d++");
+//        Matcher mt = pt.matcher(str);
+//        int sum = 0;
+//        while(mt.find()){
+//            String st = mt.group();
+//            sum += Integer.parseInt(st);
+//        }
+//        return sum;
+//    }
+//    public static void main(String[] args){
+//        String str = "credited : 1000 Debited : -200";
+//        System.out.print(calcHidddenDebt(str));
+//    }
+//}
+
+//public class HiddenDebt{
+//    public static int calcHiddenDebt(String str){
+//        Pattern pt = Pattern.compile("-?\\d++");
+//        Matcher mt = pt.matcher(str);
+//        int sum = 0;
+//        while(mt.find()){
+//            String st = mt.group();
+//            sum += Integer.parseInt(st);
+//        }
+//        return sum;
+//    }
+//    public static void main(String[] args){
+//        String str = "Credited : 1000 Debited : -200";
+//        System.out.print(calcHiddenDebt(str));
+//    }
+//}

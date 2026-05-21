@@ -93,3 +93,41 @@ import java.util.Scanner;
 //        System.out.println(calcPalindrome(str));
 //    }
 //}
+
+//public class Palindrome{
+//    public static boolean calcPalindrome(String str){
+//        String org = str;
+//        String rev = "";
+//        for(int i=0;i<str.length();i++){
+//            rev += str.charAt(str.length()-1-i);
+//
+//        }
+//        if(rev.equals(org))
+//            return true;
+//        return false;
+//    }
+//    public static void main(String[] args){
+//        String str = "WOW";
+//        System.out.print(calcPalindrome(str));
+//    }
+//}
+
+//public class Palindrome{
+//    public static boolean calcPalindrome(int num){
+//        int org = num;
+//        int sum = 0;
+//        while(num>0){
+//            int digit = num % 10;
+//            sum = sum * 10 + digit;
+//            num = num / 10;
+//        }
+//        if(sum == org){
+//            return true;
+//        }
+//        return false;
+//    }
+//    public static void main(String[] args){
+//        int num = 12321;
+//        System.out.print(calcPalindrome(num));
+//    }
+//}
