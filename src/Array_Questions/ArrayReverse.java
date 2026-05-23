@@ -66,3 +66,20 @@ import java.sql.SQLOutput;
 //        }
 //    }
 //}
+
+public class ArrayReverse{
+    public static int[] calcArrayReverse(int []arr){
+        int []revArr = new int[arr.length];
+        for(int i=0;i<arr.length;i++){
+            revArr[i] = arr[arr.length-i-1];
+        }
+        return revArr;
+    }
+    public static void main(String[] args){
+        int []arr = {11,2,100,90};
+        int []revArr = calcArrayReverse(arr);
+        for(int X : revArr){
+            System.out.print(X + " ");
+        }
+    }
+}
