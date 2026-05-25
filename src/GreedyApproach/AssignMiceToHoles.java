@@ -130,3 +130,18 @@ import java.util.Scanner;
 //        System.out.println(calcAssignMiceToHoles(mice,holes));
 //    }
 //}
+
+public class AssignMiceToHoles {
+    public static int calcAssignMiceToHoles(int []mice,int []holes){
+        int MaxTime = 0;
+        for(int i=0;i<mice.length;i++) {
+            MaxTime = Math.max(MaxTime, Math.abs(mice[i] - holes[i]));
+        }
+        return MaxTime;
+    }
+    public static void main(String[] args){
+        int []mice = {4,-4,2};
+        int []holes = {4,0,5};
+        System.out.println(calcAssignMiceToHoles(mice,holes));
+    }
+}

@@ -193,3 +193,16 @@ import java.util.*;
 //        System.out.println(calcFractionalKnapsack(value,weight,N));
 //    }
 //}
+
+record ListInput
+public class FractionalKnapsack {
+    public static double calcFractionalKnapsack(int []value,int[]weight,int N){
+        int rem = 0;
+
+    }
+    public static void main(String[] args){
+        int value[]= {60,100,120};
+        int [] weight = {10,20,30};
+       int N = 50;
+    }
+}

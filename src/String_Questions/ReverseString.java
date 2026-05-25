@@ -70,3 +70,17 @@ import java.util.Scanner;
 //        System.out.print(calcReverseString(str));
 //    }
 //}
+
+public class ReverseString{
+    public static String calcReverseString(String str){
+        String rev = "";
+        for(int i=0;i<str.length();i++){
+            rev = rev + str.charAt(str.length()-1-i);
+        }
+        return rev;
+    }
+    public static void main(String[] args){
+        String str = "HEMANT MISHRA";
+        System.out.println(calcReverseString(str));
+    }
+}
