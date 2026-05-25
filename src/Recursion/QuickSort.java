@@ -302,3 +302,33 @@ package Recursion;
 //            System.out.print(X + " ");
 //    }
 //}
+
+public class QuickSort {
+    public static int Partition(int []arr,int low,int high){
+        int Pos = low;int end = high;
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]<=arr[end]){
+                int temp = arr[i];
+                arr[i] = arr[Pos];
+                arr[Pos] = temp;
+                Pos++;
+            }
+        }
+        return Pos-1;
+    }
+    public static void quickSort(int []arr,int low,int high){
+        if(low>=high)
+            return;
+        int pos = Partition(arr,low,high);
+        quickSort(arr,low,pos-1);
+        quickSort(arr,pos+1,high);
+    }
+    public static void main(String[] args){
+        int [] arr = {1,99,12,31,48};
+        int low = 0;
+        int high = arr.length-1;
+        quickSort(arr,low,high);
+        for(int X : arr)
+            System.out.print(X +" ");
+    }
+}

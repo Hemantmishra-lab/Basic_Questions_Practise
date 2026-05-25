@@ -40,3 +40,16 @@ package Recursion;
 //        System.out.print(calcFibonacci(num));
 //    }
 //}
+
+public class Fibonacci{
+    public static int calcFibonacci(int num){
+        if(num <= 1){
+            return num;
+        }
+        return calcFibonacci(num-1) + calcFibonacci(num-2);
+    }
+    public static void main(String[] args){
+        int num = 15;
+        System.out.print(calcFibonacci(num));
+    }
+}

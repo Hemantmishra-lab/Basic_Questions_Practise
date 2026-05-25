@@ -267,3 +267,49 @@ package Recursion;
 //            System.out.print(X +" ");
 //    }
 //}
+
+public class MergeSort{
+    public static int[] mergeSort(int []arr,int low,int high,int mid){
+        int []temp = new int[high-low+1];
+        int index = 0;
+        int left = low, right = mid+1;
+        while(left<=mid && right<=high){
+            if(arr[left]<=arr[right]){
+                temp[index] = arr[left];
+                index++;left++;
+            }
+            else{
+                temp[index] = arr[right];
+                right++;index++;
+            }
+        }
+        while(left<=mid){
+            temp[index] = arr[left];
+            left++;index++;
+        }
+        while (right<=high){
+            temp[index] = arr[right];
+            index++;right++;
+        }
+        for(int i=low;i<=high;i++){
+            arr[i] = temp[i-low];
+        }
+        return arr;
+    }
+    public static void Sort(int []arr,int low,int high){
+        if(low>=high)
+            return;
+        int mid = (low+high)/2;
+        Sort(arr,low,mid);
+        Sort(arr,mid+1,high);
+        mergeSort(arr,low,high,mid);
+    }
+    public static void main(String[] args){
+        int []arr ={20,10,33,1,99};
+        int low = 0;
+        int high = arr.length-1;
+        Sort(arr,low,high);
+        for(int X: arr)
+            System.out.print(X +" ");
+    }
+}
