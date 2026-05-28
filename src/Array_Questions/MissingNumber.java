@@ -69,3 +69,17 @@ import java.util.Scanner;
 //        System.out.println(calcMissingNumber(arr));
 //    }
 //}
+
+public class MissingNumber {
+    public static int calcMissingNumber(int []arr){
+        int actSum = 0;
+        for(int X:arr)
+            actSum += X;
+        int expected = (arr.length+1) * (arr.length+2)/2;
+        return expected-actSum;
+    }
+    public static void main(String[] args){
+        int []arr = {1,2,3,5,6,7};
+        System.out.println(calcMissingNumber(arr));
+    }
+}

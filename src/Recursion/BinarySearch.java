@@ -42,24 +42,30 @@ package Recursion;
 //    }
 //}
 
-public class BinarySearch{
-    public static int binarySearch(int []arr,int target,int low,int high){
-        if(low>=high)
-            return -1;
-        int mid = (low+high)/2;
-        if(arr[mid] == target)
-            return mid;
-        if(arr[mid]<target){
-            return binarySearch(arr,target,mid+1,high);
-        }
-        return binarySearch(arr,target,low,mid);
+//public class BinarySearch{
+//    public static int binarySearch(int []arr,int target,int low,int high){
+//        if(low>=high)
+//            return -1;
+//        int mid = (low+high)/2;
+//        if(arr[mid] == target)
+//            return mid;
+//        if(arr[mid]<target){
+//            return binarySearch(arr,target,mid+1,high);
+//        }
+//        return binarySearch(arr,target,low,mid);
+//
+//    }
+//    public static void main(String[] args){
+//        int []arr = {12,18,70,100,110};
+//        int target = 70;
+//        int low =  0;
+//        int high = arr.length-1;
+//        System.out.println(binarySearch(arr,target,low,high));
+//    }
+//}
 
-    }
+public class BinarySearch {
     public static void main(String[] args){
-        int []arr = {12,18,70,100,110};
-        int target = 70;
-        int low =  0;
-        int high = arr.length-1;
-        System.out.println(binarySearch(arr,target,low,high));
+
     }
 }

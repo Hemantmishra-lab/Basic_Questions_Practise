@@ -65,22 +65,61 @@ package Array_Questions;
 //    }
 //}
 
+//public class LeftRotateByDPlaces {
+//    public static int[] calcLeftRotateByDPlaces(int []arr,int d){
+//        int []temp = new int[arr.length];
+//        for(int i= d;i<arr.length;i++){
+//            temp[i-d] = arr[i];
+//        }
+//        for(int i=0;i<d;i++){
+//            temp[i+ arr.length-d] = arr[i];
+//        }
+//        return temp;
+//    }
+//    public static void main(String[] args){
+//        int [] arr = {1, 2, 3, 4, 5, 6, 7};
+//        int d = 2;
+//        int []temp = calcLeftRotateByDPlaces(arr,d);
+//        for(int X : temp)
+//            System.out.print(X +" ");
+//    }
+//}
+//
+//public class LeftRotateByDPlaces {
+//    public static int[] calcLeftRotateByDPlaces(int []arr,int k){
+//        int []temp = new int[arr.length];
+//        for(int i=0;i<k;i++){
+//            temp[arr.length-k+i]=arr[i];
+//        }
+//        for(int i=k;i<arr.length;i++){
+//            temp[i-k]=arr[i];
+//        }
+//        return temp;
+//    }
+//    public static void main(String[] args){
+//        int []arr = {1,2,3,4,5,6,7};
+//        int K = 2;
+//        int []temp = calcLeftRotateByDPlaces(arr,K);
+//        for(int X:temp)
+//            System.out.print(X+" ");
+//    }
+//}
+
 public class LeftRotateByDPlaces {
-    public static int[] calcLeftRotateByDPlaces(int []arr,int d){
+    public static int[] calcLeftRotateByDPlaces(int []arr,int k){
         int []temp = new int[arr.length];
-        for(int i= d;i<arr.length;i++){
-            temp[i-d] = arr[i];
+        for(int i=0;i<k;i++){
+            temp[arr.length-k+i]=arr[i];
         }
-        for(int i=0;i<d;i++){
-            temp[i+ arr.length-d] = arr[i];
+        for(int i=k;i<arr.length;i++){
+            temp[i-k] = arr[i];
         }
         return temp;
     }
     public static void main(String[] args){
-        int [] arr = {1, 2, 3, 4, 5, 6, 7};
-        int d = 2;
-        int []temp = calcLeftRotateByDPlaces(arr,d);
-        for(int X : temp)
-            System.out.print(X +" ");
+        int []arr ={1,2,3,4,5,6,7};int k=2;
+        int []temp = calcLeftRotateByDPlaces(arr,k);
+        for(int X:temp)
+            System.out.print(X+" ");
     }
 }

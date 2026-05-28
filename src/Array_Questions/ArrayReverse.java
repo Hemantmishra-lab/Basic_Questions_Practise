@@ -84,18 +84,34 @@ import java.sql.SQLOutput;
 //    }
 //}
 
-public class ArrayReverse{
+//public class ArrayReverse{
+//    public static int[] calcArrayReverse(int []arr){
+//        int []temp = new int[arr.length];
+//        for(int i=0;i<arr.length;i++){
+//            temp[i] = arr[arr.length-i-1];
+//        }
+//        return temp;
+//    }
+//    public static void main(String[] args){
+//        int []arr = {10,20,30,40,50};
+//        int []temp = calcArrayReverse(arr);
+//        for(int X: temp)
+//            System.out.print(X +" ");
+//    }
+//}
+
+public class ArrayReverse {
     public static int[] calcArrayReverse(int []arr){
-        int []temp = new int[arr.length];
+        int []rev = new int[arr.length];
         for(int i=0;i<arr.length;i++){
-            temp[i] = arr[arr.length-i-1];
+            rev[i] = arr[arr.length-1-i];
         }
-        return temp;
+        return rev;
     }
     public static void main(String[] args){
-        int []arr = {10,20,30,40,50};
-        int []temp = calcArrayReverse(arr);
-        for(int X: temp)
+        int []arr = {1,2,3,4,5,6};
+        int []rev = calcArrayReverse(arr);
+        for(int X: rev)
             System.out.print(X +" ");
     }
 }

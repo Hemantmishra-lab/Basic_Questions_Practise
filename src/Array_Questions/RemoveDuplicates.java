@@ -95,3 +95,22 @@ import java.util.*;
 //    }
 //}
 
+public class RemoveDuplicates {
+    public static List<Integer> calcRemoveDuplicates(int []arr){
+        HashMap<Integer,Integer> map = new HashMap<>();
+        List<Integer> list = new ArrayList<>();
+        for(int X:arr)
+            map.put(X,map.getOrDefault(X,0)+1);
+        for(int Key:map.keySet()){
+            if(map.get(Key)==1){
+                list.add(Key);
+            }
+        }
+        return list;
+    }
+    public static void main(String[] args){
+        int []arr = {1,8,5,4,6,6,7,2};
+        System.out.println(calcRemoveDuplicates(arr));
+    }
+}
+

@@ -103,11 +103,32 @@ import java.util.Scanner;
 //    }
 //}
 
-public class BubbleSort{
-    public static int[] calcBubbleSort(int []arr){
-        int n = arr.length;
-        for(int i=0;i<n-1;i++){
-            for(int j=0;j<n-1-i;j++){
+//public class BubbleSort{
+//    public static int[] calcBubbleSort(int []arr){
+//        int n = arr.length;
+//        for(int i=0;i<n-1;i++){
+//            for(int j=0;j<n-1-i;j++){
+//                if(arr[j]>arr[j+1]){
+//                    int temp = arr[j];
+//                    arr[j] = arr[j+1];
+//                    arr[j+1] = temp;
+//                }
+//            }
+//        }
+//        return arr;
+//    }
+//    public static void main(String[] args){
+//        int []arr = {10,50,2,44};
+//        calcBubbleSort(arr);
+//        for(int X : arr)
+//            System.out.print(X +" ");
+//    }
+//}
+
+public class BubbleSort {
+    public static void calcBubbleSort(int []arr){
+        for(int i=0;i<arr.length-1;i++){
+            for(int j=0;j< arr.length-1-i;j++){
                 if(arr[j]>arr[j+1]){
                     int temp = arr[j];
                     arr[j] = arr[j+1];
@@ -115,12 +136,12 @@ public class BubbleSort{
                 }
             }
         }
-        return arr;
+
     }
     public static void main(String[] args){
-        int []arr = {10,50,2,44};
+        int []arr = {1,9,7,3,6,7};
         calcBubbleSort(arr);
-        for(int X : arr)
+        for(int X:arr)
             System.out.print(X +" ");
     }
 }

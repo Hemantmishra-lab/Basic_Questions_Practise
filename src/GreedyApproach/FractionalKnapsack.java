@@ -194,15 +194,24 @@ import java.util.*;
 //    }
 //}
 
-record ListInput
-public class FractionalKnapsack {
-    public static double calcFractionalKnapsack(int []value,int[]weight,int N){
-        int rem = 0;
-
-    }
-    public static void main(String[] args){
-        int value[]= {60,100,120};
-        int [] weight = {10,20,30};
-       int N = 50;
-    }
-}
+//record ListFormatClass(int value,int weight,double ratio){
+//    public ListFormatClass(int value,int weight){
+//        this(value,weight,(double)value/(double)weight);
+//    }
+//}
+//public class FractionalKnapsack{
+//    public static double calcFractionalKnapsack(int []value,int []weight){
+//        List<ListFormatClass> list = new ArrayList<>();
+//        for(int i=0;i<value.length;i++){
+//            list.add(new ListFormatClass(value[i],weight[i]));
+//        }
+//        Collections.sort(list,(a,b)->{
+//            list.get(b.ratio());
+//        })
+//    }
+//    public static void main(String[] args){
+//        int value[]= {60,100,120};
+//        int [] weight = {10,20,30};
+//        int N = 50;
+//    }
+//}

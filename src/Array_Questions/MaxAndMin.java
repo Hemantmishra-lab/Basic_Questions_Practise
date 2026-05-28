@@ -78,21 +78,43 @@ import java.util.Scanner;
 //Max ko Integer.MIN_VALUE (sabse chhota number) se start karein.
 // Min ko Integer.MAX_VALUE (sabse bada number) se start karein.
 
-public class MaxAndMin{
-    public static int[] clacMaxAndMin(int []arr){
-        int Max = Integer.MIN_VALUE,Min = Integer.MAX_VALUE;
+//public class MaxAndMin{
+//    public static int[] clacMaxAndMin(int []arr){
+//        int Max = Integer.MIN_VALUE,Min = Integer.MAX_VALUE;
+//        for(int i=0;i<arr.length;i++){
+//            if(arr[i]>Max) Max = arr[i];
+//            if(arr[i]<Min) Min = arr[i];
+//        }
+//        int []result = {Max,Min};
+//        return result;
+//    }
+//    public static void main(String[] args){
+//        int []arr = {102,100,9,1};
+//        int[] result = clacMaxAndMin(arr);
+//        for(int x : result){
+//            System.out.print(x +" ");
+//        }
+//    }
+//}
+
+public class MaxAndMin {
+    public static int[] calcMaxAndMin(int []arr){
+        int Max = Integer.MIN_VALUE;
+        int Min = Integer.MAX_VALUE;
+
         for(int i=0;i<arr.length;i++){
-            if(arr[i]>Max) Max = arr[i];
-            if(arr[i]<Min) Min = arr[i];
+            if(arr[i]>Max)
+                Max = arr[i];
+            else if(arr[i]<Min)
+                Min = arr[i];
         }
-        int []result = {Max,Min};
-        return result;
+        int temp[] = {Max,Min};
+        return temp;
     }
     public static void main(String[] args){
-        int []arr = {102,100,9,1};
-        int[] result = clacMaxAndMin(arr);
-        for(int x : result){
-            System.out.print(x +" ");
-        }
+        int []arr =  {102,100,9,1};
+        int []temp = calcMaxAndMin(arr);
+        for(int X:temp)
+            System.out.print(X +" ");
     }
 }

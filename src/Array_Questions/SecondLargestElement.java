@@ -1,6 +1,8 @@
 package Array_Questions;
 import GreedyApproach.MinRotationLetterUnlockCircularLock;
 
+import javax.management.remote.rmi.RMIJRMPServerImpl;
+import java.util.PriorityQueue;
 import java.util.Scanner;
 //Very Important : Wrraper class use Integer.Min_value
 //public class SecondLargestElement {
@@ -93,24 +95,89 @@ import java.util.Scanner;
 //
 //    }
 //}
+//
+//public class SecondLargestElement{
+//    public static int calcSecondLargestElement(int []arr){
+//        int Max = Integer.MIN_VALUE;
+//        int SecMax = Integer.MIN_VALUE;
+//        for(int i=0;i<arr.length;i++){
+//            if(arr[i]>Max){
+//                SecMax = Max;
+//                Max = arr[i];
+//            } else if (arr[i]<Max && arr[i]>SecMax) {
+//                SecMax = arr[i];
+//
+//            }
+//        }
+//        return SecMax;
+//    }
+//    public static void main(String[] args){
+//        int arr[] = {10,22,77,1};
+//        System.out.print(calcSecondLargestElement(arr));
+//    }
+//}
 
-public class SecondLargestElement{
-    public static int calcSecondLargestElement(int []arr){
-        int Max = Integer.MIN_VALUE;
-        int SecMax = Integer.MIN_VALUE;
-        for(int i=0;i<arr.length;i++){
-            if(arr[i]>Max){
-                SecMax = Max;
-                Max = arr[i];
-            } else if (arr[i]<Max && arr[i]>SecMax) {
-                SecMax = arr[i];
+//public class SecondLargestElement {
+//    public static int calcSecondLargestElement(int []arr){
+//        PriorityQueue<Integer> maxHeap = new PriorityQueue<>((a,b)->b-a);
+//        for(int X: arr)
+//            maxHeap.add(X);
+//        maxHeap.poll();
+//        return maxHeap.poll();
+//    }
+//    public static void main(String[] args){
+//        int []arr = {10,22,77,1};
+//        System.out.println(calcSecondLargestElement(arr));
+//    }
+//}
 
-            }
-        }
-        return SecMax;
-    }
-    public static void main(String[] args){
-        int arr[] = {10,22,77,1};
-        System.out.print(calcSecondLargestElement(arr));
-    }
-}
+//public class SecondLargestElement {
+//    public static int calcSecondLargestElement(int[]arr){
+//        PriorityQueue<Integer> maxHeap = new PriorityQueue<>((a,b)->b-a);
+//        for(int X: arr)
+//            maxHeap.add(X);
+//        maxHeap.poll();
+//        return maxHeap.poll();
+//    }
+//    public static void main(String[] args){
+//        int []arr = {10,22,77,1};
+//        System.out.println(calcSecondLargestElement(arr));
+//    }
+//}
+
+//public class SecondLargestElement {
+//    public static int calcSecondLargestElement(int []arr){
+//        PriorityQueue<Integer> minHeap = new PriorityQueue<>((a,b)->a-b);
+//        for(int X: arr)
+//            minHeap.add(X);
+//        minHeap.poll();
+//        return minHeap.poll();
+//    }
+//    public static void main(String[] args){
+//        int []arr = {10,22,77,1};
+//        System.out.println(calcSecondLargestElement(arr));
+//    }
+//}
+
+
+//public class SecondLargestElement {
+//    public static int calcSecondLargestElement(int []arr){
+//        int Max = Integer.MIN_VALUE;
+//        int SecMax = Integer.MIN_VALUE;
+//        for(int i=0;i<arr.length;i++){
+//            if(arr[i]>Max){
+//                SecMax = Max;
+//                Max = arr[i];
+//            }
+//            else if(arr[i]<Max && arr[i]>SecMax){
+//                SecMax = arr[i];
+//            }
+//        }
+//        return SecMax;
+//    }
+//    public static void main(String []args){
+//        int []arr ={10,22,77,1};
+//        System.out.println(calcSecondLargestElement(arr));
+//    }
+//}
+

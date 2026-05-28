@@ -102,3 +102,18 @@ import java.util.Scanner;
 //        System.out.println(calclinearSearch(arr,N));
 //    }
 //}
+
+public class LinearSearch {
+    public static int calcLinearSearch(int []arr,int target){
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]==target)
+                return i;
+        }
+        return -1;
+    }
+    public static void main(String[] args){
+        int []arr = {1,6,3,2,8,0};
+        int target = 0;
+        System.out.println(calcLinearSearch(arr,target));
+    }
+}
