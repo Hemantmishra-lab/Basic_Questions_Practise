@@ -103,3 +103,4 @@ import java.util.Scanner;
 //        System.out.println(calcArmstrong(num));
 //    }
 //}
+

@@ -125,23 +125,44 @@ import java.util.Scanner;
 //    }
 //}
 
+//public class BubbleSort {
+//    public static void calcBubbleSort(int []arr){
+//        for(int i=0;i<arr.length-1;i++){
+//            for(int j=0;j< arr.length-1-i;j++){
+//                if(arr[j]>arr[j+1]){
+//                    int temp = arr[j];
+//                    arr[j] = arr[j+1];
+//                    arr[j+1] = temp;
+//                }
+//            }
+//        }
+//
+//    }
+//    public static void main(String[] args){
+//        int []arr = {1,9,7,3,6,7};
+//        calcBubbleSort(arr);
+//        for(int X:arr)
+//            System.out.print(X +" ");
+//    }
+//}
+
 public class BubbleSort {
-    public static void calcBubbleSort(int []arr){
+    public static int[] calcBubbleSort(int []arr){
         for(int i=0;i<arr.length-1;i++){
-            for(int j=0;j< arr.length-1-i;j++){
-                if(arr[j]>arr[j+1]){
+            for(int j=0;j<arr.length-i-1;j++){
+                if(arr[j+1]<arr[j]){
                     int temp = arr[j];
                     arr[j] = arr[j+1];
                     arr[j+1] = temp;
                 }
             }
         }
-
+        return arr;
     }
     public static void main(String[] args){
-        int []arr = {1,9,7,3,6,7};
+        int []arr = {1,52,5,8,0};
         calcBubbleSort(arr);
         for(int X:arr)
-            System.out.print(X +" ");
+            System.out.print(X+" ");
     }
 }

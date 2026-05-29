@@ -1,5 +1,6 @@
 package Array_Questions;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 //public class MaxAndMin {
@@ -97,24 +98,46 @@ import java.util.Scanner;
 //    }
 //}
 
+//public class MaxAndMin {
+//    public static int[] calcMaxAndMin(int []arr){
+//        int Max = Integer.MIN_VALUE;
+//        int Min = Integer.MAX_VALUE;
+//
+//        for(int i=0;i<arr.length;i++){
+//            if(arr[i]>Max)
+//                Max = arr[i];
+//            else if(arr[i]<Min)
+//                Min = arr[i];
+//        }
+//        int temp[] = {Max,Min};
+//        return temp;
+//    }
+//    public static void main(String[] args){
+//        int []arr =  {102,100,9,1};
+//        int []temp = calcMaxAndMin(arr);
+//        for(int X:temp)
+//            System.out.print(X +" ");
+//    }
+//}
+
 public class MaxAndMin {
     public static int[] calcMaxAndMin(int []arr){
         int Max = Integer.MIN_VALUE;
         int Min = Integer.MAX_VALUE;
-
         for(int i=0;i<arr.length;i++){
             if(arr[i]>Max)
                 Max = arr[i];
-            else if(arr[i]<Min)
+            else if (arr[i]<Min) {
                 Min = arr[i];
+            }
         }
         int temp[] = {Max,Min};
         return temp;
     }
     public static void main(String[] args){
-        int []arr =  {102,100,9,1};
+        int []arr = {102,100,9,1};
         int []temp = calcMaxAndMin(arr);
         for(int X:temp)
-            System.out.print(X +" ");
+            System.out.print(X+" ");
     }
 }

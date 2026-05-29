@@ -22,6 +22,24 @@ import java.util.List;
 //    }
 //}
 
+//public class FindNonRepeatingElements {
+//    public static List<Integer> calcFindNonRepeatingElements(int []arr){
+//        HashMap<Integer,Integer> map = new HashMap<>();
+//        List<Integer> list = new ArrayList<>();
+//        for(int X:arr)
+//            map.put(X,map.getOrDefault(X,0)+1);
+//        for(int Key : map.keySet()){
+//            if(map.get(Key)==1)
+//                list.add(Key);
+//        }
+//        return list;
+//    }
+//    public static void main(String[] args){
+//        int []arr = {1,1,1,2,2,3,3,5,8,9,6,7};
+//        System.out.println(calcFindNonRepeatingElements(arr));
+//    }
+//}
+
 public class FindNonRepeatingElements {
     public static List<Integer> calcFindNonRepeatingElements(int []arr){
         HashMap<Integer,Integer> map = new HashMap<>();
@@ -29,13 +47,14 @@ public class FindNonRepeatingElements {
         for(int X:arr)
             map.put(X,map.getOrDefault(X,0)+1);
         for(int Key : map.keySet()){
-            if(map.get(Key)==1)
+            if(map.get(Key)==1){
                 list.add(Key);
+            }
         }
         return list;
     }
     public static void main(String[] args){
-        int []arr = {1,1,1,2,2,3,3,5,8,9,6,7};
+        int [] arr = {1,1,1,2,2,3,3,5,8,9,6,7};
         System.out.println(calcFindNonRepeatingElements(arr));
     }
 }

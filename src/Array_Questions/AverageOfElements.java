@@ -16,15 +16,29 @@ package Array_Questions;
 //}
 
 
+//public class AverageOfElements {
+//    public static double calcAvergaeOfElements(int[]arr){
+//        int sum = 0;
+//        for(int X:arr)
+//            sum += X;
+//        return sum/ arr.length;
+//    }
+//    public static void main(String[] args){
+//        int []arr = {4,5,8,9,1};
+//        System.out.println(calcAvergaeOfElements(arr));
+//    }
+//}
+
 public class AverageOfElements {
-    public static double calcAvergaeOfElements(int[]arr){
+    public static double calcAvergaeOfElements(int []arr){
         int sum = 0;
         for(int X:arr)
             sum += X;
-        return sum/ arr.length;
+        int n = arr.length;
+        return sum / n;
     }
     public static void main(String[] args){
-        int []arr = {4,5,8,9,1};
+        int []arr = {1,2,3,4,56,7};
         System.out.println(calcAvergaeOfElements(arr));
     }
 }

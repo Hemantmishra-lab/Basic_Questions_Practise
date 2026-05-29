@@ -61,14 +61,32 @@ import java.util.List;
 //    }
 //}
 
+//public class FindRepeatingElements {
+//    public static List<Integer> calcFindRepeatingElements(int []arr){
+//        HashMap<Integer,Integer> map = new HashMap<>();
+//        List<Integer> list = new ArrayList<>();
+//        for(int X:arr)
+//            map.put(X,map.getOrDefault(X,0)+1);
+//        for(int Key:map.keySet()) {
+//            if (map.get(Key) > 1)
+//                list.add(Key);
+//        }
+//        return list;
+//    }
+//    public static void main(String[] args){
+//        int []arr = {1,1,1,2,2,3,6,9,8,7};
+//        System.out.println(calcFindRepeatingElements(arr));
+//    }
+//}
+
 public class FindRepeatingElements {
     public static List<Integer> calcFindRepeatingElements(int []arr){
         HashMap<Integer,Integer> map = new HashMap<>();
-        List<Integer> list = new ArrayList<>();
         for(int X:arr)
             map.put(X,map.getOrDefault(X,0)+1);
-        for(int Key:map.keySet()) {
-            if (map.get(Key) > 1)
+        List<Integer> list = new ArrayList<>();
+        for(int Key:map.keySet()){
+            if(map.get(Key)>1)
                 list.add(Key);
         }
         return list;

@@ -1,6 +1,7 @@
 package Array_Questions;
 
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -78,19 +79,41 @@ import java.util.List;
 //        System.out.println(calcRearrangeAscendingOrDescending(arr));
 //    }
 //}
+//
+//public class RearrangeAscendingOrDescening {
+//    public static void calcRearrangeAscendingOrDescending(int[]arr){
+//        Arrays.sort(arr);
+//        for(int X:arr)
+//            System.out.print(X +" ");
+//        System.out.println();
+//        for(int i=0;i<arr.length;i++){
+//            System.out.print(arr[arr.length-i-1] +" ");
+//        }
+//    }
+//    public static void main(String[] args){
+//        int []arr = {10,2,100,99,8,88};
+//        calcRearrangeAscendingOrDescending(arr);
+//    }
+//}
+//
+//public class RearrangeAscendingOrDescening {
+//    public static List<List<Integer>> calcRearrangeAscendingOrDescending(int []arr){
+//        List<List<Integer>> list = new ArrayList<>();
+//        List<Integer> list0 = new ArrayList<>();
+//        List<Integer> list1 = new ArrayList<>();
+//        for(int X:arr){
+//            list0.add(X);
+//            list1.add(X);
+//        }
+//        Collections.sort(list0,(a,b)->Integer.compare(b,a));
+//        Collections.sort(list1,(a,b)->Integer.compare(a,b));
+//        list.add(list0);
+//        list.add(list1);
+//        return list;
+//    }
+//    public static void main(String[] args){
+//        int []arr = {10,2,100,99,8,88};
+//        System.out.println(calcRearrangeAscendingOrDescending(arr));
+//    }
+//}
 
-public class RearrangeAscendingOrDescening {
-    public static void calcRearrangeAscendingOrDescending(int[]arr){
-        Arrays.sort(arr);
-        for(int X:arr)
-            System.out.print(X +" ");
-        System.out.println();
-        for(int i=0;i<arr.length;i++){
-            System.out.print(arr[arr.length-i-1] +" ");
-        }
-    }
-    public static void main(String[] args){
-        int []arr = {10,2,100,99,8,88};
-        calcRearrangeAscendingOrDescending(arr);
-    }
-}

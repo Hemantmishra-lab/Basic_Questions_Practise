@@ -20,24 +20,45 @@ import java.util.List;
 //        System.out.println(calcRemoveDuplicateSortedArray(arr));
 //    }
 //}
+//
+//public class RemoveDupliateSortedArray {
+//    public static int[] calcRemoveDuplicateSortedArray(int []arr){
+//        int []temp = new int[arr.length];
+//        int index = 0;
+//        for(int i=0;i<arr.length-1;i++){
+//            if(arr[i] != arr[i+1]){
+//                temp[index] = arr[i];
+//                index++;
+//            }
+//        }
+//        temp[index] = arr[arr.length-1];
+//        return temp;
+//    }
+//    public static void main(String[] args){
+//        int []arr = {1,1,1,2,2,3,4,5,6,6,6,7,8,9};
+//        int[]temp = calcRemoveDuplicateSortedArray(arr);
+//        for(int X:temp)
+//            System.out.print(X +" ");
+//    }
+//}
 
 public class RemoveDupliateSortedArray {
     public static int[] calcRemoveDuplicateSortedArray(int []arr){
         int []temp = new int[arr.length];
-        int index = 0;
+        int j = 0;
         for(int i=0;i<arr.length-1;i++){
-            if(arr[i] != arr[i+1]){
-                temp[index] = arr[i];
-                index++;
+            if(arr[i]!=arr[i+1]){
+                temp[j] = arr[i];
+                j++;
             }
         }
-        temp[index] = arr[arr.length-1];
+        temp[j] = arr[arr.length-1];
         return temp;
     }
     public static void main(String[] args){
         int []arr = {1,1,1,2,2,3,4,5,6,6,6,7,8,9};
-        int[]temp = calcRemoveDuplicateSortedArray(arr);
+        int []temp  = calcRemoveDuplicateSortedArray(arr);
         for(int X:temp)
-            System.out.print(X +" ");
+            System.out.print(X+" ");
     }
 }
