@@ -26,7 +26,13 @@ package Array_Questions;
 
 public class SecondLargestAndSecondSmallestNumber {
     public static void calcSecondLargestAndSecondSmallestNumber(int []arr){
+        int Max = Integer.MIN_VALUE;
+        int Min = Integer.MAX_VALUE;
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]>Max){
 
+            }
+        }
     }
     public static void main(String[] args){
         int []arr = {100,20,22,9,80};

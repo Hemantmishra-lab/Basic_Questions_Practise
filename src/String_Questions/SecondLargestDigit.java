@@ -30,41 +30,27 @@ import java.util.Scanner;
 //}
 
 
-//public class SecondLargestDigit{
-//    public static int secLargDig(String input){
-//        int Max = Integer.MIN_VALUE;
-//        int SecMax = Integer.MIN_VALUE;
-//        int num;
-//        for(int i=0;i<input.length();i++){
-//            if(Character.isDigit(input.charAt(i))) {
-//                num = input.charAt(i) - '0';
-//                if (num > Max) {
-//                    SecMax = Max;
-//                    Max = num;
-//                } else if (num < Max && num > SecMax) {
-//                    SecMax = num;
-//                }
-//            }
-//        }
-//        return SecMax;
-//    }
-//    public static void main(String[] args){
-//        String input = "a9b10c2";
-//        System.out.println(secLargDig(input));
-//    }
-//}
+public class SecondLargestDigit{
+    public static int secLargDig(String input){
+        int Max = Integer.MIN_VALUE;
+        int SecMax = Integer.MIN_VALUE;
+        int num;
+        for(int i=0;i<input.length();i++){
+            if(Character.isDigit(input.charAt(i))) {
+                num = input.charAt(i) - '0';
+                if (num > Max) {
+                    SecMax = Max;
+                    Max = num;
+                } else if (num < Max && num > SecMax) {
+                    SecMax = num;
+                }
+            }
+        }
+        return SecMax;
+    }
+    public static void main(String[] args){
+        String input = "a9b10c2";
+        System.out.println(secLargDig(input));
+    }
+}
 
-//public class SecondLargestDigit{
-//    public static int calcSecondLargestDigit(String str){
-//        for(int i=0;i<str.length();i++){
-//            if(Character.isDigit(str.charAt(i))){
-//
-//                Integer.parseInt();
-//            }
-//        }
-//    }
-//    public static void main(String[] args){
-//        String str = "a89b0c100";
-//
-//    }
-//}
