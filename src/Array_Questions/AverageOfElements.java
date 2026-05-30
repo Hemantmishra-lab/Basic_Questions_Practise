@@ -29,16 +29,29 @@ package Array_Questions;
 //    }
 //}
 
+//public class AverageOfElements {
+//    public static double calcAvergaeOfElements(int []arr){
+//        int sum = 0;
+//        for(int X:arr)
+//            sum += X;
+//        int n = arr.length;
+//        return sum / n;
+//    }
+//    public static void main(String[] args){
+//        int []arr = {1,2,3,4,56,7};
+//        System.out.println(calcAvergaeOfElements(arr));
+//    }
+//}
+
 public class AverageOfElements {
-    public static double calcAvergaeOfElements(int []arr){
+    public static int calcAvergaeOfElements(int []arr){
         int sum = 0;
         for(int X:arr)
             sum += X;
-        int n = arr.length;
-        return sum / n;
+        return sum / arr.length;
     }
     public static void main(String[] args){
-        int []arr = {1,2,3,4,56,7};
+        int []arr = {1,2,2,4,6};
         System.out.println(calcAvergaeOfElements(arr));
     }
 }

@@ -116,6 +116,22 @@ import java.sql.SQLOutput;
 //    }
 //}
 
+//public class ArrayReverse {
+//    public static int[] calcArrayReverse(int []arr){
+//        int []temp = new int[arr.length];
+//        for(int i=0;i<arr.length;i++){
+//            temp[i] = arr[arr.length-i-1];
+//        }
+//        return temp;
+//    }
+//    public static void main(String[] args){
+//        int []arr = {1,2,3,4};
+//        int []temp = calcArrayReverse(arr);
+//        for(int X: temp)
+//            System.out.print(X+" ");
+//    }
+//}
+
 public class ArrayReverse {
     public static int[] calcArrayReverse(int []arr){
         int []temp = new int[arr.length];
@@ -127,7 +143,7 @@ public class ArrayReverse {
     public static void main(String[] args){
         int []arr = {1,2,3,4};
         int []temp = calcArrayReverse(arr);
-        for(int X: temp)
+        for(int X:temp)
             System.out.print(X+" ");
     }
 }

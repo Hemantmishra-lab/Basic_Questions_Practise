@@ -84,17 +84,23 @@ import java.util.Scanner;
 //    }
 //}
 
+//public class MissingNumber {
+//    public static int calcMissingNumber(int []arr){
+//        int n = arr.length;
+//        int actSum = 0;
+//        for(int X:arr)
+//            actSum += X;
+//        int expectedSum = (n+1)*(n+2)/2;
+//        return expectedSum - actSum;
+//    }
+//    public static void main(String[] args){
+//        int[]arr = {1,2,3,4,6};
+//        System.out.println(calcMissingNumber(arr));
+//    }
+//}
+
 public class MissingNumber {
-    public static int calcMissingNumber(int []arr){
-        int n = arr.length;
-        int actSum = 0;
-        for(int X:arr)
-            actSum += X;
-        int expectedSum = (n+1)*(n+2)/2;
-        return expectedSum - actSum;
-    }
-    public static void main(String[] args){
-        int[]arr = {1,2,3,4,6};
-        System.out.println(calcMissingNumber(arr));
+    public static void main(String[]args){
+
     }
 }

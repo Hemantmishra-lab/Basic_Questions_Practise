@@ -71,19 +71,36 @@ import java.util.Arrays;
 //    }
 //}
 
+//public class FindMedian {
+//    public static double calcFindMedian(int []arr){
+//        Arrays.sort(arr);
+//        int n =arr.length;
+//        if(n%2==0)
+//            return (arr[n/2] + arr[(n/2)-1])/2.0;
+//        else
+//            return arr[n/2];
+//
+//    }
+//    public static void main(String[] args){
+//        int []arr = {4,88,9,3,2,4};
+//        System.out.print(calcFindMedian(arr));
+//    }
+//
+//}
+
 public class FindMedian {
     public static double calcFindMedian(int []arr){
         Arrays.sort(arr);
-        int n =arr.length;
-        if(n%2==0)
-            return (arr[n/2] + arr[(n/2)-1])/2.0;
-        else
+        int n = arr.length;
+        if(n%2==0){
+            return (arr[n/2]+arr[(n/2)-1])/2.0;
+        }
+        else {
             return arr[n/2];
-
+        }
     }
     public static void main(String[] args){
-        int []arr = {4,88,9,3,2,4};
-        System.out.print(calcFindMedian(arr));
+        int []arr = {1,3,5,8,2};
+        System.out.println(calcFindMedian(arr));
     }
-
 }
