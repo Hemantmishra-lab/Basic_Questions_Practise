@@ -84,3 +84,24 @@ import java.util.*;
 //        System.out.println(calMaxShopCandyStore(TPrice,TName,k));
 //    }
 //}
+
+public class MaxShopCandyStore {
+    public static int calcMaxShopCandyStore(int []TPrice,int k){
+        Arrays.sort(TPrice);
+        int MinMney = 0;
+        int forward = 0;
+        int backward = TPrice.length;
+        while(forward<backward){
+            MinMney += TPrice[forward];
+            forward++;
+            backward -= k;
+        }
+        return MinMney;
+    }
+    public static void main(String[] args){
+        int []TPrice = {1,6,32,8,7};
+        int k = 2;
+        System.out.println(calcMaxShopCandyStore(TPrice,k));
+    }
+}
+//1 6 7 8 32

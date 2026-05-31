@@ -62,7 +62,7 @@ import java.util.Arrays;
 //        int N = 15;
 //        System.out.println(MinCoinUsed(moneycoll,N));
 //    }
-//}
+////}
 //public class MinNumberOfCoins{
 //    public static int calcMinNoCoins(int[]moneyColl,int N){
 //        Arrays.sort(moneyColl);
@@ -82,3 +82,23 @@ import java.util.Arrays;
 //        System.out.println(calcMinNoCoins(moneyColl,N));
 //    }
 //}
+
+public class MinNumberOfCoins {
+    public static int calcMinNumberOfCoins(int []moneyColl,int N){
+        Arrays.sort(moneyColl);
+        int count = 0;
+        for(int i=moneyColl.length-1;i>=0;i--){
+            int current = moneyColl[i];
+            if(current <=N){
+                N -= current;
+                count++;
+            }
+        }
+        return count;
+    }
+    public static void main(String[] args){
+        int []moneyColl = {2,5,10,1};
+        int N = 19;
+        System.out.println(calcMinNumberOfCoins(moneyColl,N));
+    }
+}

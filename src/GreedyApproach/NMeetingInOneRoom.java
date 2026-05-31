@@ -1,10 +1,7 @@
 package GreedyApproach;
 
 import java.lang.classfile.MethodTransform;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 //class Meeting{
 //    int start;
@@ -221,3 +218,29 @@ import java.util.Scanner;
 //        System.out.println(countNMeetingInOneRoom(start,end));
 //    }
 //}
+
+record ListFormat(int startTime,int endTime){};
+public class NMeetingInOneRoom {
+    public static int calcNMeetingInOneRoom(int []startTime,int []endTime){
+        List<ListFormat> list = new ArrayList<>();
+        for(int i=0;i<startTime.length;i++){
+            list.add(new ListFormat(startTime[i],endTime[i]));
+        }
+        Collections.sort(list,(a,b)->Integer.compare(a.endTime(),b.endTime()));
+        int end = list.get(0).endTime();
+        int count =1;
+        for(int i=1;i<list.size();i++){
+            int start = list.get(i).startTime();
+            if(start>=end){
+                count++;
+                end = list.get(i).endTime();
+            }
+        }
+        return count;
+    }
+    public static void main(String[] args){
+        int[] startTime = {1,3,0,5,8,5};
+        int [] endTime = {2,4,6,7,9,9};
+        System.out.println(calcNMeetingInOneRoom(startTime,endTime));
+    }
+}

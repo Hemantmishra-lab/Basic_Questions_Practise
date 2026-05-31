@@ -67,3 +67,20 @@ import java.util.Scanner;
 //        System.out.println(calcMinRotation(curr,des));
 //    }
 //}
+
+public class MinRotationUnlockCircularLock {
+    public static int calcMinRotationUnlockCircularLock(int []curr,int []des){
+        int MinRotate = 0;
+        for(int i=0;i<curr.length;i++){
+            int diff = Math.abs(curr[i]-des[i]);
+            int cirDif = 10 - diff;
+            MinRotate = Math.max(MinRotate,Math.min(diff,cirDif));
+        }
+        return MinRotate;
+    }
+    public static void main(String[] args){
+        int[]curr = {2,8,5};
+        int []des = {5,2,9};
+        System.out.println(calcMinRotationUnlockCircularLock(curr,des));
+    }
+}

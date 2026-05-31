@@ -1,6 +1,7 @@
 package LeetCode_Problems;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 //class Solution {
@@ -45,25 +46,60 @@ import java.util.Map;
 
 // Remember : closest Sum, currentSum , How to handle both pointer.
 
+//
+//public class ThreeSumClosest { // Remember : closest Sum, currentSum , How to handle both pointer.
+//    public static int calcThreeSumClosest(int []arr,int target){
+//        Arrays.sort(arr);
+//        int closestSum = arr[0] + arr[1] + arr[2];
+//        for(int i=0;i<arr.length-2;i++){
+//            int left = i+1;
+//            int right = arr.length - 1;
+//            while(left<right){
+//                int currentSum = arr[i]  + arr[left] +arr[right];
+//                if(Math.abs(currentSum-target) < Math.abs(closestSum - target)){
+//                    closestSum = currentSum;
+//                }
+//                if(currentSum<target){
+//                    left++;
+//                } else if (currentSum>target) {
+//                    right--;
+//                }
+//                else {
+//                    return currentSum;
+//                }
+//            }
+//        }
+//        return closestSum;
+//    }
+//    public static void main(String[] args){
+//        int []arr = {-1,2,1,-4};
+//        int target = 1;
+//        System.out.println(calcThreeSumClosest(arr,target));
+//        int []arr2 = {0,0,0};
+//        int target2 = 1;
+//        System.out.println(calcThreeSumClosest(arr2,target2));
+//    }
+//}
 
-public class ThreeSumClosest { // Remember : closest Sum, currentSum , How to handle both pointer.
+public class ThreeSumClosest {
     public static int calcThreeSumClosest(int []arr,int target){
         Arrays.sort(arr);
-        int closestSum = arr[0] + arr[1] + arr[2];
+        int closestSum  = arr[0] + arr[1] +arr[2];
         for(int i=0;i<arr.length-2;i++){
             int left = i+1;
-            int right = arr.length - 1;
+            int right = arr.length-1;
             while(left<right){
-                int currentSum = arr[i]  + arr[left] +arr[right];
-                if(Math.abs(currentSum-target) < Math.abs(closestSum - target)){
+                int currentSum = arr[i] + arr[left] +arr[right];
+                if(Math.abs(currentSum- target)<Math.abs(closestSum - target)){
                     closestSum = currentSum;
                 }
-                if(currentSum<target){
+                if(currentSum < target){
                     left++;
-                } else if (currentSum>target) {
+                }
+                else if(currentSum > target){
                     right--;
                 }
-                else {
+                else{
                     return currentSum;
                 }
             }
