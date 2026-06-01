@@ -61,6 +61,8 @@ package GreedyApproach;//package GreedyApproach;
 //    }
 //}
 
+import Recursion.BinarySearch;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -120,30 +122,63 @@ import java.util.List;
 //    }
 //}
 
-record ListOutputFormat(int start,int end){}
-public class InsertInterval {
-    public static List<ListOutputFormat> calcInsertInterval(int [][]nonoverlap,int []interval){
-        List<ListOutputFormat> list = new ArrayList<>();
-        int i=0;int n = nonoverlap.length;
-        while(i<n && interval[0]>nonoverlap[i][1]){
-            list.add(new ListOutputFormat(nonoverlap[i][0],nonoverlap[i][1]));
+//record ListOutputFormat(int start,int end){}
+//public class InsertInterval {
+//    public static List<ListOutputFormat> calcInsertInterval(int [][]nonoverlap,int []interval){
+//        List<ListOutputFormat> list = new ArrayList<>();
+//        int i=0;int n = nonoverlap.length;
+//        while(i<n && interval[0]>nonoverlap[i][1]){
+//            list.add(new ListOutputFormat(nonoverlap[i][0],nonoverlap[i][1]));
+//            i++;
+//        }
+//        while(i<n && interval[1]>=nonoverlap[i][0]){
+//            interval[0] = Math.min(interval[0],nonoverlap[i][0]);
+//            interval[1] = Math.max(interval[1],nonoverlap[i][1]);
+//            list.add(new ListOutputFormat(interval[0],interval[1]));
+//            i++;
+//        }
+//        while(i<n){
+//            list.add(new ListOutputFormat(nonoverlap[i][0],nonoverlap[i][1]));
+//            i++;
+//        }
+//        return list;
+//    }
+//    public static void main(String[] args){
+//        int [][]nonOverlap = {{1,3},{6,9},{10,20}};
+//        int []interval = {2,5};
+//        System.out.println(calcInsertInterval(nonOverlap,interval));
+//    }
+//}
+
+public class InsertInterval{
+    public static int[][] calcinsert(int[][] nonOverlap, int[] newInterval) {
+        List<Integer> list = new ArrayList<>();
+        int i =0;int n = nonOverlap.length;
+        while(i<n && newInterval[0]>nonOverlap[i][1]){
+            list.add(nonOverlap[i][0],nonOverlap[i][1]);
             i++;
         }
-        while(i<n && interval[1]>=nonoverlap[i][0]){
-            interval[0] = Math.min(interval[0],nonoverlap[i][0]);
-            interval[1] = Math.max(interval[1],nonoverlap[i][1]);
-            list.add(new ListOutputFormat(interval[0],interval[1]));
+        while(i<n && newInterval[1]>nonOverlap[i][0]){
+            newInterval[0] = Math.min(newInterval[0],nonOverlap[i][0]);
+            newInterval[1]  = Math.max(newInterval[1],nonOverlap[i][1]);
             i++;
         }
+        list.add(newInterval[0],newInterval[1]);
         while(i<n){
-            list.add(new ListOutputFormat(nonoverlap[i][0],nonoverlap[i][1]));
+            list.add(nonOverlap[i][0],nonOverlap[i][1]);
             i++;
         }
-        return list;
+        return list.toArray(new int[list.size()][]);
     }
     public static void main(String[] args){
-        int [][]nonOverlap = {{1,3},{6,9},{10,20}};
+        int [][]nonOverlap = {{1,3},{6,9}};
         int []interval = {2,5};
-        System.out.println(calcInsertInterval(nonOverlap,interval));
+        int [][] temp = calcinsert(nonOverlap,interval);
+        for(int i=0;i<temp.length;i++){
+            for(int j=0;j<temp[i].length;j++){
+                System.out.print(temp[i][j]+" ");
+            }
+            System.out.println();
+        }
     }
 }

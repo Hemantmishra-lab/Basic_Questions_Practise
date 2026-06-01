@@ -132,18 +132,60 @@ import java.sql.SQLOutput;
 //    }
 //}
 
+//public class ArrayReverse {
+//    public static int[] calcArrayReverse(int []arr){
+//        int []temp = new int[arr.length];
+//        for(int i=0;i<arr.length;i++){
+//            temp[i] = arr[arr.length-i-1];
+//        }
+//        return temp;
+//    }
+//    public static void main(String[] args){
+//        int []arr = {1,2,3,4};
+//        int []temp = calcArrayReverse(arr);
+//        for(int X:temp)
+//            System.out.print(X+" ");
+//    }
+//}
+
+//
+//class Solution {
+//    public int reverse(int x) {
+//        int sum = 0;
+//        while(x != 0){
+//            int digit = x % 10;
+//            if (sum > Integer.MAX_VALUE / 10 || (sum == Integer.MAX_VALUE / 10 && digit > 7)) {
+//                return 0;
+//            }
+//
+//            if (sum < Integer.MIN_VALUE / 10 || (sum == Integer.MIN_VALUE / 10 && digit < -8)) {
+//                return 0;
+//            }
+//            sum = sum * 10 + digit;
+//            x = x / 10;
+//        }
+//        return sum;
+//    }
+//}
+
 public class ArrayReverse {
-    public static int[] calcArrayReverse(int []arr){
-        int []temp = new int[arr.length];
-        for(int i=0;i<arr.length;i++){
-            temp[i] = arr[arr.length-i-1];
+    public static int calcArrayReverse(int num){
+        int sum = 0;
+        while(num!=0){
+            int digit = num % 10;
+            if(sum > Integer.MAX_VALUE/10 || (sum == Integer.MAX_VALUE/10 && digit>7 )){
+                return 0;
+            }
+            if(sum <Integer.MIN_VALUE/10 || (sum == Integer.MIN_VALUE/10 && digit<-8)){
+                return 0;
+            }
+            sum = sum * 10 + digit;
+            num = num / 10;
         }
-        return temp;
+        return sum;
     }
     public static void main(String[] args){
-        int []arr = {1,2,3,4};
-        int []temp = calcArrayReverse(arr);
-        for(int X:temp)
-            System.out.print(X+" ");
+        int num = -123;
+        System.out.println(calcArrayReverse(num));
     }
 }
