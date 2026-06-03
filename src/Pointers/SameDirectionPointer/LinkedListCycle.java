@@ -1,6 +1,6 @@
 package Pointers.SameDirectionPointer;
-
-// Linked List Node structure
+//
+//// Linked List Node structure
 class ListNode {
     int val;
     ListNode next;

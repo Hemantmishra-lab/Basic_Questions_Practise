@@ -1,6 +1,6 @@
 package Pointers.OppositeDirectionPointer;
 
-public class ValidPalindrome {
+public class  ValidPalindrome {
     public static boolean isPalindrome(String s) {
         // Aapka bataya hua Two Pointer format
         int left = 0;
