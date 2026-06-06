@@ -168,24 +168,58 @@ import java.sql.SQLOutput;
 //    }
 //}
 
+//public class ArrayReverse {
+//    public static int calcArrayReverse(int num){
+//        int sum = 0;
+//        while(num!=0){
+//            int digit = num % 10;
+//            if(sum > Integer.MAX_VALUE/10 || (sum == Integer.MAX_VALUE/10 && digit>7 )){
+//                return 0;
+//            }
+//            if(sum <Integer.MIN_VALUE/10 || (sum == Integer.MIN_VALUE/10 && digit<-8)){
+//                return 0;
+//            }
+//            sum = sum * 10 + digit;
+//            num = num / 10;
+//        }
+//        return sum;
+//    }
+//    public static void main(String[] args){
+//        int num = -123;
+//        System.out.println(calcArrayReverse(num));
+//    }
+//}
+
+//public class ArrayReverse {
+//    public static int[] calcArrayReverse(int []arr){
+//        int []temp = new int[arr.length];
+//        for(int i=0;i<arr.length;i++){
+//            temp[i] = arr[arr.length-i-1];
+//        }
+//        return temp;
+//    }
+//    public static void main(String[] args){
+//        int[]arr = {1,3,2,5};
+//        int []temp = calcArrayReverse(arr);
+//        for(int X:temp)
+//            System.out.print(X+" ");
+//    }
+//}
+
 public class ArrayReverse {
-    public static int calcArrayReverse(int num){
-        int sum = 0;
-        while(num!=0){
-            int digit = num % 10;
-            if(sum > Integer.MAX_VALUE/10 || (sum == Integer.MAX_VALUE/10 && digit>7 )){
-                return 0;
-            }
-            if(sum <Integer.MIN_VALUE/10 || (sum == Integer.MIN_VALUE/10 && digit<-8)){
-                return 0;
-            }
-            sum = sum * 10 + digit;
-            num = num / 10;
+    public static void calcArrayReverse(int []arr){
+        int left = 0; int right = arr.length-1;
+        while (left<right){
+            int temp = arr[left];
+            arr[left] = arr[right];
+            arr[right] = temp;
+            left++;right--;
         }
-        return sum;
     }
     public static void main(String[] args){
-        int num = -123;
-        System.out.println(calcArrayReverse(num));
+        int []arr = {2,2,1,9,7};
+        calcArrayReverse(arr);
+        for(int X: arr)
+            System.out.print(X + " ");
     }
 }

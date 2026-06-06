@@ -28,20 +28,42 @@ import java.util.Arrays;
 //        System.out.println(calcMedianOfTwoSortedArrays(arr3,arr4));
 //    }
 //}
+//
+//public class MedianofTwoSortedArrays {
+//    public static double calcMedianOfTwoSortedArrays(int []arr1,int []arr2){
+//        int arr[]= new int[arr1.length+arr2.length];
+//        for(int i=0;i<arr1.length;i++){
+//            arr[i] = arr1[i];
+//        }
+//        for(int i=0;i<arr2.length;i++){
+//            arr[i+arr1.length] = arr2[i];
+//        }
+//        int n = arr.length;
+//        if(n%2==0)
+//            return (arr[n/2]+arr[(n/2)-1])/2.0;
+//        return arr[n/2];
+//    }
+//    public static void main(String[] args){
+//        int []arr1 = {2,3,4};
+//        int []arr2 = {1,6};
+//        System.out.println(calcMedianOfTwoSortedArrays(arr1,arr2));
+//    }
+//}
 
 public class MedianofTwoSortedArrays {
-    public static double calcMedianOfTwoSortedArrays(int []arr1,int []arr2){
-        int arr[]= new int[arr1.length+arr2.length];
+    public static double calcMedianOfTwoSortedArrays(int[] arr1,int[] arr2){
+        int []temp = new int[arr1.length+arr2.length];
         for(int i=0;i<arr1.length;i++){
-            arr[i] = arr1[i];
+            temp[i] = arr1[i];
         }
         for(int i=0;i<arr2.length;i++){
-            arr[i+arr1.length] = arr2[i];
+            temp[i+arr1.length] = arr2[i];
         }
-        int n = arr.length;
+        int n = temp.length;
         if(n%2==0)
-            return (arr[n/2]+arr[(n/2)-1])/2.0;
-        return arr[n/2];
+            return (temp[n/2]+temp[(n/2)-1]);
+        else
+            return temp[n/2];
     }
     public static void main(String[] args){
         int []arr1 = {2,3,4};

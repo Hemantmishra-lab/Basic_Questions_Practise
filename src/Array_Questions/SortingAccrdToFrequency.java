@@ -200,15 +200,31 @@ import java.util.List;
 //    }
 //}
 
+//public class SortingAccrdToFrequency {
+//    public static List<Integer> calcSortingAccrdToFrequency(int []arr){
+//        HashMap<Integer,Integer> map = new HashMap<>();
+//        for(int X:arr)
+//            map.put(X,map.getOrDefault(X,0)+1);
+//        List<Integer> list = new ArrayList<>();
+//        for(int Key : map.keySet())
+//            list.add(Key);
+//        Collections.sort(list,(a,b)->map.get(b)-map.get(a));
+//        return list;
+//    }
+//    public static void main(String[] args){
+//        int []arr = {1,1,1,1,1,1,1,9,9,9,9,4,4,4,4,4,6,6,6,6,7,77,7,};
+//        System.out.println(calcSortingAccrdToFrequency(arr));
+//    }
+//}
+
 public class SortingAccrdToFrequency {
     public static List<Integer> calcSortingAccrdToFrequency(int []arr){
         HashMap<Integer,Integer> map = new HashMap<>();
         for(int X:arr)
             map.put(X,map.getOrDefault(X,0)+1);
         List<Integer> list = new ArrayList<>();
-        for(int Key : map.keySet())
-            list.add(Key);
-        Collections.sort(list,(a,b)->map.get(b)-map.get(a));
+        list.addAll(map.keySet());
+        Collections.sort(list,(a,b)->Integer.compare(map.get(b),map.get(a)));
         return list;
     }
     public static void main(String[] args){

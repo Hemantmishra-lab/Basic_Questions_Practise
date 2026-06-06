@@ -78,21 +78,38 @@ import java.util.List;
 //        System.out.println(calcFindRepeatingElements(arr));
 //    }
 //}
+//
+//public class FindRepeatingElements {
+//    public static List<Integer> calcFindRepeatingElements(int []arr){
+//        HashMap<Integer,Integer> map = new HashMap<>();
+//        for(int X:arr)
+//            map.put(X,map.getOrDefault(X,0)+1);
+//        List<Integer> list = new ArrayList<>();
+//        for(int Key:map.keySet()){
+//            if(map.get(Key)>1)
+//                list.add(Key);
+//        }
+//        return list;
+//    }
+//    public static void main(String[] args){
+//        int []arr = {1,1,1,2,2,3,6,9,8,7};
+//        System.out.println(calcFindRepeatingElements(arr));
+//    }
+//}
 
 public class FindRepeatingElements {
-    public static List<Integer> calcFindRepeatingElements(int []arr){
-        HashMap<Integer,Integer> map = new HashMap<>();
+    public static void calcFindRepeatingElements(int []arr){
+        HashMap<Integer,Integer> map= new HashMap<>();
         for(int X:arr)
             map.put(X,map.getOrDefault(X,0)+1);
-        List<Integer> list = new ArrayList<>();
         for(int Key:map.keySet()){
-            if(map.get(Key)>1)
-                list.add(Key);
+            if(map.get(Key)>1){
+                System.out.print(Key+" ");
+            }
         }
-        return list;
     }
     public static void main(String[] args){
-        int []arr = {1,1,1,2,2,3,6,9,8,7};
-        System.out.println(calcFindRepeatingElements(arr));
+        int []arr = {1,1,1,2,2,3,3,5,8,9,6,7};
+        calcFindRepeatingElements(arr);
     }
 }

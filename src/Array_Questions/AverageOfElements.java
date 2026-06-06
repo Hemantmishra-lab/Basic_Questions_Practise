@@ -43,15 +43,29 @@ package Array_Questions;
 //    }
 //}
 
+//public class AverageOfElements {
+//    public static int calcAvergaeOfElements(int []arr){
+//        int sum = 0;
+//        for(int X:arr)
+//            sum += X;
+//        return sum / arr.length;
+//    }
+//    public static void main(String[] args){
+//        int []arr = {1,2,2,4,6};
+//        System.out.println(calcAvergaeOfElements(arr));
+//    }
+//}
+
 public class AverageOfElements {
-    public static int calcAvergaeOfElements(int []arr){
+    public static double calcAvergaeOfElements(int[]arr){
         int sum = 0;
         for(int X:arr)
-            sum += X;
-        return sum / arr.length;
+            sum+=X;
+        int n = arr.length;
+        return sum/n;
     }
     public static void main(String[] args){
-        int []arr = {1,2,2,4,6};
+        int []arr = {1,3,2,7};
         System.out.println(calcAvergaeOfElements(arr));
     }
 }

@@ -100,7 +100,16 @@ import java.util.Scanner;
 //}
 
 public class MissingNumber {
-    public static void main(String[]args){
-
+    public static int calcMissingNumber(int []arr){
+        int ActSum = 0;
+        for(int X:arr)
+            ActSum += X;
+        int n = arr.length + 1;
+        int expSum = n*(n+1)/2;
+        return expSum - ActSum;
+    }
+    public static void main(String[] args){
+        int []arr = {1,2,3,5,6};
+        System.out.println(calcMissingNumber(arr));
     }
 }

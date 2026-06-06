@@ -145,6 +145,27 @@ package Array_Questions;
 //    }
 //}
 
+//public class LeftRotateByDPlaces {
+//    public static int[] calcLeftRotateByDPlaces(int []arr,int k){
+//        int []temp = new int[arr.length];
+//        for(int i=0;i<k;i++){
+//            temp[arr.length-k+i] = arr[i];
+//        }
+//        for(int i=k;i<arr.length;i++){
+//            temp[i-k] = arr[i];
+//        }
+//        return temp;
+//    }
+//    public static void main(String []args){
+//        int []arr = {1,8,2,3,46,9};
+//        int k = 2;
+//        int []temp = calcLeftRotateByDPlaces(arr,k);
+//        for(int X:temp){
+//            System.out.print(X+" ");
+//        }
+//    }
+//}
+
 public class LeftRotateByDPlaces {
     public static int[] calcLeftRotateByDPlaces(int []arr,int k){
         int []temp = new int[arr.length];
@@ -156,12 +177,11 @@ public class LeftRotateByDPlaces {
         }
         return temp;
     }
-    public static void main(String []args){
+    public static void main(String[] args){
         int []arr = {1,8,2,3,46,9};
         int k = 2;
-        int []temp = calcLeftRotateByDPlaces(arr,k);
-        for(int X:temp){
+        int []temp= calcLeftRotateByDPlaces(arr,k);
+        for(int X:temp)
             System.out.print(X+" ");
-        }
     }
 }

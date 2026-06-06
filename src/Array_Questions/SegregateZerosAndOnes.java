@@ -42,12 +42,24 @@ import java.util.Arrays;
 
 public class SegregateZerosAndOnes {
     public static void calcSegregateZerosAndOnes(int []arr){
-        int left = 0;int right = arr.length-1;
-        while(left<right){
-            
+        int slow = 0;int fast = 0;
+        while(fast<arr.length){
+            if(arr[fast] != 0){
+                arr[slow] = arr[fast];
+                slow++;
+            }
+            fast++;
+        }
+        slow++;
+        while(slow<arr.length){
+            arr[slow] = 0;
+            slow++;
         }
     }
     public static void main(String[] args){
         int []arr = {0, 1, 0, 1, 1, 0, 1, 0, 0};
+        calcSegregateZerosAndOnes(arr);
+        for(int X:arr)
+            System.out.print(X+" ");
     }
 }
