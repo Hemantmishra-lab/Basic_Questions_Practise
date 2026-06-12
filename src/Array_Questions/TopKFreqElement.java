@@ -70,12 +70,34 @@ import java.util.PriorityQueue;
 //    }
 //}
 
+//public class TopKFreqElement {
+//    public static int calcTopKFreqElement(int []arr,int k){
+//        PriorityQueue<Integer> maxHeap = new PriorityQueue<>((a,b)->Integer.compare(b,a));
+//        for(int X:arr)
+//            maxHeap.add(X);
+//        maxHeap.poll();
+//        return maxHeap.poll();
+//    }
+//    public static void main(String[] args){
+//        int []arr = {1,1,1,1,1,1,1,9,9,9,9,4,4,4,4,4,6,6,6,6,7,77,7};
+//        int k = 2;
+//        System.out.println(calcTopKFreqElement(arr,k));
+//    }
+//}
+
+
 public class TopKFreqElement {
     public static int calcTopKFreqElement(int []arr,int k){
-        PriorityQueue<Integer> maxHeap = new PriorityQueue<>((a,b)->Integer.compare(b,a));
+        HashMap<Integer,Integer> map = new HashMap<>();
+        for(int X:arr)
+            map.put(X,map.getOrDefault(X,0)+1);
+        PriorityQueue<Integer> maxHeap = new PriorityQueue<>((a,b)->map.get(b)-map.get(a));
         for(int X:arr)
             maxHeap.add(X);
-        maxHeap.poll();
+        for(int i=1;i<k;i++){
+            maxHeap.poll();
+        }
+        System.out.println(map);
         return maxHeap.poll();
     }
     public static void main(String[] args){

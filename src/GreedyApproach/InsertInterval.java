@@ -150,35 +150,64 @@ import java.util.List;
 //    }
 //}
 
-public class InsertInterval{
-    public static int[][] calcinsert(int[][] nonOverlap, int[] newInterval) {
-        List<Integer> list = new ArrayList<>();
-        int i =0;int n = nonOverlap.length;
-        while(i<n && newInterval[0]>nonOverlap[i][1]){
-            list.add(nonOverlap[i][0],nonOverlap[i][1]);
-            i++;
-        }
-        while(i<n && newInterval[1]>nonOverlap[i][0]){
-            newInterval[0] = Math.min(newInterval[0],nonOverlap[i][0]);
-            newInterval[1]  = Math.max(newInterval[1],nonOverlap[i][1]);
-            i++;
-        }
-        list.add(newInterval[0],newInterval[1]);
-        while(i<n){
-            list.add(nonOverlap[i][0],nonOverlap[i][1]);
-            i++;
-        }
-        return list.toArray(new int[list.size()][]);
-    }
-    public static void main(String[] args){
-        int [][]nonOverlap = {{1,3},{6,9}};
-        int []interval = {2,5};
-        int [][] temp = calcinsert(nonOverlap,interval);
-        for(int i=0;i<temp.length;i++){
-            for(int j=0;j<temp[i].length;j++){
-                System.out.print(temp[i][j]+" ");
-            }
-            System.out.println();
-        }
-    }
-}
+//public class InsertInterval{
+//    public static int[][] calcinsert(int[][] nonOverlap, int[] newInterval) {
+//        List<Integer> list = new ArrayList<>();
+//        int i =0;int n = nonOverlap.length;
+//        while(i<n && newInterval[0]>nonOverlap[i][1]){
+//            list.add(nonOverlap[i][0],nonOverlap[i][1]);
+//            i++;
+//        }
+//        while(i<n && newInterval[1]>nonOverlap[i][0]){
+//            newInterval[0] = Math.min(newInterval[0],nonOverlap[i][0]);
+//            newInterval[1]  = Math.max(newInterval[1],nonOverlap[i][1]);
+//            i++;
+//        }
+//        list.add(newInterval[0],newInterval[1]);
+//        while(i<n){
+//            list.add(nonOverlap[i][0],nonOverlap[i][1]);
+//            i++;
+//        }
+//        return list.toArray(new int[list.size()][]);
+//    }
+//    public static void main(String[] args){
+//        int [][]nonOverlap = {{1,3},{6,9}};
+//        int []interval = {2,5};
+//        int [][] temp = calcinsert(nonOverlap,interval);
+//        for(int i=0;i<temp.length;i++){
+//            for(int j=0;j<temp[i].length;j++){
+//                System.out.print(temp[i][j]+" ");
+//            }
+//            System.out.println();
+//        }
+//    }
+//}
+
+//public class InsertInterval {
+//    public static List<int []> calcInsertInterval(int [][]nonOverlap,int []interval){
+//        int i=0;int n = nonOverlap.length;
+//        List<int []> list = new ArrayList<>();
+//        while(i<n && interval[0]>nonOverlap[i][1]){
+//            list.add(nonOverlap[i]);
+//            i++;
+//        }
+//        while(i<n && interval[1]>=nonOverlap[i][0]){
+//            interval[0] = Math.min(interval[0],nonOverlap[i][0]);
+//            interval[1] = Math.max(interval[1],nonOverlap[i][1]);
+//            i++;
+//        }
+//        list.add(interval);
+//        while(i<n){
+//            list.add(nonOverlap[i]);
+//            i++;
+//        }
+//        return list;
+//    }
+//    public static void main(String[] args){
+//        int [][]nonOverlap = {{1,3},{6,9}};
+//        int []interval = {2,5};
+//        List<int[]> result = calcInsertInterval(nonOverlap, interval);
+//        System.out.println(java.util.Arrays.deepToString(result.toArray()));
+//    }
+//}
+

@@ -83,15 +83,35 @@ import java.util.Arrays;
 //    }
 //}
 
+//public class MinNumberOfCoins {
+//    public static int calcMinNumberOfCoins(int []moneyColl,int N){
+//        Arrays.sort(moneyColl);
+//        int count = 0;
+//        for(int i=moneyColl.length-1;i>=0;i--){
+//            int current = moneyColl[i];
+//            if(current <=N){
+//                N -= current;
+//                count++;
+//            }
+//        }
+//        return count;
+//    }
+//    public static void main(String[] args){
+//        int []moneyColl = {2,5,10,1};
+//        int N = 19;
+//        System.out.println(calcMinNumberOfCoins(moneyColl,N));
+//    }
+//}
+//
 public class MinNumberOfCoins {
     public static int calcMinNumberOfCoins(int []moneyColl,int N){
         Arrays.sort(moneyColl);
         int count = 0;
-        for(int i=moneyColl.length-1;i>=0;i--){
-            int current = moneyColl[i];
-            if(current <=N){
-                N -= current;
+        for(int  i=moneyColl.length-1;i>=0;i--){
+            if(N>=moneyColl[i]){
                 count++;
+                N -= moneyColl[i];
+
             }
         }
         return count;
@@ -102,3 +122,22 @@ public class MinNumberOfCoins {
         System.out.println(calcMinNumberOfCoins(moneyColl,N));
     }
 }
+
+//public class MinNumberOfCoins {
+//    public static int calcMinNumberOfCoins(int []moneyColl,int N){
+//        int count = 0;
+//        Arrays.sort(moneyColl);
+//        for (int i=moneyColl.length-1;i>=0;i--){
+//            if(N>=moneyColl[i]){
+//                N -= moneyColl[i];
+//                count++;
+//            }
+//        }
+//        return count;
+//    }
+//    public static void main(String[] args){
+//        int []moneyColl = {2,5,10,1};
+//        int N = 19;
+//        System.out.println(calcMinNumberOfCoins(moneyColl,N));
+//    }
+//}

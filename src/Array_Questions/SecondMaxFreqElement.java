@@ -113,13 +113,33 @@ import java.util.zip.CheckedOutputStream;
 //    }
 //}
 
+//public class SecondMaxFreqElement {
+//    public static int calcSecondMaxFreqElement(int []arr){
+//        HashMap<Integer,Integer> map= new HashMap<>();
+//        for(int X:arr)
+//            map.put(X,map.getOrDefault(X,0)+1);
+//        PriorityQueue<Integer> maxHeap = new PriorityQueue<>((a,b)->Integer.compare(map.get(b),map.get(a)));
+//        maxHeap.addAll(map.keySet());
+//        maxHeap.poll();
+//        System.out.println(map);
+//        return maxHeap.poll();
+//    }
+//    public static void main(String[] args){
+//        int []arr = {1,1,1,1,1,1,1,1,1,6,6,6,9,9,9,9,9,0,0,0,3333,333,333};
+//        System.out.println(calcSecondMaxFreqElement(arr));
+//    }
+//}
+
 public class SecondMaxFreqElement {
     public static int calcSecondMaxFreqElement(int []arr){
-        HashMap<Integer,Integer> map= new HashMap<>();
+        HashMap<Integer,Integer> map = new HashMap<>();
         for(int X:arr)
             map.put(X,map.getOrDefault(X,0)+1);
         PriorityQueue<Integer> maxHeap = new PriorityQueue<>((a,b)->Integer.compare(map.get(b),map.get(a)));
-        maxHeap.addAll(map.keySet());
+//        maxHeap.addAll(map.keySet());
+        for(int X:map.keySet()){
+            maxHeap.add(X);
+        }
         maxHeap.poll();
         System.out.println(map);
         return maxHeap.poll();

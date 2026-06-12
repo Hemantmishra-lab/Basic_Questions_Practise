@@ -253,36 +253,72 @@ import java.util.*;
 //    }
 //}
 //
-record ListInputFormat(int value,int weight,double ratio){
-    public ListInputFormat(int value,int weight){
+//record ListInputFormat(int value,int weight,double ratio){
+//    public ListInputFormat(int value,int weight){
+//        this(value,weight,(double)value/(double) weight);
+//    }
+//}
+//public class FractionalKnapsack {
+//    public static double calcFractionalKnapsack(int []value,int []weight,int N){
+//        List<ListInputFormat> list = new ArrayList<>();
+//        for(int i=0;i<value.length;i++){
+//            list.add(new ListInputFormat(value[i],weight[i]));
+//        }
+//        Collections.sort(list,(a,b)->Double.compare(b.ratio(),a.ratio()));
+//        double maxMoney = 0.0;
+//        for(int i=0;i<list.size();i++){
+//            if(N==0)
+//                break;
+//            if(N>=list.get(i).weight()){
+//                N -= list.get(i).weight();
+//                maxMoney +=list.get(i).value();
+//            }
+//            else if(N<list.get(i).weight()){
+//                double fraction = (double) N / (double) list.get(i).weight();
+//                double money = fraction * list.get(i).value();
+//                maxMoney += money;
+//                N=0;
+//            }
+//        }
+//        return maxMoney;
+//    }
+//    public static void main(String[] str){
+//        int value[]= {60,100,120};
+//        int [] weight = {10,20,30};
+//        int N = 50;
+//        System.out.println(calcFractionalKnapsack(value,weight,N));
+//    }
+//}
+//
+record inputformatlist(int value,int weight,double ratio){
+    public inputformatlist(int value,int weight){
         this(value,weight,(double)value/(double) weight);
     }
 }
 public class FractionalKnapsack {
-    public static double calcFractionalKnapsack(int []value,int []weight,int N){
-        List<ListInputFormat> list = new ArrayList<>();
-        for(int i=0;i<value.length;i++){
-            list.add(new ListInputFormat(value[i],weight[i]));
-        }
-        Collections.sort(list,(a,b)->Double.compare(b.ratio(),a.ratio()));
-        double maxMoney = 0.0;
-        for(int i=0;i<list.size();i++){
-            if(N==0)
-                break;
-            if(N>=list.get(i).weight()){
-                N -= list.get(i).weight();
-                maxMoney +=list.get(i).value();
-            }
-            else if(N<list.get(i).weight()){
-                double fraction = (double) N / (double) list.get(i).weight();
-                double money = fraction * list.get(i).value();
-                maxMoney += money;
-                N=0;
-            }
-        }
-        return maxMoney;
+    public static double calcFractionalKnapsack(int value[],int []weight,int N){
+       List<inputformatlist> list = new ArrayList<>();
+       for(int i=0;i<value.length;i++){
+           list.add(new inputformatlist(value[i],weight[i]));
+       }
+       Collections.sort(list,(a,b)->Double.compare(b.ratio(),a.ratio()));
+       int money = 0;
+       for(int i=0;i<list.size();i++){
+           int curr = list.get(i).weight();
+           if(N>=curr){
+               N -= curr;
+               money += list.get(i).value();
+           }
+           else if(curr>N){
+               double fr = N / (double)curr;
+               double mny = fr*list.get(i).value();
+               money += mny;
+               N=0;
+           }
+       }
+       return money;
     }
-    public static void main(String[] str){
+    public static void main(String[] args){
         int value[]= {60,100,120};
         int [] weight = {10,20,30};
         int N = 50;

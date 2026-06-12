@@ -176,48 +176,48 @@ import java.util.*;
 //    }
 //}
 
-public class FourSum {
-    public static List<List<Integer>> calcFourSum(int []arr){
-        Arrays.sort(arr);
-        List<List<Integer>> list = new ArrayList<>();
-        for(int i=0;i<arr.length-3;i++){
-            if(i>0 && arr[i]==arr[i-1]){
-                continue;
-            }
-            for(int j=i+1;j<arr.length-2;j++){
-                if(j>i+1 && arr[j]==arr[j-1])
-                    continue;
-                int left = j+1;
-                int right = arr.length-1;
-                while(left<right){
-                   long sum =(long) arr[i] + arr[j] + arr[left] + arr[right];
-                   if(sum == 0){
-                      list.add(Arrays.asList(arr[i],arr[j],arr[left],arr[right]));
-                      left++;right--;
-                      while(left<right && arr[left] == arr[left-1]){
-                          left++;
-                      }
-                      while(left<right && arr[right] == arr[right+1]){
-                          right--;
-                      }
-                   }
-                   else if(sum<0){
-                       left++;
-                   }
-                   else{
-                       right--;
-                   }
-                }
-            }
-        }
-        return list;
-    }
-    public static void main(String[] args){
-        int[] arr = {1, 0, -1, 0, -2, 2};
-        int target = 0;
-        System.out.println(calcFourSum(arr));
-    }
-}
+//public class FourSum {
+//    public static List<List<Integer>> calcFourSum(int []arr){
+//        Arrays.sort(arr);
+//        List<List<Integer>> list = new ArrayList<>();
+//        for(int i=0;i<arr.length-3;i++){
+//            if(i>0 && arr[i]==arr[i-1]){
+//                continue;
+//            }
+//            for(int j=i+1;j<arr.length-2;j++){
+//                if(j>i+1 && arr[j]==arr[j-1])
+//                    continue;
+//                int left = j+1;
+//                int right = arr.length-1;
+//                while(left<right){
+//                   long sum =(long) arr[i] + arr[j] + arr[left] + arr[right];
+//                   if(sum == 0){
+//                      list.add(Arrays.asList(arr[i],arr[j],arr[left],arr[right]));
+//                      left++;right--;
+//                      while(left<right && arr[left] == arr[left-1]){
+//                          left++;
+//                      }
+//                      while(left<right && arr[right] == arr[right+1]){
+//                          right--;
+//                      }
+//                   }
+//                   else if(sum<0){
+//                       left++;
+//                   }
+//                   else{
+//                       right--;
+//                   }
+//                }
+//            }
+//        }
+//        return list;
+//    }
+//    public static void main(String[] args){
+//        int[] arr = {1, 0, -1, 0, -2, 2};
+//        int target = 0;
+//        System.out.println(calcFourSum(arr));
+//    }
+//}
 //
 //public class FourSum {
 //    public static List<List<Integer>> calcFourSum(int []arr){
@@ -262,3 +262,48 @@ public class FourSum {
 //        System.out.println(calcFourSum(arr));
 //    }
 //}
+
+public class FourSum {
+    public static List<int []> calcFourSum(int []arr,int target){
+        Arrays.sort(arr);
+        List<int []> list = new ArrayList<>();
+        for(int i=0;i<arr.length-3;i++){
+            if(i>0 && arr[i]==arr[i-1]){
+                continue;
+            }
+            for(int j=i+1;j<arr.length-2;j++){
+                if(j>i+1 && arr[j]== arr[j-1]){
+                    continue;
+                }
+                int left = j+1;
+                int right = arr.length-1;
+                while(left<right){
+                    int sum = arr[i]+arr[j]+arr[left]+arr[right];
+                    if(left<right && sum == target){
+                        list.add(new int []{arr[left],arr[right],arr[i],arr[j]});
+                        left++;right--;
+                        if(arr[left]== arr[left-1])
+                            left++;
+                        if(arr[right] == arr[right+1])
+                            right--;
+                    }
+                    else if(left<right && sum < target){
+                        left ++;
+                    }
+                    else{
+                        right--;
+                    }
+                }
+            }
+        }
+        return list;
+    }
+    public static void main(String[] args){
+        int[] arr = {1, 0, -1, 0, -2, 2};
+        int target = 0;
+        List<int[]> list = calcFourSum(arr,target);
+        for(int []X:list){
+            System.out.println(Arrays.toString(X));
+          }
+    }
+}

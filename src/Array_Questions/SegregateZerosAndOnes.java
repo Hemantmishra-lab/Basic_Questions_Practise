@@ -1,6 +1,9 @@
 package Array_Questions;
 
+import java.awt.image.AreaAveragingScaleFilter;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 //public class SegregateZerosAndOnes {
 //
@@ -40,26 +43,50 @@ import java.util.Arrays;
 //    }
 //}
 
+//public class SegregateZerosAndOnes {
+//    public static void calcSegregateZerosAndOnes(int []arr){
+//        int slow = 0;int fast = 0;
+//        while(fast<arr.length){
+//            if(arr[fast] != 0){
+//                arr[slow] = arr[fast];
+//                slow++;
+//            }
+//            fast++;
+//        }
+//        slow++;
+//        while(slow<arr.length){
+//            arr[slow] = 0;
+//            slow++;
+//        }
+//    }
+//    public static void main(String[] args){
+//        int []arr = {0, 1, 0, 1, 1, 0, 1, 0, 0};
+//        calcSegregateZerosAndOnes(arr);
+//        for(int X:arr)
+//            System.out.print(X+" ");
+//    }
+//}
+
 public class SegregateZerosAndOnes {
-    public static void calcSegregateZerosAndOnes(int []arr){
-        int slow = 0;int fast = 0;
-        while(fast<arr.length){
-            if(arr[fast] != 0){
+    public static int[] calcSegregateZerosAndOnes(int []arr){
+        int fast = 0;
+        int slow = 0;
+        int n = arr.length;
+        while(fast<n){
+            if(arr[fast]!=0){
                 arr[slow] = arr[fast];
                 slow++;
             }
             fast++;
         }
-        slow++;
-        while(slow<arr.length){
+        while(slow<n){
             arr[slow] = 0;
             slow++;
         }
+        return arr;
     }
     public static void main(String[] args){
         int []arr = {0, 1, 0, 1, 1, 0, 1, 0, 0};
-        calcSegregateZerosAndOnes(arr);
-        for(int X:arr)
-            System.out.print(X+" ");
+        System.out.println(Arrays.toString(calcSegregateZerosAndOnes(arr)));
     }
 }

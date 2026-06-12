@@ -218,22 +218,74 @@ import java.util.*;
 //        System.out.println(countNMeetingInOneRoom(start,end));
 //    }
 //}
+//
+//record ListFormat(int startTime,int endTime){};
+//public class NMeetingInOneRoom {
+//    public static int calcNMeetingInOneRoom(int []startTime,int []endTime){
+//        List<ListFormat> list = new ArrayList<>();
+//        for(int i=0;i<startTime.length;i++){
+//            list.add(new ListFormat(startTime[i],endTime[i]));
+//        }
+//        Collections.sort(list,(a,b)->Integer.compare(a.endTime(),b.endTime()));
+//        int end = list.get(0).endTime();
+//        int count =1;
+//        for(int i=1;i<list.size();i++){
+//            int start = list.get(i).startTime();
+//            if(start>=end){
+//                count++;
+//                end = list.get(i).endTime();
+//            }
+//        }
+//        return count;
+//    }
+//    public static void main(String[] args){
+//        int[] startTime = {1,3,0,5,8,5};
+//        int [] endTime = {2,4,6,7,9,9};
+//        System.out.println(calcNMeetingInOneRoom(startTime,endTime));
+//    }
+//}
+//
+//record ListInputFormatClass(int startTime,int endTime){}
+//public class NMeetingInOneRoom {
+//    public static int calcNMeetingInOneRoom(int []startTime,int []endTime){
+//        List<ListInputFormatClass> list = new ArrayList<>();
+//        for(int i=0;i<startTime.length;i++){
+//            list.add(new ListInputFormatClass(startTime[i],endTime[i]));
+//        }
+//        Collections.sort(list,(a,b)->a.endTime()-b.endTime());
+//        int endT = list.get(0).endTime();
+//        int count = 1;
+//        for(int i=1;i<list.size();i++){
+//            int startT = list.get(i).startTime();
+//            if(endT<=startT){
+//                count++;
+//                endT = list.get(i).endTime();
+//            }
+//        }
+//        return count;
+//    }
+//    public static void main(String[] args){
+//        int[] startTime = {1,3,0,5,8,5};
+//        int [] endTime = {2,4,6,7,9,9};
+//        System.out.println(calcNMeetingInOneRoom(startTime,endTime));
+//    }
+//}
 
-record ListFormat(int startTime,int endTime){};
+record ListInputFormatClass(int startTime,int endTime){}
 public class NMeetingInOneRoom {
-    public static int calcNMeetingInOneRoom(int []startTime,int []endTime){
-        List<ListFormat> list = new ArrayList<>();
+    public static int calcNMeetingInOneRoom(int startTime[],int []endTime){
+        List<ListInputFormatClass> list = new ArrayList<>();
         for(int i=0;i<startTime.length;i++){
-            list.add(new ListFormat(startTime[i],endTime[i]));
+            list.add(new ListInputFormatClass(startTime[i],endTime[i]));
         }
-        Collections.sort(list,(a,b)->Integer.compare(a.endTime(),b.endTime()));
-        int end = list.get(0).endTime();
-        int count =1;
-        for(int i=1;i<list.size();i++){
-            int start = list.get(i).startTime();
-            if(start>=end){
+        Collections.sort(list,(a,b)->Integer.compare(a.endTime(), b.endTime()));
+        int count = 1;
+        int endT = list.get(0).endTime();
+        for(int i=0;i<startTime.length;i++){
+            int startT = list.get(i).startTime();
+            if(endT<=startT){
                 count++;
-                end = list.get(i).endTime();
+                endT = list.get(i).endTime();
             }
         }
         return count;
