@@ -31,6 +31,7 @@ package Array_Questions;//package Array_Questions;
 //
 
 import java.sql.SQLOutput;
+import java.util.Arrays;
 
 //public class ArrayReverse{
 //    public static int[] reverse(int []arr){
@@ -206,20 +207,51 @@ import java.sql.SQLOutput;
 //    }
 //}
 
+//public class ArrayReverse {
+//    public static void calcArrayReverse(int []arr){
+//        int left = 0; int right = arr.length-1;
+//        while (left<right){
+//            int temp = arr[left];
+//            arr[left] = arr[right];
+//            arr[right] = temp;
+//            left++;right--;
+//        }
+//    }
+//    public static void main(String[] args){
+//        int []arr = {2,2,1,9,7};
+//        calcArrayReverse(arr);
+//        for(int X: arr)
+//            System.out.print(X + " ");
+//    }
+//}
+//public class ArrayReverse {
+//    public static void calArrayReverse(int []arr){
+//        int left = 0;
+//        int right = arr.length-1;
+//        while(left<=right){
+//            int temp = arr[left];
+//            arr[left] = arr[right];
+//            arr[right] = temp;
+//            left++;right--;
+//        }
+//    }
+//    public static void main(String[] args){
+//        int []arr = {2,2,1,9,7};
+//        calArrayReverse(arr);
+//        System.out.println(Arrays.toString(arr));
+//    }
+//}
+
 public class ArrayReverse {
-    public static void calcArrayReverse(int []arr){
-        int left = 0; int right = arr.length-1;
-        while (left<right){
-            int temp = arr[left];
-            arr[left] = arr[right];
-            arr[right] = temp;
-            left++;right--;
+    public static int[] calcArrayReverse(int []arr){
+        int []temp = new int[arr.length];
+        for(int i=0;i<arr.length;i++){
+            temp[i] = arr[arr.length-i-1];
         }
+        return temp;
     }
     public static void main(String[] args){
         int []arr = {2,2,1,9,7};
-        calcArrayReverse(arr);
-        for(int X: arr)
-            System.out.print(X + " ");
+        System.out.println(Arrays.toString(calcArrayReverse(arr)));
     }
 }

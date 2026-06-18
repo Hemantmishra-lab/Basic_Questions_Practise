@@ -97,19 +97,38 @@ import java.util.List;
 //    }
 //}
 
+//public class FindRepeatingElements {
+//    public static void calcFindRepeatingElements(int []arr){
+//        HashMap<Integer,Integer> map= new HashMap<>();
+//        for(int X:arr)
+//            map.put(X,map.getOrDefault(X,0)+1);
+//        for(int Key:map.keySet()){
+//            if(map.get(Key)>1){
+//                System.out.print(Key+" ");
+//            }
+//        }
+//    }
+//    public static void main(String[] args){
+//        int []arr = {1,1,1,2,2,3,3,5,8,9,6,7};
+//        calcFindRepeatingElements(arr);
+//    }
+//}
+
 public class FindRepeatingElements {
-    public static void calcFindRepeatingElements(int []arr){
-        HashMap<Integer,Integer> map= new HashMap<>();
+    public static List<Integer> calcFindRepeatingElements(int []arr){
+        HashMap<Integer,Integer> map = new HashMap<>();
+        List<Integer> list = new ArrayList<>();
         for(int X:arr)
             map.put(X,map.getOrDefault(X,0)+1);
-        for(int Key:map.keySet()){
-            if(map.get(Key)>1){
-                System.out.print(Key+" ");
+        for(int X:map.keySet()){
+            if(map.get(X)>1){
+                list.add(X);
             }
         }
+        return list;
     }
     public static void main(String[] args){
         int []arr = {1,1,1,2,2,3,3,5,8,9,6,7};
-        calcFindRepeatingElements(arr);
+        System.out.println(calcFindRepeatingElements(arr));
     }
 }

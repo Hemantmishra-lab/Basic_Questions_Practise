@@ -55,15 +55,45 @@ package Array_Questions;
 //}
 
 import java.util.Arrays;
+//public class SecondLargestAndSecondSmallestNumber {
+//    public static int[] calcSecodLargestAndSecondSmallestNumber(int []arr){
+//        int Max = Integer.MIN_VALUE;
+//        int SecMax = Integer.MIN_VALUE;
+//        int Min = Integer.MAX_VALUE;
+//        int SecMin = Integer.MAX_VALUE;
+//        for(int i=0;i<arr.length;i++){
+//            if(arr[i]>Max){
+//                SecMax = Max;
+//                Max = arr[i];
+//            }
+//            else if(arr[i]<Max && arr[i]>SecMax){
+//                SecMax = arr[i];
+//            }
+//            if(arr[i]<Min){
+//                SecMin = Min;
+//                Min = arr[i];
+//            }
+//            else if(arr[i]>Min && arr[i]<SecMin){
+//                SecMin = arr[i];
+//            }
+//        }
+//        return new int[]{SecMax,SecMin};
+//    }
+//    public static void main(String[] args){
+//        int []arr = {100,20,22,9,80};
+//        System.out.println(Arrays.toString(calcSecodLargestAndSecondSmallestNumber(arr)));
+//    }
+//}
+
 public class SecondLargestAndSecondSmallestNumber {
-    public static int[] calcSecodLargestAndSecondSmallestNumber(int []arr){
+    public static int[] calcSecondLargestAndSecondSmallestNumber(int []arr){
         int Max = Integer.MIN_VALUE;
         int SecMax = Integer.MIN_VALUE;
         int Min = Integer.MAX_VALUE;
         int SecMin = Integer.MAX_VALUE;
         for(int i=0;i<arr.length;i++){
             if(arr[i]>Max){
-                SecMax = Max;
+                SecMax  = Max;
                 Max = arr[i];
             }
             else if(arr[i]<Max && arr[i]>SecMax){
@@ -81,6 +111,8 @@ public class SecondLargestAndSecondSmallestNumber {
     }
     public static void main(String[] args){
         int []arr = {100,20,22,9,80};
-        System.out.println(Arrays.toString(calcSecodLargestAndSecondSmallestNumber(arr)));
+        int [] temp= calcSecondLargestAndSecondSmallestNumber(arr);
+        for(int X:temp)
+            System.out.println(X+" ");
     }
 }

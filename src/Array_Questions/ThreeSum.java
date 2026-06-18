@@ -372,30 +372,73 @@ import java.util.*;
 //    }
 //}
 
+//public class ThreeSum {
+//    public static List<int []> calThreeSum(int []arr,int target){
+//        Arrays.sort(arr);
+//        List<int []> list = new ArrayList<>();
+//        for(int i=0;i<arr.length-2;i++){
+//            if(i>0 && arr[i] == arr[i-1]){
+//                continue;
+//            }
+//            int left = i+1;
+//            int right = arr.length-1;
+//            while(left<right){
+//                int sum = arr[i] + arr[left] + arr[right];
+//                if(left<right && sum == target){
+//                    //Add the values in list whose datatype is in int array
+//                    list.add(new int[]{arr[i],arr[left],arr[right]});
+//                    left++;right--;
+//                    if(arr[left]==arr[left-1]){
+//                        left++;
+//                    }
+//                    if(arr[right]==arr[right+1]){
+//                        right--;
+//                    }
+//                }
+//                else if(left<right && sum < target){
+//                    left++;
+//                }
+//                else{
+//                    right--;
+//                }
+//            }
+//        }
+//        //return the list
+//        return list;
+//    }
+//    public static void main(String[] args){
+//        int[] arr = {-1, 0, 1, 2, -1, -4};
+//        int target = 0;
+//        List<int []> list =calThreeSum(arr,target);
+//        for(int X[]: list){
+//            System.out.println(Arrays.toString(X));
+//        }
+//    }
+//}
+
 public class ThreeSum {
-    public static List<int []> calThreeSum(int []arr,int target){
+    public static List<int []> calcThreeSum(int []arr,int target){
         Arrays.sort(arr);
         List<int []> list = new ArrayList<>();
-        for(int i=0;i<arr.length-2;i++){
-            if(i>0 && arr[i] == arr[i-1]){
+        for(int i=0;i<arr.length-2;i++) {
+            if (i > 0 && arr[i] == arr[i - 1]) {
                 continue;
             }
-            int left = i+1;
-            int right = arr.length-1;
-            while(left<right){
+            int left = i + 1;
+            int right = arr.length - 1;
+            while (left < right) {
                 int sum = arr[i] + arr[left] + arr[right];
-                if(left<right && sum == target){
-                    //Add the values in list whose datatype is in int array
-                    list.add(new int[]{arr[i],arr[left],arr[right]});
-                    left++;right--;
-                    if(arr[left]==arr[left-1]){
+                if (sum == target) {
+                    list.add(new int[]{arr[i], arr[left], arr[right]});
+                    left++;
+                    right--;
+                    while(left<right && arr[left] == arr[left-1]){
                         left++;
                     }
-                    if(arr[right]==arr[right+1]){
+                    while(left<right && arr[right] == arr[right-1]){
                         right--;
                     }
-                }
-                else if(left<right && sum < target){
+                } else if (sum < target) {
                     left++;
                 }
                 else{
@@ -403,14 +446,13 @@ public class ThreeSum {
                 }
             }
         }
-        //return the list
         return list;
     }
     public static void main(String[] args){
         int[] arr = {-1, 0, 1, 2, -1, -4};
         int target = 0;
-        List<int []> list =calThreeSum(arr,target);
-        for(int X[]: list){
+        List<int []> list = calcThreeSum(arr,target);
+        for(int []X : list){
             System.out.println(Arrays.toString(X));
         }
     }

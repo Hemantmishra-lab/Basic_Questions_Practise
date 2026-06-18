@@ -117,14 +117,58 @@ import java.util.List;
 //    }
 //}
 //
+//public class RearrangeAscendingOrDescening {
+//    public static int[][] calcRearrangeAscendingOrDescending(int []arr){
+//        List<List<Integer>> list = new ArrayList<>();
+//
+//        List<Integer> list1 = new ArrayList<>();
+//
+//        List<Integer> list2 = new ArrayList<>();
+//        for(int X:arr){
+//            list1.add(X);
+//            list2.add(X);
+//        }
+//        Collections.sort(list1);
+//        Collections.sort(list2,(a,b)->Integer.compare(b,a));
+//        list.add(list1);
+//        list.add(list2);
+//        return list.toArray(new int[list.size()][]);
+//    }
+//    public static void main(String[]args){
+//        int []arr =  {10,2,100,99,8,88};
+//        System.out.println(calcRearrangeAscendingOrDescending(arr));
+//    }
+//}
+//
+//public class RearrangeAscendingOrDescening {
+//    public static List<List<Integer>> calcRearrangeAscendingOrDescending(int []arr){
+//        List<List<Integer>> list = new ArrayList<>();
+//        List<Integer> list1 = new ArrayList<>();
+//        List<Integer> list2 = new ArrayList<>();
+//        for(int X:arr){
+//            list1.add(X);
+//            list2.add(X);
+//        }
+//        Collections.sort(list1);
+//        Collections.sort(list2,(a,b)->Integer.compare(b,a));
+//        list.add(list1);
+//        list.add(list2);
+//        return list;
+//    }
+//    public static void main(String[] args){
+//        int []arr =  {10,2,100,99,8,88};
+//        System.out.println(calcRearrangeAscendingOrDescending(arr));
+//    }
+//}
+//
+//
+
 public class RearrangeAscendingOrDescening {
-    public static int[][] calcRearrangeAscendingOrDescending(int []arr){
+    public static List<List<Integer>> calcRearrangeAscendingOrDescending(int []arr){
         List<List<Integer>> list = new ArrayList<>();
-
         List<Integer> list1 = new ArrayList<>();
-
         List<Integer> list2 = new ArrayList<>();
-        for(int X:arr){
+        for(int X :arr){
             list1.add(X);
             list2.add(X);
         }
@@ -132,12 +176,10 @@ public class RearrangeAscendingOrDescening {
         Collections.sort(list2,(a,b)->Integer.compare(b,a));
         list.add(list1);
         list.add(list2);
-        return list.toArray(new int[list.size()][]);
+        return list;
     }
-    public static void main(String[]args){
+    public static void main(String[] args){
         int []arr =  {10,2,100,99,8,88};
         System.out.println(calcRearrangeAscendingOrDescending(arr));
     }
 }
-
-

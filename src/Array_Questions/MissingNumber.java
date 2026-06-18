@@ -99,14 +99,45 @@ import java.util.Scanner;
 //    }
 //}
 
+//public class MissingNumber {
+//    public static int calcMissingNumber(int []arr){
+//        int ActSum = 0;
+//        for(int X:arr)
+//            ActSum += X;
+//        int n = arr.length + 1;
+//        int expSum = n*(n+1)/2;
+//        return expSum - ActSum;
+//    }
+//    public static void main(String[] args){
+//        int []arr = {1,2,3,5,6};
+//        System.out.println(calcMissingNumber(arr));
+//    }
+//}
+
+//public class MissingNumber {
+//    public static int calcMissingNumber(int []arr){
+//        int n  = arr.length;
+//        int actSum = 0;
+//        for(int X:arr)
+//            actSum += X;
+//        int expSum = (n+1)*(n+2)/2;
+//        return  expSum - actSum;
+//    }
+//    public static void main(String [] args){
+//        int []arr = {1,2,3,5,6};
+//        System.out.println(calcMissingNumber(arr));
+//    }
+//}
+
+
 public class MissingNumber {
     public static int calcMissingNumber(int []arr){
-        int ActSum = 0;
+        int actSum = 0;
         for(int X:arr)
-            ActSum += X;
-        int n = arr.length + 1;
-        int expSum = n*(n+1)/2;
-        return expSum - ActSum;
+            actSum += X;
+        int n = arr.length;
+        int expSum =  (n+1)*(n+2)/2;
+        return expSum-actSum;
     }
     public static void main(String[] args){
         int []arr = {1,2,3,5,6};

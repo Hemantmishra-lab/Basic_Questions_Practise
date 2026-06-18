@@ -303,18 +303,105 @@ package Recursion;
 //    }
 //}
 
+//public class QuickSort {
+//    public static int Partition(int []arr,int low,int high){
+//        int Pos = low;int end = high;
+//        for(int i=0;i<arr.length;i++){
+//            if(arr[i]<=arr[end]){
+//                int temp = arr[i];
+//                arr[i] = arr[Pos];
+//                arr[Pos] = temp;
+//                Pos++;
+//            }
+//        }
+//        return Pos-1;
+//    }
+//    public static void quickSort(int []arr,int low,int high){
+//        if(low>=high)
+//            return;
+//        int pos = Partition(arr,low,high);
+//        quickSort(arr,low,pos-1);
+//        quickSort(arr,pos+1,high);
+//    }
+//    public static void main(String[] args){
+//        int [] arr = {1,99,12,31,48};
+//        int low = 0;
+//        int high = arr.length-1;
+//        quickSort(arr,low,high);
+//        for(int X : arr)
+//            System.out.print(X +" ");
+//    }
+//}
+
+import java.util.Arrays;
+
+//public class QuickSort {
+//    public static int Partition(int []arr,int low,int high){
+//        int end = arr[high];int pos = low;
+//        for(int i=low;i<high;i++){
+//            if(arr[end]>=arr[i]){
+//                int temp = arr[i];
+//                arr[i] = arr[pos];
+//                arr[pos] = temp;
+//                pos++;
+//            }
+//        }
+//        return pos-1;
+//    }
+//    public static void quickSort(int []arr,int low,int high){
+//        if(low>=high)
+//            return;
+//        int pos = Partition(arr,low,high);
+//        quickSort(arr,low,pos-1);
+//        quickSort(arr,pos+1,high);
+//    }
+//    public static void main(String[] args){
+//        int [] arr = {1,99,12,31,48};
+//        quickSort(arr,0,arr.length-1);
+//        System.out.println(Arrays.toString(arr));
+//    }
+//}
+
+//public class QuickSort {
+//    public static int Partition(int []arr,int low,int high){
+//        int pos = low;int pivot = arr[high];
+//        for(int i=low;i<=high;i++){
+//            if(arr[i]<=pivot){
+//                int temp = arr[pos];
+//                arr[pos] = arr[i];
+//                arr[i] = temp;
+//                pos++;
+//            }
+//        }
+//        return pos-1;
+//    }
+//    public static void quickSort(int []arr,int low,int high){
+//        if(low>=high)
+//            return;
+//        int pos = Partition(arr,low,high);
+//        quickSort(arr,low,pos-1);
+//        quickSort(arr,pos+1,high);
+//    }
+//    public static void main(String[] args){
+//        int [] arr = {1,99,12,31,48};
+//        quickSort(arr,0,arr.length-1);
+//        System.out.println(Arrays.toString(arr));
+//
+//    }
+//}
+
 public class QuickSort {
     public static int Partition(int []arr,int low,int high){
-        int Pos = low;int end = high;
+        int pivot = arr[high];int pos = low;
         for(int i=0;i<arr.length;i++){
-            if(arr[i]<=arr[end]){
-                int temp = arr[i];
-                arr[i] = arr[Pos];
-                arr[Pos] = temp;
-                Pos++;
+            if(arr[i]<=pivot){
+                int temp = arr[pos];
+                arr[pos] = arr[i];
+                arr[i] = temp;
+                pos++;
             }
         }
-        return Pos-1;
+        return pos-1;
     }
     public static void quickSort(int []arr,int low,int high){
         if(low>=high)
@@ -325,10 +412,7 @@ public class QuickSort {
     }
     public static void main(String[] args){
         int [] arr = {1,99,12,31,48};
-        int low = 0;
-        int high = arr.length-1;
-        quickSort(arr,low,high);
-        for(int X : arr)
-            System.out.print(X +" ");
+        quickSort(arr,0,arr.length-1);
+        System.out.println(Arrays.toString(arr));
     }
 }

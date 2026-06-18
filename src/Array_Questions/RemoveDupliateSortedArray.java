@@ -1,9 +1,6 @@
 package Array_Questions;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 //public class RemoveDupliateSortedArray {
 //    public static List<Integer> calcRemoveDuplicateSortedArray(int []arr){
@@ -63,10 +60,59 @@ import java.util.List;
 //    }
 //}
 
+//public class RemoveDupliateSortedArray {
+//    public static void calcRemoveDuplicateSortedArray(int []arr){
+//        int fast = 0;
+//        int slow = 0;
+//        while(fast<arr.length){
+//            if(arr[slow] != arr[fast]){
+//                slow++;
+//                arr[slow] = arr[fast];
+//            }
+//            fast++;
+//        }
+//        slow++;
+//        while(slow<arr.length){
+//            arr[slow] = 0;
+//            slow++;
+//        }
+//    }
+//    public static void main(String[] args){
+//        int []arr = {1,1,1,2,2,3,4,5,6,6,6,7,8,9};
+//        calcRemoveDuplicateSortedArray(arr);
+//        for(int X: arr)
+//            System.out.print(X+" ");
+//    }
+//}
+
+//public class RemoveDupliateSortedArray {
+////    public static int[] calcRemoveDuplicateSortedArray(int []arr){
+////        int fast = 0;
+////        int slow = 0;
+////        while(fast<arr.length){
+////            if(arr[fast] != arr[slow]){
+////                slow++;
+////                arr[slow] = arr[fast];
+////            }
+////            fast++;
+////        }
+////        slow++;
+////        while(slow<arr.length){
+////            arr[slow] = 0;
+////            slow++;
+////        }
+////        return arr;
+////    }
+////    public static void main(String[] args){
+////        int []arr = {1,1,1,2,2,3,4,5,6,6,6,7,8,9};
+////        System.out.println(Arrays.toString(calcRemoveDuplicateSortedArray(arr)));
+////    }
+////}
+
 public class RemoveDupliateSortedArray {
     public static void calcRemoveDuplicateSortedArray(int []arr){
-        int fast = 0;
         int slow = 0;
+        int fast = 0;
         while(fast<arr.length){
             if(arr[slow] != arr[fast]){
                 slow++;
@@ -74,16 +120,10 @@ public class RemoveDupliateSortedArray {
             }
             fast++;
         }
-        slow++;
-        while(slow<arr.length){
-            arr[slow] = 0;
-            slow++;
-        }
     }
-    public static void main(String[] args){
+    public static void main(String []args){
         int []arr = {1,1,1,2,2,3,4,5,6,6,6,7,8,9};
         calcRemoveDuplicateSortedArray(arr);
-        for(int X: arr)
-            System.out.print(X+" ");
+        System.out.println(Arrays.toString(arr));
     }
 }

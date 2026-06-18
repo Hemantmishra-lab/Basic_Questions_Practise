@@ -1,7 +1,7 @@
 package Array_Questions;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.nio.charset.IllegalCharsetNameException;
+import java.util.*;
 
 //public class TwoSum {
 //    public static void calcTwoSum(int []arr,int target){
@@ -172,11 +172,74 @@ import java.util.Map;
 //    }
 //}
 
+//public class TwoSum {
+//    public static int[] calcTwoSum(int []arr,int target){
+//        for(int i=0;i<arr.length-1;i++){
+//            for(int j=i+1;j<arr.length;j++){
+//                int sum =arr[i] + arr[j];
+//                if(sum == target){
+//                    return new int[]{i,j};
+//                }
+//            }
+//        }
+//        return new int[]{};
+//    }
+//    public static void main(String[] args){
+//        int []arr = {1,2,7,0};
+//        int target = 9;
+//        int []temp = calcTwoSum(arr,target);
+//        for(int X:temp)
+//            System.out.print(X+" ");
+//    }
+//}
+//
+//public class TwoSum {
+//    public static List<Integer> calcTwoSum(int []arr,int target){
+//        List<Integer> list = new ArrayList<>();
+//        Arrays.sort(arr);
+//        for(int i=0;i<arr.length-1;i++){
+//            for(int j=i+1;j<arr.length;j++){
+//                int sum = arr[i] + arr[j];
+//                if(sum == target){
+//                    list.add(arr[i],arr[j]);
+//                }
+//
+//            }
+//        }
+//        return list;
+//    }
+//    public static void main(String[] args){
+//        int []arr = {1,2,7,0};
+//        int target = 9;
+//        System.out.println(calcTwoSum(arr,target));
+//    }
+//}
+
+//public class TwoSum {
+//    public static int[] calcTwoSum(int []arr,int target){
+//        Arrays.sort(arr);
+//        for(int i=0;i<arr.length-1;i++){
+//            for(int j=i+1;j<arr.length;j++){
+//                int sum = arr[i] + arr[j];
+//                if(sum == target){
+//                    return new int[]{arr[i],arr[j]};
+//                }
+//            }
+//        }
+//        return new int[]{};
+//    }
+//    public static void main(String[] args){
+//        int []arr = {1,2,7,0};
+//        int target = 9;
+//        System.out.println(Arrays.toString(calcTwoSum(arr,target)));
+//    }
+//}
+
 public class TwoSum {
     public static int[] calcTwoSum(int []arr,int target){
         for(int i=0;i<arr.length-1;i++){
             for(int j=i+1;j<arr.length;j++){
-                int sum =arr[i] + arr[j];
+                int sum = arr[i] + arr[j];
                 if(sum == target){
                     return new int[]{i,j};
                 }
@@ -185,10 +248,8 @@ public class TwoSum {
         return new int[]{};
     }
     public static void main(String[] args){
-        int []arr = {1,2,7,0};
+        int []arr = {1,7,2,9};
         int target = 9;
-        int []temp = calcTwoSum(arr,target);
-        for(int X:temp)
-            System.out.print(X+" ");
+        System.out.println(Arrays.toString(calcTwoSum(arr,target)));
     }
 }

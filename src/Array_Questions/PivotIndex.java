@@ -58,17 +58,57 @@ package Array_Questions;
 //    }
 //}
 
+//public class PivotIndex {
+//    public static int calcPivotIndex(int []arr){
+//        int Tsum = 0;
+//        for(int X:arr)
+//            Tsum += X;
+//        int LSum = 0;
+//        for(int i=0;i<arr.length;i++){
+//            if(LSum == Tsum - arr[i] - LSum){
+//                return i;
+//            }
+//            LSum += arr[i];
+//        }
+//        return -1;
+//    }
+//    public static void main(String[] args){
+//        int []arr = {1, 7, 3, 6, 5, 6};
+//        System.out.println(calcPivotIndex(arr));
+//    }
+//}
+
+//public class PivotIndex {
+//    public static int calcPivotIndex(int []arr){
+//        int TSum = 0;
+//        for(int X:arr)
+//            TSum += X;
+//        int LSum = 0;
+//        for(int i=0;i<arr.length;i++){
+//            if(LSum == TSum-arr[i]-LSum){
+//                return i;
+//            }
+//            LSum += arr[i];
+//        }
+//        return -1;
+//    }
+//    public static void main(String[] args){
+//        int []arr = {1, 7, 3, 6, 5, 6};
+//        System.out.println(calcPivotIndex(arr));
+//    }
+//}
+
 public class PivotIndex {
     public static int calcPivotIndex(int []arr){
-        int Tsum = 0;
+        int total  = 0;
+        int leftSum = 0;
         for(int X:arr)
-            Tsum += X;
-        int LSum = 0;
+            total += X;
         for(int i=0;i<arr.length;i++){
-            if(LSum == Tsum - arr[i] - LSum){
+            if(leftSum == total - arr[i]-leftSum){
                 return i;
             }
-            LSum += arr[i];
+            leftSum += arr[i];
         }
         return -1;
     }
