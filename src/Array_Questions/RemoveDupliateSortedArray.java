@@ -109,20 +109,40 @@ import java.util.*;
 ////    }
 ////}
 
+//public class RemoveDupliateSortedArray {
+//    public static void calcRemoveDuplicateSortedArray(int []arr){
+//        int slow = 0;
+//        int fast = 0;
+//        while(fast<arr.length){
+//            if(arr[slow] != arr[fast]){
+//                slow++;
+//                arr[slow] = arr[fast];
+//            }
+//            fast++;
+//        }
+//    }
+//    public static void main(String []args){
+//        int []arr = {1,1,1,2,2,3,4,5,6,6,6,7,8,9};
+//        calcRemoveDuplicateSortedArray(arr);
+//        System.out.println(Arrays.toString(arr));
+//    }
+//}
+
 public class RemoveDupliateSortedArray {
     public static void calcRemoveDuplicateSortedArray(int []arr){
-        int slow = 0;
         int fast = 0;
+        int slow = 0;
         while(fast<arr.length){
-            if(arr[slow] != arr[fast]){
+            if(arr[fast]!=arr[slow]){
                 slow++;
                 arr[slow] = arr[fast];
             }
             fast++;
         }
     }
-    public static void main(String []args){
+    public static void main(String[] args){
         int []arr = {1,1,1,2,2,3,4,5,6,6,6,7,8,9};
+        System.out.println(arr.length);
         calcRemoveDuplicateSortedArray(arr);
         System.out.println(Arrays.toString(arr));
     }
