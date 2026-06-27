@@ -1,6 +1,7 @@
 package Array_Questions;
 
 import java.awt.image.AreaAveragingScaleFilter;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -113,17 +114,41 @@ import java.util.List;
 //    }
 //}
 
+//public class SegregateZerosAndOnes {
+//    public static void calcSegregateZeroesAndOnes(int []arr){
+//        int slow = 0;
+//        int fast = 0;
+//        while(fast<arr.length){
+//            if(arr[fast] != 0){
+//                arr[slow] = arr[fast];
+//                slow++;
+//            }
+//            fast++;
+//        }
+//        while(slow<arr.length){
+//            arr[slow] = 0;
+//            slow++;
+//        }
+//    }
+//    public static void main(String[] args){
+//        int []arr = {0, 1, 0, 1, 1, 0, 1, 0, 0};
+//        calcSegregateZeroesAndOnes(arr);
+//        System.out.println(Arrays.toString(arr));
+//    }
+//}
+
 public class SegregateZerosAndOnes {
     public static void calcSegregateZeroesAndOnes(int []arr){
-        int slow = 0;
         int fast = 0;
+        int slow = 0;
         while(fast<arr.length){
-            if(arr[fast] != 0){
+            if(arr[fast]!=0){
                 arr[slow] = arr[fast];
                 slow++;
             }
             fast++;
         }
+
         while(slow<arr.length){
             arr[slow] = 0;
             slow++;

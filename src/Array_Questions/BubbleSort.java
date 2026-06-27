@@ -208,21 +208,40 @@ import java.util.Scanner;
 //    }
 //}
 
+//public class BubbleSort {
+//    public static void calcBubbleSort(int []arr){
+//        for(int i=0;i<arr.length;i++){
+//            for(int j=i;j<arr.length-i-1;j++){
+//                if(arr[j]>arr[j+1]){
+//                    int temp = arr[j+1];
+//                    arr[j+1] = arr[j];
+//                    arr[j] = temp;
+//                }
+//            }
+//        }
+//    }
+//    public static void main(String[] args){
+//        int []arr = {2,47,7,4};
+//        calcBubbleSort(arr);
+//        System.out.println(Arrays.toString(arr));
+//    }
+//}
+
 public class BubbleSort {
-    public static void calcBubbleSort(int []arr){
+    public static void bubbleSort(int []arr){
         for(int i=0;i<arr.length;i++){
             for(int j=i;j<arr.length-i-1;j++){
                 if(arr[j]>arr[j+1]){
-                    int temp = arr[j+1];
-                    arr[j+1] = arr[j];
-                    arr[j] = temp;
+                    int temp = arr[j];
+                    arr[j] = arr[j+1];
+                   arr[j+1] = temp;
                 }
             }
         }
     }
     public static void main(String[] args){
         int []arr = {2,47,7,4};
-        calcBubbleSort(arr);
+        bubbleSort(arr);
         System.out.println(Arrays.toString(arr));
     }
 }

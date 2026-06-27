@@ -71,16 +71,31 @@ import java.util.Scanner;
 //    }
 //}
 
-public class ReverseString{
+//public class ReverseString{
+//    public static String calcReverseString(String str){
+//        String rev = "";
+//        for(int i=0;i<str.length();i++){
+//            rev = rev + str.charAt(str.length()-1-i);
+//        }
+//        return rev;
+//    }
+//    public static void main(String[] args){
+//        String str = "HEMANT MISHRA";
+//        System.out.println(calcReverseString(str));
+//    }
+//}
+
+public class ReverseString {
     public static String calcReverseString(String str){
         String rev = "";
         for(int i=0;i<str.length();i++){
             rev = rev + str.charAt(str.length()-1-i);
         }
         return rev;
+
     }
     public static void main(String[] args){
-        String str = "HEMANT MISHRA";
+        String str = "Hemant Mishra";
         System.out.println(calcReverseString(str));
     }
 }

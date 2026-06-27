@@ -104,8 +104,21 @@ import java.util.PriorityQueue;
 //    }
 //}
 
+//public class LargestNumber {
+//    public static int calLargestNumber(int []arr){
+//        PriorityQueue<Integer> maxHeap = new PriorityQueue<>((a,b)->Integer.compare(b,a));
+//        for(int X:arr)
+//            maxHeap.add(X);
+//        return maxHeap.poll();
+//    }
+//    public static void main(String[] args){
+//        int []arr = {1,8,2,3,46,9};
+//        System.out.println(calLargestNumber(arr));
+//    }
+//}
+
 public class LargestNumber {
-    public static int calLargestNumber(int []arr){
+    public static int calcLargestNumber(int []arr){
         PriorityQueue<Integer> maxHeap = new PriorityQueue<>((a,b)->Integer.compare(b,a));
         for(int X:arr)
             maxHeap.add(X);
@@ -113,6 +126,6 @@ public class LargestNumber {
     }
     public static void main(String[] args){
         int []arr = {1,8,2,3,46,9};
-        System.out.println(calLargestNumber(arr));
+        System.out.println(calcLargestNumber(arr));
     }
 }

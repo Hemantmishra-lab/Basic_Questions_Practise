@@ -1,5 +1,6 @@
 package Array_Questions;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.PriorityQueue;
@@ -128,23 +129,44 @@ import java.util.PriorityQueue;
 //    }
 //}
 
+//public class TopKFreqElement {
+//    public static int calcTopKFreqElement(int []arr,int k){
+//        HashMap<Integer,Integer> map = new HashMap<>();
+//        for(int X:arr)
+//            map.put(X,map.getOrDefault(X,0)+1);
+//        PriorityQueue<Integer> maxHeap = new PriorityQueue<>((a,b)->Integer.compare(map.get(b),map.get(a)));
+//        for(int X:map.keySet())
+//            maxHeap.add(X);
+//        for(int i=1;i<k;i++){
+//            maxHeap.poll();
+//        }
+//        System.out.println(map);
+//        return maxHeap.poll();
+//    }
+//    public static void main(String [] args){
+//        int []arr = {1,1,1,1,1,1,1,9,9,9,9,4,4,4,4,4,6,6,6,6,7,77,7};
+//        int k = 2;
+//        System.out.println(calcTopKFreqElement(arr,k));
+//    }
+//}
+
 public class TopKFreqElement {
     public static int calcTopKFreqElement(int []arr,int k){
         HashMap<Integer,Integer> map = new HashMap<>();
-        for(int X:arr)
+        for(int X: arr){
             map.put(X,map.getOrDefault(X,0)+1);
+        }
         PriorityQueue<Integer> maxHeap = new PriorityQueue<>((a,b)->Integer.compare(map.get(b),map.get(a)));
-        for(int X:map.keySet())
-            maxHeap.add(X);
+        for(int key:map.keySet())
+            maxHeap.add(key);
         for(int i=1;i<k;i++){
             maxHeap.poll();
         }
         System.out.println(map);
         return maxHeap.poll();
     }
-    public static void main(String [] args){
+    public static void main(String[] args){
         int []arr = {1,1,1,1,1,1,1,9,9,9,9,4,4,4,4,4,6,6,6,6,7,77,7};
-        int k = 2;
-        System.out.println(calcTopKFreqElement(arr,k));
+        System.out.println(calcTopKFreqElement(arr,2));
     }
 }
