@@ -126,25 +126,26 @@ package Pointers.SlidingWindow.VariableWindow;
 //    }
 //}
 
-public class LongestSubstring {
-    public static int caclLongestSubstring(String s){
-        int []arr = new int[128];
-        int index = 0;
-        int left = 0;int maxLen = 0;
-        for(int right = 0;right<s.length();right++){
-            char charRight = s.charAt(right);
-            arr[charRight]++;
-            while (arr[charRight]>=2){
-                char charLeft = s.charAt(left);
-                arr[charLeft]--;
-                left++;
-            }
-            maxLen = Math.max(maxLen,right-left+1);
-        }
-        return maxLen;
-    }
-    public static void main(String[] args){
-        String s = "abcabcbb";
-        System.out.println(caclLongestSubstring(s));
-    }
-}
+//public class LongestSubstring {
+//    public static int caclLongestSubstring(String s){
+//        int []arr = new int[128];
+//        int index = 0;
+//        int left = 0;int maxLen = 0;
+//        for(int right = 0;right<s.length();right++){
+//            char charRight = s.charAt(right);
+//            arr[charRight]++;
+//            while (arr[charRight]>=2){
+//                char charLeft = s.charAt(left);
+//                arr[charLeft]--;
+//                left++;
+//            }
+//            maxLen = Math.max(maxLen,right-left+1);
+//        }
+//        return maxLen;
+//    }
+//    public static void main(String[] args){
+//        String s = "abcabcbb";
+//        System.out.println(caclLongestSubstring(s));
+//    }
+//}
+

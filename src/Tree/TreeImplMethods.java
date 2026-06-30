@@ -74,76 +74,179 @@ package Tree;
 
 import com.sun.source.tree.BreakTree;
 
+//public class TreeImplMethods {
+//    static class Node{
+//        int data;
+//        Node left,right;
+//        Node(int data){
+//            this.data = data;
+//        }
+//    }
+//    static Node root;
+//    static Node insert(Node root,int data){
+//        if(root == null)
+//            return new Node(data);
+//        if(data<root.data){
+//            root.left = insert(root.left,data);
+//        }
+//        else {
+//            root.right = insert(root.right,data);
+//        }
+//        return root;
+//    }
+//    static boolean search(Node root,int data){
+//        if(root.data != data)
+//            return false;
+//        if(root.data == data)
+//            return true;
+//        if(data<root.data)
+//            return search(root.left,data);
+//        else{
+//            return search(root.right,data);
+//        }
+//    }
+//    static void inOrder(Node root){
+//        if(root == null)
+//            return;
+//        inOrder(root.left);
+//        System.out.println(root.data+" ");
+//        inOrder(root.right);
+//    }
+//    static void preOrder(Node root){
+//        if(root == null)
+//            return;
+//        System.out.print(root.data+" ");
+//        preOrder(root.left);
+//        preOrder(root.right);
+//    }
+//    static void postOrder(Node root){
+//        if(root == null)
+//            return;
+//        postOrder(root.left);
+//        postOrder(root.right);
+//        System.out.print(root.data+" ");
+//    }
+//    static int height(Node root){
+//        if(root == null)
+//            return 0;
+//        return Math.max(height(root.left),height(root.right))+1;
+//    }
+//
+//    public static void main(String[] args){
+//        root = insert(root,1);
+//        root = insert(root,2);
+//        root = insert(root,5);
+//        preOrder(root);
+//        inOrder(root);
+//        postOrder(root);
+//        System.out.println(search(root,2));
+//
+//    }
+//}
+
 public class TreeImplMethods {
     static class Node{
         int data;
-        Node left,right;
-        Node(int data){
-            this.data = data;
-        }
+         Node left,right;
+         Node(int data){
+             this.data = data;
+         }
     }
     static Node root;
     static Node insert(Node root,int data){
-        if(root == null)
+        if(root==null)
             return new Node(data);
         if(data<root.data){
             root.left = insert(root.left,data);
         }
-        else {
+        else{
             root.right = insert(root.right,data);
         }
         return root;
     }
+
     static boolean search(Node root,int data){
-        if(root.data != data)
+        if(root == null)
             return false;
         if(root.data == data)
             return true;
         if(data<root.data)
             return search(root.left,data);
-        else{
+        else
             return search(root.right,data);
-        }
     }
+
     static void inOrder(Node root){
         if(root == null)
             return;
         inOrder(root.left);
-        System.out.println(root.data+" ");
+        System.out.print(root.data);
         inOrder(root.right);
+        System.out.println();
     }
+
     static void preOrder(Node root){
         if(root == null)
             return;
-        System.out.print(root.data+" ");
+        System.out.print(root.data);
         preOrder(root.left);
         preOrder(root.right);
+        System.out.println();
     }
+
     static void postOrder(Node root){
         if(root == null)
             return;
         postOrder(root.left);
         postOrder(root.right);
-        System.out.print(root.data+" ");
+        System.out.print(root.data);
+        System.out.println();
     }
+
     static int height(Node root){
         if(root == null)
             return 0;
         return Math.max(height(root.left),height(root.right))+1;
     }
 
+    static int count(Node root){
+        if(root==null)
+            return 0;
+        return count(root.left) +  count(root.right) + 1;
+    }
+
+    static int Maximum(Node root){
+        if(root == null)
+            return Integer.MIN_VALUE;
+        return Math.max(root.data,Math.max(Maximum(root.right),Maximum(root.left)));
+    }
+
+    static int Minimum(Node root){
+        if(root == null)
+            return Integer.MAX_VALUE;
+        return Math.min(root.data,Math.min(Minimum(root.left),Minimum(root.right)));
+    }
+
+    static int sumOfAllNodes(Node root){
+        if(root == null)
+            return 0;
+        return sumOfAllNodes(root.left) + sumOfAllNodes(root.right) + root.data;
+    }
+
     public static void main(String[] args){
         root = insert(root,1);
-        root = insert(root,2);
-        root = insert(root,5);
+        insert(root,2);
+        insert(root,3);
+        insert(root,4);
+        insert(root,5);
+        search(root,3);
         preOrder(root);
         inOrder(root);
         postOrder(root);
-        System.out.println(search(root,2));
-
+        System.out.println(count(root));
+        System.out.println(sumOfAllNodes(root));
     }
 }
-
 
 
 

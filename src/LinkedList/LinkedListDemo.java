@@ -546,3 +546,30 @@ package LinkedList;
 //    }
 //}
 
+public class LinkedListDemo {
+    static class Node{
+        int data;
+        Node next;
+        Node(int data){
+            this.data = data;
+            this.next = null;
+        }
+    }
+    static Node head;
+    static void addBeg(int data){
+        Node newNode = new Node(data);
+        newNode.next = head;
+        head = newNode;
+    }
+    static void addLast(int data){
+        Node newNode = new Node(data);
+        Node temp = head;
+        while(temp.next != null){
+            temp = temp.next;
+        }
+        temp.next = newNode;
+    }
+    static void addIndex(int index,int data){
+
+    }
+}

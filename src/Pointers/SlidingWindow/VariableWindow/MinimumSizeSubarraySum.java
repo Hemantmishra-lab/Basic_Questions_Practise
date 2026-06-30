@@ -141,22 +141,42 @@ package Pointers.SlidingWindow.VariableWindow;
 //    }
 //}
 
+//public class MinimumSizeSubarraySum {
+//    public static int calcMinimumSizeSubarraySum(int[] arr,int target){
+//        int min = Integer.MAX_VALUE;int left = 0;
+//        int currSum = 0;
+//        for(int right = 0;right<arr.length;right++){
+//            currSum += arr[right];
+//            while(currSum>=target){
+//                min = Math.min(min,right-left+1);
+//                currSum -= arr[left];
+//                left++;
+//            }
+//
+//        }
+//        return min;
+//    }
+//    public static void main(String[] args){
+//        int target = 7;
+//        int[] nums = {2, 3, 1, 2, 4, 3};
+//        System.out.println(calcMinimumSizeSubarraySum(nums,target));
+//    }
+//}
 public class MinimumSizeSubarraySum {
-    public static int calcMinimumSizeSubarraySum(int[] arr,int target){
-        int min = Integer.MAX_VALUE;int left = 0;
+    public static int calcMinimumSizeSubarraySum(int []arr,int target){
+        int minSize = Integer.MAX_VALUE;int left = 0;
         int currSum = 0;
         for(int right = 0;right<arr.length;right++){
             currSum += arr[right];
-            while(currSum>=target){
-                min = Math.min(min,right-left+1);
+            while (currSum>=target){
+                minSize = Math.min(minSize,right-left+1);
                 currSum -= arr[left];
                 left++;
             }
-
         }
-        return min;
+        return minSize;
     }
-    public static void main(String[] args){
+    public static void main(String[] args) {
         int target = 7;
         int[] nums = {2, 3, 1, 2, 4, 3};
         System.out.println(calcMinimumSizeSubarraySum(nums,target));
