@@ -42,36 +42,88 @@ package Pointers.SameDirectionPointer;
 //    }
 //}
 //
+//
+//class Node{
+//    int data;
+//    Node next;
+//    public Node(int data){
+//        this.data = data;
+//        this.next = null;
+//    }
+//}
+//public class MiddleOfLinkedList {
+//    public static int calcMiddleOfLinkedList(Node head){
+//        Node fast = head;
+//        Node slow = head;
+//        while(fast!=null && fast.next!=null){
+//            slow = slow.next;
+//            fast = fast.next.next;
+//        }
+//        return slow.data;
+//    }
+//    public static void main(String[] args){
+//        Node head = new Node(1);
+//        Node node1 = new Node(2);
+//        Node node2 = new Node(3);
+//        Node node3 = new Node(4);
+//        Node node4 = new Node(5);
+//
+//        head.next = node1;
+//        node1.next = node2;
+//        node2.next = node3;
+//        node3.next = node4;
+//        System.out.println(calcMiddleOfLinkedList(head));
+//    }
+//}
 
-class Node{
-    int data;
-    Node next;
-    public Node(int data){
-        this.data = data;
-        this.next = null;
-    }
-}
 public class MiddleOfLinkedList {
-    public static int calcMiddleOfLinkedList(Node head){
-        Node fast = head;
-        Node slow = head;
+    static class Node{
+        int data;
+        Node next;
+        Node(int data){
+            this.data = data;
+            this.next = null;
+        }
+    }
+    static Node head;
+    static void addBeg(int data){
+        Node newNode = new Node(data);
+        newNode.next = head;
+        head = newNode;
+    }
+    static void addLast(int data){
+        Node newNode = new Node(data);
+        Node temp = head;
+        while(temp.next != null){
+            temp = temp.next;
+        }
+        temp.next = newNode;
+    }
+
+    static int middle(){
+        Node fast = head,slow = head;
         while(fast!=null && fast.next!=null){
             slow = slow.next;
             fast = fast.next.next;
         }
         return slow.data;
     }
+    static void display(){
+        Node temp = head;
+        while(temp != null){
+            System.out.print(temp.data+"->");
+            temp = temp.next;
+        }
+        System.out.print("null");
+        System.out.println();
+    }
     public static void main(String[] args){
-        Node head = new Node(1);
-        Node node1 = new Node(2);
-        Node node2 = new Node(3);
-        Node node3 = new Node(4);
-        Node node4 = new Node(5);
-
-        head.next = node1;
-        node1.next = node2;
-        node2.next = node3;
-        node3.next = node4;
-        System.out.println(calcMiddleOfLinkedList(head));
+        addBeg(1);
+        addBeg(2);
+        addLast(3);
+        addLast(4);
+        addLast(5);
+        display();
+        System.out.println(middle());
     }
 }

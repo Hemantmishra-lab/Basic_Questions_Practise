@@ -61,22 +61,45 @@ import java.util.Arrays;
 //    }
 //}
 
+//public class RemoveDuplicatesSortedArray {
+//    public static int calcRemoveDuplicatesSortedArray(int []arr){
+//        int slow = 0;
+//        for(int fast=1 ;fast<arr.length;fast++){
+//            if(arr[fast]!=arr[slow]){
+//                slow++;
+//                arr[slow] = arr[fast];
+//            }
+//        }
+//        return slow+1;
+//    }
+//    public static void main(String[] args){
+//        int[] arr = {1, 1, 2, 2, 3};
+//        int k = calcRemoveDuplicatesSortedArray(arr);
+//        for(int i=0;i<k;i++){
+//            System.out.print(arr[i] + (i==k-1?"":", "));
+//        }
+//    }
+//}
+
 public class RemoveDuplicatesSortedArray {
-    public static int calcRemoveDuplicatesSortedArray(int []arr){
-        int slow = 0;
-        for(int fast=1 ;fast<arr.length;fast++){
+    public static int[] calcRemoveDuplicateSortedArray(int []arr){
+        int slow = 0;int fast = 0;
+        while(fast<arr.length){
             if(arr[fast]!=arr[slow]){
                 slow++;
                 arr[slow] = arr[fast];
             }
+            fast++;
         }
-        return slow+1;
+        slow++;
+        while(slow<arr.length){
+            arr[slow] = 0;
+            slow++;
+        }
+        return arr;
     }
     public static void main(String[] args){
         int[] arr = {1, 1, 2, 2, 3};
-        int k = calcRemoveDuplicatesSortedArray(arr);
-        for(int i=0;i<k;i++){
-            System.out.print(arr[i] + (i==k-1?"":", "));
-        }
+        System.out.println(Arrays.toString(calcRemoveDuplicateSortedArray(arr)));
     }
 }

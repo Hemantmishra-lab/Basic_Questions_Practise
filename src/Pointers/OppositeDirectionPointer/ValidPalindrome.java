@@ -1,32 +1,66 @@
 package Pointers.OppositeDirectionPointer;
 
-public class  ValidPalindrome {
-    public static boolean isPalindrome(String s) {
-        // Aapka bataya hua Two Pointer format
-        int left = 0;
-        int right = s.length() - 1;
+//public class  ValidPalindrome {
+//    public static boolean isPalindrome(String s) {
+//        // Aapka bataya hua Two Pointer format
+//        int left = 0;
+//        int right = s.length() - 1;
+//
+//        while (left < right) {
+//            // Agar dono characters match nahi karte, toh palindrome nahi hai
+//            if (s.charAt(left) != s.charAt(right)) {
+//                return false;
+//            }
+//
+//            // Match hone par dono pointers ko center ki taraf lao
+//            left++;
+//            right--;
+//        }
+//
+//        return true; // Agar loop bina kisi mismatch ke khatam ho gaya
+//    }
+//
+//    public static void main(String[] args) {
+//        // Input Format
+//        String s = "madam";
+//
+//        // Output Process
+//        boolean result = isPalindrome(s);
+//        System.out.println(result); // Output: true
+//    }
+//}
 
-        while (left < right) {
-            // Agar dono characters match nahi karte, toh palindrome nahi hai
-            if (s.charAt(left) != s.charAt(right)) {
+//public class ValidPalindrome {
+//    public static boolean calcValidPalindrome(String s){
+//        char []arr = s.toCharArray();
+//        int left = 0,right = arr.length-1;
+//        while(left<right){
+//            if(arr[left]!=arr[right]){
+//                return false;
+//            }
+//            left++;right--;
+//        }
+//        return true;
+//    }
+//    public static void main(String[] args){
+//        String s = "madam";
+//        System.out.println(calcValidPalindrome(s));
+//    }
+//}
+
+public class ValidPalindrome {
+    public static boolean caclValidPalindrome(String s){
+        char ch [] = s.toCharArray();
+        int left = 0,right = ch.length-1;
+        while(left<right){
+            if(ch[left]!=ch[right])
                 return false;
-            }
-
-            // Match hone par dono pointers ko center ki taraf lao
-            left++;
-            right--;
+            left++;right--;
         }
-
-        return true; // Agar loop bina kisi mismatch ke khatam ho gaya
+        return true;
     }
-
-    public static void main(String[] args) {
-        // Input Format
+    public static void main(String[] args){
         String s = "madam";
-
-        // Output Process
-        boolean result = isPalindrome(s);
-        System.out.println(result); // Output: true
+        System.out.println(caclValidPalindrome(s));
     }
 }
-

@@ -439,22 +439,110 @@ package LinkedList;
 //   }
 //}
 
-public class LinkedListDemo {
-    static class Node{
-        int data;
-        Node next;
-        Node(int data){
-            this.data = data;
-            next = null;
-        }
-    }
-    static Node head;
-    static void addBeg(int data){
-        Node newNode = new Node(data);
-        newNode.next = head;
-        
-    }
-    public static void main(String[] args){
+//public class LinkedListDemo {
+//    static class Node{
+//        int data;
+//        Node next;
+//        Node(int data){
+//            this.data = data;
+//            this.next = null;
+//        }
+//    }
+//    static Node head;
+//    static void addBeg(int data){
+//        Node newNode = new Node(data);
+//        newNode.next = head;
+//        head = newNode;
+//    }
+//    static void addLast(int data){
+//        Node newNode = new Node(data);
+//        Node temp = head;
+//        while(temp.next !=null){
+//            temp = temp.next;
+//        }
+//        temp.next = newNode;
+//    }
+//    static void addIndex(int index,int data){
+//        Node newNode = new Node(data);
+//        Node temp = head;
+//        for(int i=0;i<index-1;i++){
+//            temp = temp.next;
+//        }
+//        Node temp2 = temp.next;
+//        temp.next = newNode;
+//        newNode.next = temp2;
+//    }
+//    static boolean search(int data){
+//        Node temp = head;
+//        while(temp != null){
+//            if(data == temp.data){
+//                return true;
+//            }
+//            temp = temp.next;
+//        }
+//        return false;
+//    }
+//    static void delete(int index){
+//        Node temp = head;
+//        for(int i=0;i<index-1;i++){
+//            temp = temp.next;
+//        }
+//        temp.next = temp.next.next;
+//    }
+//    static void reverse(){
+//        Node curr = head;
+//        Node prev = null;
+//        while(curr != null){
+//            Node temp = curr.next;
+//            curr.next = prev;
+//            prev = curr;
+//            curr = temp;
+//        }
+//        head = prev;
+//    }
+//    static int middle(){
+//        Node fast = head;
+//        Node slow = head;
+//        while(fast != null && fast.next != null){
+//            slow = slow.next;
+//            fast = fast.next.next;
+//        }
+//        return slow.data;
+//    }
+//    static int nThFromEnd(int index){
+//        Node first = head;
+//        Node second = head;
+//        for(int i=0;i<index;i++){
+//            first  = first.next;
+//        }
+//        while(first != null){
+//            first = first.next;
+//            second = second.next;
+//        }
+//        return second.data;
+//    }
+//    static void display(){
+//        Node temp = head;
+//        while(temp != null){
+//            System.out.print(temp.data+"->");
+//            temp = temp.next;
+//        }
+//        System.out.print("null");
+//        System.out.println();
+//    }
+//    public static void main(String[] args){
+//        addBeg(1);
+//        addLast(2);
+//        addLast(3);
+//        addLast(4);
+//        addIndex(1,99);
+//        delete(1);
+//        display();
+//        reverse();
+//        display();
+//        System.out.println(middle());
+//        System.out.println(nThFromEnd(3));
+//
+//    }
+//}
 
-    }
-}

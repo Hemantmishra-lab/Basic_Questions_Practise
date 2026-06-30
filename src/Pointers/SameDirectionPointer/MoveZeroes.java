@@ -44,17 +44,39 @@ package Pointers.SameDirectionPointer;
 
 import java.util.Arrays;
 
+//public class MoveZeroes {
+//    public static int[] calcMoveZeroes(int []arr){
+//        int fast = 0;
+//        int slow = 0;
+//        while (fast<arr.length){
+//            if(arr[fast] != 0){
+//                arr[slow] = arr[fast];
+//                slow++;
+//            }
+//            fast++;
+//        }
+//        while(slow<arr.length){
+//            arr[slow] = 0;
+//            slow++;
+//        }
+//        return arr;
+//    }
+//    public static void main(String[] args){
+//        int[] arr = {0, 1, 0, 3, 12};
+//        System.out.println(Arrays.toString(calcMoveZeroes(arr)));
+//    }
+//}
 public class MoveZeroes {
     public static int[] calcMoveZeroes(int []arr){
-        int fast = 0;
-        int slow = 0;
-        while (fast<arr.length){
-            if(arr[fast] != 0){
+        int fast = 0;int slow = 0;
+        while(fast<arr.length){
+            if(arr[fast]!=0){
                 arr[slow] = arr[fast];
                 slow++;
             }
             fast++;
         }
+
         while(slow<arr.length){
             arr[slow] = 0;
             slow++;
