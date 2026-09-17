@@ -361,7 +361,41 @@ import java.util.LinkedList;
 //    }
 //}
 
+public class LinkedListDemo2 {
+    static class Node{
+        int data;
+        Node next;
+        Node(int data){
+            this.data = data;
+        }
+    }
+    static Node head;
+    static void addBeg(int data){
+        Node newNode = new Node(data);
+        newNode.next = head;
+        head = newNode;
+    }
+    static void addLast(int data){
+        Node newNode = new Node(data);
+        Node temp = head;
+        while(temp.next!=null){
+            temp = temp.next;
+        }
+        temp.next = newNode;
+    }
+    static void addIndex(int index,int data){
+        Node newNode = new Node(data);
+        Node temp = head;
+        for(int i=1;i<index;i++){
+            temp = temp.next;
+        }
+        temp.next.next = newNode.next;
+        temp.next = newNode;
+    }
+    public static void main(String[] args){
 
+    }
+}
 
 
 

@@ -149,3 +149,94 @@ package Pointers.SlidingWindow.VariableWindow;
 //    }
 //}
 
+import java.util.Arrays;
+import java.util.Map;
+import java.util.Queue;
+//
+//public class LongestSubstring {
+//    public static int calcLongestSubString(String s){
+//        int left = 0;int []temp = new int[128];
+//        for(int right = 0;right<s.length();right++){
+//            char rightChar = s.charAt(right);
+//            temp[rightChar]++;
+//            while(temp[rightChar]>=2){
+//                char leftChar = s.charAt(left);
+//                rightChar -= temp[leftChar];
+//                left++;
+//            }
+//        }
+//    }
+//    public static void main(String[] args){
+//        String s = "abcdabcddd";
+//    }
+//}
+//
+
+//
+//public class LongestSubstring {
+//    public static int calcLongestSubString(String s){
+//        char []CharCount = new char[128];
+//        int maxLen = 0;
+//        int left = 0;
+//        for(int right = 0;right<s.length();right++){
+//            char RightChar = s.charAt(right);
+//            CharCount[RightChar]++;
+//            while(CharCount[RightChar]>=2){
+//                CharCount[s.charAt(left)]--;
+//                left++;
+//            }
+//            maxLen = Math.max(maxLen,right-left+1);
+//        }
+//        return maxLen;
+//    }
+//    public static void main(String[] args){
+//        String s = "abcdabcddd";
+//        System.out.println(calcLongestSubString(s));
+//    }
+//}
+
+
+//public class LongestSubstring {
+//    public static int calcLongestSubString(String s){
+//        int charCount[] = new int[128];
+//        int left = 0;
+//        int maxLen = 0;
+//        for(int right = 0;right<s.length();right++){
+//            char rightChar = s.charAt(right);
+//            charCount[rightChar]++;
+//            while(charCount[rightChar]>=2){
+//                charCount[s.charAt(left)]--;
+//                left++;
+//            }
+//            maxLen = Math.max(maxLen,right-left+1);
+//        }
+//        return maxLen;
+//    }
+//    public static void main(String[] args){
+//        String s = "abcdabcddd";
+//        System.out.println(calcLongestSubString(s));
+//    }
+//}
+
+public class LongestSubstring {
+    public static int calcLongestSubstring(String s){
+        int charCount[] = new int[128];
+        int maxLen = 0;
+        int left = 0;
+        for(int right = 0;right<s.length();right++){
+            char rightChar = s.charAt(right);
+            charCount[rightChar]++;
+            while(charCount[rightChar]>=2){
+                charCount[s.charAt(left)]--;
+                left++;
+            }
+            maxLen = Math.max(maxLen,right-left+1);
+        }
+        return maxLen;
+    }
+    public static void main(String[] args){
+        String s = "abcdabcddd";
+        System.out.println(calcLongestSubstring(s));
+    }
+
+}

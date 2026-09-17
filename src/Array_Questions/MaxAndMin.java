@@ -221,19 +221,59 @@ import java.util.*;
 //    }
 //}
 
+//public class MaxAndMin {
+//    public static void calcMaxAndMin(int arr[]){
+//       Arrays.sort(arr);
+//       for(int X:arr) {
+//           System.out.print(X + " ");
+//       }
+//        System.out.println();
+//       for(int i=arr.length-1;i>=0;i--){
+//           System.out.print(arr[i]+" ");
+//       }
+//    }
+//    public static void main(String[] args){
+//        int []arr = {1,3,2,7,54};
+//        calcMaxAndMin(arr);
+//    }
+//}
+
+//public class MaxAndMin {
+//    public static int[] calcMaxAndMin(int []arr){
+//        int max = Integer.MIN_VALUE;
+//        int min = Integer.MAX_VALUE;
+//        for(int i=0;i<arr.length;i++){
+//            if(arr[i]>max){
+//                max = arr[i];
+//            }
+//            if(arr[i]<min){
+//                min = arr[i];
+//            }
+//        }
+//        return new int[]{max,min};
+//    }
+//    public static void main(String[] args){
+//        int []arr = {1,3,2,7,54};
+//        System.out.println(Arrays.toString(calcMaxAndMin(arr)));
+//    }
+//}
+
 public class MaxAndMin {
-    public static void calcMaxAndMin(int arr[]){
-       Arrays.sort(arr);
-       for(int X:arr) {
-           System.out.print(X + " ");
-       }
-        System.out.println();
-       for(int i=arr.length-1;i>=0;i--){
-           System.out.print(arr[i]+" ");
-       }
+    public static int[] calcMaxAndMin(int[]arr){
+        int Max = Integer.MIN_VALUE;
+        int Min = Integer.MAX_VALUE;
+        for(int i=0;i<arr.length;i++){
+            if(Max < arr[i]){
+                Max = arr[i];
+            }
+            if(Min > arr[i]){
+                Min = arr[i];
+            }
+        }
+        return new int[]{Max,Min};
     }
-    public static void main(String[] args){
+    public static void main(String[]args){
         int []arr = {1,3,2,7,54};
-        calcMaxAndMin(arr);
+        System.out.println(Arrays.toString(calcMaxAndMin(arr)));
     }
 }

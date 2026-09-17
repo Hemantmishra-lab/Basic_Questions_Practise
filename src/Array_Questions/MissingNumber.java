@@ -130,14 +130,45 @@ import java.util.Scanner;
 //}
 
 
+//public class MissingNumber {
+//    public static int calcMissingNumber(int []arr){
+//        int actSum = 0;
+//        for(int X:arr)
+//            actSum += X;
+//        int n = arr.length;
+//        int expSum =  (n+1)*(n+2)/2;
+//        return expSum-actSum;
+//    }
+//    public static void main(String[] args){
+//        int []arr = {1,2,3,5,6};
+//        System.out.println(calcMissingNumber(arr));
+//    }
+//}
+
+//public class MissingNumber {
+//    public static int calcMissingNumber(int []arr){
+//        int sum = 0;
+//        for(int X:arr){
+//            sum+= X;
+//        }
+//        int n = arr.length;
+//        int expectedSum = (n+1)*(n+2)/2;
+//        return expectedSum-sum;
+//    }
+//    public static void main(String[] args){
+//        int []arr = {1,2,3,5,6};
+//        System.out.println(calcMissingNumber(arr));
+//    }
+//}
+
 public class MissingNumber {
     public static int calcMissingNumber(int []arr){
-        int actSum = 0;
-        for(int X:arr)
-            actSum += X;
         int n = arr.length;
-        int expSum =  (n+1)*(n+2)/2;
-        return expSum-actSum;
+        int sum = 0;
+        for(int X:arr){
+            sum += X;
+        }
+        return ((n+1)*(n+2)/2) - sum;
     }
     public static void main(String[] args){
         int []arr = {1,2,3,5,6};

@@ -114,33 +114,80 @@ import java.util.SplittableRandom;
 //    }
 //}
 
+//public class FourSum {
+//    public static List<int []> calcFourSum(int []arr,int target){
+//        Arrays.sort(arr);
+//        List<int []> list = new ArrayList<>();
+//        for(int i=0;i<arr.length-3;i++){
+//            if(i>0 && arr[i]==arr[i-1]){
+//                continue;
+//            }
+//            for(int j=i+1;j<arr.length-2;j++){
+//                if(j>j+1 && arr[j]==arr[j-1]){
+//                    continue;
+//                }
+//                int left = j+1;
+//                int right = arr.length-1;
+//                while(left<right){
+//                    int sum = arr[i] + arr[j] + arr[left] + arr[right];
+//                    if(sum == 0){
+//                        list.add(new int[]{arr[i],arr[j],arr[left],arr[right]});
+//                        left++;right--;
+//                        while(left<right && arr[left]==arr[left-1]){
+//                            left++;
+//                        }
+//                        while(left<right && arr[right]==arr[right+1]){
+//                            right--;
+//                        }
+//                    }
+//                    else if(sum<0){
+//                        left++;
+//                    }
+//                    else {
+//                        right--;
+//                    }
+//                }
+//            }
+//        }
+//        return list;
+//    }
+//    public static void main(String[] args){
+//        int[] arr = {1, 0, -1, 0, -2, 2};
+//        int target = 0;
+//        List<int []> list = calcFourSum(arr,target);
+//        for(int X[]:list)
+//            System.out.println(Arrays.toString(X));
+//
+//    }
+//}
+
 public class FourSum {
-    public static List<int []> calcFourSum(int []arr,int target){
+    public static List<int []> calcFourSum(int[]arr){
         Arrays.sort(arr);
         List<int []> list = new ArrayList<>();
         for(int i=0;i<arr.length-3;i++){
             if(i>0 && arr[i]==arr[i-1]){
                 continue;
             }
-            for(int j=i+1;j<arr.length-2;j++){
-                if(j>j+1 && arr[j]==arr[j-1]){
+            for(int j = i+1;j<arr.length-2;j++){
+                if(j>i+1 && arr[j]==arr[j-1]){
                     continue;
                 }
                 int left = j+1;
                 int right = arr.length-1;
                 while(left<right){
-                    int sum = arr[i] + arr[j] + arr[left] + arr[right];
+                    long sum = (long) arr[i] + arr[j]+ arr[left] + arr[right];
                     if(sum == 0){
                         list.add(new int[]{arr[i],arr[j],arr[left],arr[right]});
                         left++;right--;
                         while(left<right && arr[left]==arr[left-1]){
                             left++;
                         }
-                        while(left<right && arr[right]==arr[right+1]){
+                        while (left<right && arr[right]==arr[right+1]){
                             right--;
                         }
                     }
-                    else if(sum<0){
+                    else if(sum<0) {
                         left++;
                     }
                     else {
@@ -152,11 +199,10 @@ public class FourSum {
         return list;
     }
     public static void main(String[] args){
-        int[] arr = {1, 0, -1, 0, -2, 2};
+        int []arr = {1,0,-1,0,-2,2};
         int target = 0;
-        List<int []> list = calcFourSum(arr,target);
-        for(int X[]:list)
+        List<int[]> list = calcFourSum(arr);
+        for(int []X:list)
             System.out.println(Arrays.toString(X));
-
     }
 }

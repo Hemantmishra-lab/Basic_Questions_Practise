@@ -490,33 +490,299 @@ import java.util.*;
 //    }
 //}
 
+//public class FourSum {
+//    public static List<int []> calcFourSum(int []arr,int target){
+//        Arrays.sort(arr);
+//        List<int []> list = new ArrayList<>();
+//        for(int i=0;i<arr.length-3;i++){
+//            if(i>0 && arr[i]==arr[i-1]){
+//                continue;
+//            }
+//            for(int j=i;j<arr.length-2;j++){
+//                if(j>0 && arr[j]==arr[j-1]){
+//                    continue;
+//                }
+//                int left = j+1;
+//                int right = arr.length-1;
+//                while(left<right){
+//                    int sum = arr[left] + arr[right] + arr[i] + arr[j];
+//                    if(sum == target){
+//                        list.add(new int[]{arr[left],arr[right],arr[i],arr[j]});
+//                        left++;right--;
+//                        while(left<right && arr[left] == arr[left-1]){
+//                            left++;
+//                        }
+//                        while(left<right && arr[right] == arr[right+1]){
+//                            right--;
+//                        }
+//                    }
+//                    else if(sum < target){
+//                        left++;
+//                    }
+//                    else{
+//                        right--;
+//                    }
+//                }
+//            }
+//        }
+//        return list;
+//    }
+//    public static void main(String[] args){
+//        int[] arr = {1, 0, -1, 0, -2, 2};
+//        int target = 0;
+//        List<int []> list = calcFourSum(arr,target);
+//        for(int []X:list)
+//            System.out.println(Arrays.toString(X));
+//    }
+//}
+
+//public class FourSum {
+//    public static List<int []> calcFourSum(int []arr,int target){
+//        List<int []> list = new ArrayList<>();
+//        for(int i=0;i<arr.length-3;i++){
+//            if(i>0 && arr[i]==arr[i-1]){
+//                continue;
+//            }
+//            for(int j=i;j<arr.length-2;j++){
+//                if(j>i && arr[j]==arr[j-1]){
+//                    continue;
+//                }
+//                int left = j+1;
+//                int right = arr.length-1;
+//                while(right>left){
+//                    long sum = (long) arr[i] + arr[j] + arr[left] + arr[right];
+//                    if(sum == 0){
+//                        list.add(new int[]{arr[i],arr[j],arr[left],arr[right]});
+//                        left++;right--;
+//                        while(left<right && arr[left]==arr[left-1]){
+//                            left++;
+//                        }
+//                        while(left<right && arr[right]==arr[right+1]){
+//                            right--;
+//                        }
+//                    }
+//
+//                    else if(sum<0){
+//                        left++;
+//                    }
+//                    else {
+//                        right--;
+//                    }
+//                }
+//            }
+//        }
+//        return list;
+//    }
+//    public static void main(String[] args){
+//        int[] arr = {1, 0, -1, 0, -2, 2};
+//        int target = 0;
+//        List<int []> list = calcFourSum(arr,target);
+//        for (int[] X:list){
+//            System.out.println(Arrays.toString(X));
+//        }
+//    }
+//}
+
+
+/*
+
+ */
+//public class FourSum {
+//    public static List<int []> calcFourSum(int []arr,int target){
+//        List<int []> list = new ArrayList<>();
+//        for(int i=0;i<arr.length-3;i++){
+//            if(i>0 && arr[i]==arr[i-1]){
+//                continue;
+//            }
+//            for(int j= i;j<arr.length-2;j++){
+//                if(j>i && arr[j]==arr[j-1]){
+//                    continue;
+//                }
+//                int left = 0;
+//                int right = arr.length-1;
+//                while(left<right){
+//                    long sum = (long) arr[i] + arr[j] +arr[left] + arr[right];
+//                    if(sum == 0){
+//                        list.add(new int[]{arr[i],arr[j],arr[left],arr[right]});
+//                        right--;left++;
+//                        while(left<right && arr[left]==arr[left-1]){
+//                            left++;
+//                        }
+//                        while(left<right && arr[right]==arr[right+1]){
+//                            right--;
+//                        }
+//                    }
+//                    else if(sum<0){
+//                        left++;
+//                    }
+//                    else{
+//                        right--;
+//                    }
+//                }
+//            }
+//        }
+//        return list;
+//    }
+//    public static void main(String[] args){
+//        int []arr = {1,1,1,2,2,3,3,5,8,9,6,7};
+//        int target = 0;
+//       List<int []> list = calcFourSum(arr,target);
+//       for(int []X:list){
+//           System.out.println(Arrays.toString(X));
+//       }
+//    }
+//}
+//
+//public class FourSum {
+//    public static List<int []> calcFourSum(int []arr){
+//        Arrays.sort(arr);
+//        List<int []> list = new ArrayList<>();
+//        for(int i=0;i<arr.length-3;i++){
+//            if(i>0 && arr[i]==arr[i-1]){
+//                continue;
+//            }
+//            for(int j=i+1;j<arr.length-2;j++){
+//                if(j>i+1  && arr[j]==arr[j-1]){
+//                    continue;
+//                }
+//                int left = j+1;
+//                int right = arr.length-1;
+//                while(left<right){
+//                    long sum = (long) arr[i] + arr[j] + arr[left] + arr[right];
+//                    if(sum == 0){
+//                        list.add(new int[]{arr[i],arr[j],arr[left],arr[right]});
+//                        left++;right--;
+//                        while(left<right && arr[left] == arr[left-1]){
+//                            left++;
+//                        }
+//                        while(left<right && arr[right] ==arr[right+1]){
+//                            right--;
+//                        }
+//                    }
+//                    else if(sum < 0){
+//                        left++;
+//                    }
+//                    else{
+//                        right--;
+//                    }
+//                }
+//            }
+//        }
+//        return list;
+//    }
+//    public static void main(String[] args){
+//        int []arr = {1,1,1,2,2,3,3,5,8,9,6,7};
+//        List<int []> list = calcFourSum(arr);
+//        for(int X[]:list){
+//            System.out.print(Arrays.toString(X));
+//        }
+//    }
+//}
+//
+//public class FourSum {
+//    public static List<int []> calcFourSum(int []arr){
+//        Arrays.sort(arr);
+//        for(int i =0;i<arr.length-3;i++){
+//            if(i>0 && arr[i] == arr[i-1]){
+//                continue;
+//            }
+//            for(int j=i+1;j<arr.length-2;j++){
+//                if(j>i+1 && arr[j]==arr[j-1]){
+//                    continue;
+//                }
+//                int left = j+1;
+//                int right = arr.length-1;
+//                while(left<right){
+//                    long sum = (long) arr[i] + arr[j] + arr[left] + arr[right];
+//
+//                }
+//            }
+//        }
+//    }
+//    public static void main(String[] args){
+//        int []arr = {1,1,1,2,2,3,3,5,8,9,6,7};
+//
+//    }
+
+
+//public class FourSum {
+//    public static List<int []> calcFourSum(int []arr,int target){
+//        Arrays.sort(arr);
+//        List<int []> list = new ArrayList<>();
+//        for(int i=0;i<arr.length-3;i++){
+//            if(i>0 && arr[i]==arr[i-1]){
+//                continue;
+//            }
+//            for(int j=i;j<arr.length;j++){
+//                if(j>i && arr[j] == arr[j-1]){
+//                    continue;
+//                }
+//                int left = j+1;
+//                int right = arr.length-1;
+//                while(left<right){
+//                    long sum = (long) arr[i] + arr[j] + arr[left] + arr[right];
+//                    if(sum == target){
+//                        list.add(new int[]{arr[i],arr[j],arr[left],arr[right]});
+//                        left++;right--;
+//                        while (left<right && arr[left] == arr[left-1]){
+//                            left++;
+//                        }
+//                        while (left<right && arr[right] == arr[right+1]){
+//                            right--;
+//                        }
+//                    }
+//                    else if(sum < target){
+//                        left++;
+//                    }
+//                    else{
+//                        right--;
+//                    }
+//                }
+//            }
+//
+//        }
+//        return list;
+//    }
+//    public static void main(String[] args){
+//        int[] nums = {1, 0, -1, 0, -2, 2};
+//        int target = 0;
+//        List<int []> list = calcFourSum(nums,target);
+//        for(int []X:list){
+//            System.out.print(Arrays.toString(X)+" ");
+//        }
+//
+//    }
+//}
+
+
+
 public class FourSum {
-    public static List<int []> calcFourSum(int []arr,int target){
+    public static List<int[]> calcFourSum(int []arr,int target){
         Arrays.sort(arr);
         List<int []> list = new ArrayList<>();
         for(int i=0;i<arr.length-3;i++){
             if(i>0 && arr[i]==arr[i-1]){
                 continue;
             }
-            for(int j=i;j<arr.length-2;j++){
-                if(j>0 && arr[j]==arr[j-1]){
+            for(int j=i+1;j<arr.length;j++){
+                if(j>i+1 && arr[j]==arr[j-1]){
                     continue;
                 }
                 int left = j+1;
                 int right = arr.length-1;
                 while(left<right){
-                    int sum = arr[left] + arr[right] + arr[i] + arr[j];
+                    long sum = (long) arr[i] + arr[j] + arr[left] + arr[right];
                     if(sum == target){
-                        list.add(new int[]{arr[left],arr[right],arr[i],arr[j]});
+                        list.add(new int[]{arr[i],arr[j],arr[left],arr[right]});
                         left++;right--;
-                        while(left<right && arr[left] == arr[left-1]){
+                        while(left<right && arr[left] == arr[left+1]){
                             left++;
                         }
-                        while(left<right && arr[right] == arr[right+1]){
+                        while(left<right && arr[right]==arr[right-1]){
                             right--;
                         }
                     }
-                    else if(sum < target){
+                    else if(sum <target){
                         left++;
                     }
                     else{
@@ -527,11 +793,10 @@ public class FourSum {
         }
         return list;
     }
-    public static void main(String[] args){
-        int[] arr = {1, 0, -1, 0, -2, 2};
-        int target = 0;
-        List<int []> list = calcFourSum(arr,target);
+    public static void main(String [] args){
+        int []arr = {1,0,-1,0,-2,2};
+        List<int []> list = calcFourSum(arr,0);
         for(int []X:list)
-            System.out.println(Arrays.toString(X));
+            System.out.print(Arrays.toString(X)+" ");
     }
 }

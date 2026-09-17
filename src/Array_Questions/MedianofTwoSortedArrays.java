@@ -74,20 +74,43 @@ import java.util.Arrays;
 
 
 
+//public class MedianofTwoSortedArrays {
+//    public static double calcMedianOfTwoSortedArrays(int []arr1,int []arr2){
+//        int []temp = new int[arr1.length + arr2.length];
+//        for(int i=0;i<arr1.length;i++){
+//            temp[i] = arr1[i];
+//        }
+//        for(int i=0;i<arr2.length;i++){
+//            temp[i+arr1.length] = arr2[i];
+//        }
+//        int len = temp.length;
+//        if(len%2 == 0)
+//            return (temp[len/2] + temp[len/2-1])/2.0;
+//        else
+//            return temp[len/2];
+//    }
+//    public static void main(String[] args){
+//        int []arr1 = {2,3,4};
+//        int []arr2 = {1,6};
+//        System.out.println(calcMedianOfTwoSortedArrays(arr1,arr2));
+//    }
+//}
+
+
 public class MedianofTwoSortedArrays {
     public static double calcMedianOfTwoSortedArrays(int []arr1,int []arr2){
-        int []temp = new int[arr1.length + arr2.length];
+        int []temp = new int[arr1.length+arr2.length];
         for(int i=0;i<arr1.length;i++){
             temp[i] = arr1[i];
         }
-        for(int i=0;i<arr2.length;i++){
-            temp[i+arr1.length] = arr2[i];
+        for(int i= 0;i<arr2.length;i++){
+            temp[arr1.length+i] = arr2[i];
         }
-        int len = temp.length;
-        if(len%2 == 0)
-            return (temp[len/2] + temp[len/2-1])/2.0;
-        else
-            return temp[len/2];
+        int n = temp.length;
+        if(n%2==0){
+            return (temp[n/2] + temp[(n/2)-1])/2.0;
+        }
+        return temp[n/2];
     }
     public static void main(String[] args){
         int []arr1 = {2,3,4};

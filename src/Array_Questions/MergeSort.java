@@ -440,33 +440,199 @@ import java.util.Arrays;
 //    }
 //}
 
+//public class MergeSort {
+//    public static void merge(int []arr,int low,int high,int mid){
+//        int []temp = new int[high-low+1];
+//        int index = 0;
+//        int left = low;int right = mid+1;
+//        while(left<=mid && right <= high){
+//            if(arr[left]<=arr[right]){
+//                temp[index] = arr[left];
+//                left++;index++;
+//            }
+//            else{
+//                temp[index] = arr[right];
+//                index++;right++;
+//            }
+//        }
+//        while(left<=mid){
+//            temp[index] = arr[left];
+//            left++;index++;
+//        }
+//        while(right<=high){
+//            temp[index] = arr[right];
+//            right++;index++;
+//        }
+//        for(int i=low;i<=high;i++){
+//            arr[i] = temp[i-low];
+//        }
+//    }
+//    public static void sort(int []arr,int low,int high){
+//        if(low>=high){
+//            return;
+//        }
+//        int mid = low + (high-low)/2;
+//        sort(arr,low,mid);
+//        sort(arr,mid+1,high);
+//        merge(arr,low,high,mid);
+//    }
+//    public static void main(String[] args){
+//        int []arr = {6,3,5,2,2,8,1,3,2,9};
+//        sort(arr,0,arr.length-1);
+//        System.out.println(Arrays.toString(arr));
+//    }
+//}
+
+
+
+//public class MergeSort {
+//    public static void merge(int []arr,int low,int high,int mid){
+//        int []temp = new int[high-low+1];
+//        int index = 0;
+//        int left = low, right = mid+1;
+//        while(left<=mid && right<=high){
+//            if(arr[left]<=arr[right]){
+//                temp[index] = arr[left];
+//                index++;left++;
+//            }
+//            else{
+//                temp[index] = arr[right];
+//                index++;right++;
+//            }
+//        }
+//        while(left<=mid){
+//            temp[index] = arr[left];
+//            left++;index++;
+//        }
+//        while(right<=high){
+//            temp[index] = arr[right];
+//            index++;right++;
+//        }
+//
+//        for(int i=low;i<=high;i++){
+//            arr[i] = temp[i-low];
+//        }
+//    }
+//    public static void sort(int[] arr,int low,int high){
+//        if(low>=high){
+//            return;
+//        }
+//        int mid = low + (high-low)/2;
+//        sort(arr,low,mid);
+//        sort(arr,mid+1,high);
+//        merge(arr,low,high,mid);
+//    }
+//    public static void main(String[] args){
+//        int []arr = {6,3,5,2,2,8,1,3,2,9};
+//        sort(arr,0,arr.length-1);
+//        System.out.println(Arrays.toString(arr));
+//    }
+//}
+
+//public class MergeSort {
+//    public static void merge(int []arr,int low,int high,int mid){
+//        int temp[] = new int[high-low+1];
+//        int index = 0;
+//        int left = low,right = mid+1;
+//        while(left<=mid && right<=high){
+//            if(arr[left]<=arr[right]){
+//                temp[index++] = arr[left++];
+//            }
+//            else{
+//                temp[index++] = arr[right++];
+//            }
+//        }
+//        while(left<=mid){
+//            temp[index++] = arr[left++];
+//        }
+//        while(right<=high){
+//            temp[index++] = arr[right++];
+//        }
+//        for(int i=low;i<=high;i++){
+//            arr[i] = temp[i-low];
+//        }
+//    }
+//
+//    public static void sort(int []arr,int low,int high){
+//        if(low>=high){
+//            return;
+//        }
+//        int mid = low + (high-low) / 2;
+//        sort(arr,low,mid);
+//        sort(arr,mid+1,high);
+//        merge(arr,low,high,mid);
+//    }
+//
+//    public static void main(String[] args){
+//        int []arr = {6,3,5,2,2,8,1,3,2,9};
+//        sort(arr,0,arr.length-1);
+//        System.out.println(Arrays.toString(arr));
+//    }
+//}
+
+
+//public class MergeSort {
+//    public static void merge(int []arr,int low,int high,int mid){
+//        int []temp = new int[high-low+1];
+//        int index = 0;int left = low,right = mid+1;
+//        while(left<=mid && right<=high){
+//            if(arr[left]<=arr[right]){
+//                temp[index++] = arr[left++];
+//            }
+//            else{
+//                temp[index++] = arr[right++];
+//            }
+//        }
+//        while (left<=mid){
+//            temp[index++] = arr[left++];
+//        }
+//        while(right<=high){
+//            temp[index++] = arr[right++];
+//        }
+//        for(int i=low;i<=high;i++){
+//            arr[i] = temp[i-low];
+//        }
+//    }
+//    public static void sort(int []arr,int low,int high){
+//        if(low>=high){
+//            return;
+//        }
+//        int mid = low + (high-low)/2;
+//        sort(arr,low,mid);
+//        sort(arr,mid+1,high);
+//        merge(arr,low,high,mid);
+//    }
+//    public static void main(String[] args){
+//        int []arr = {6,3,5,2,2,8,1,3,2,9};
+//        sort(arr,0,arr.length-1);
+//        System.out.println(Arrays.toString(arr));
+//    }
+//}
+
 public class MergeSort {
+
     public static void merge(int []arr,int low,int high,int mid){
-        int []temp = new int[high-low+1];
-        int index = 0;
-        int left = low;int right = mid+1;
-        while(left<=mid && right <= high){
+        int temp[] = new int[high-low+1];
+        int index = 0;int left = low,right = mid+1;
+        while(left<=mid && right<=high){
             if(arr[left]<=arr[right]){
-                temp[index] = arr[left];
-                left++;index++;
+                temp[index++] = arr[left++];
             }
             else{
-                temp[index] = arr[right];
-                index++;right++;
+                temp[index++] = arr[right++];
             }
         }
         while(left<=mid){
-            temp[index] = arr[left];
-            left++;index++;
+            temp[index++] = arr[left++];
         }
         while(right<=high){
-            temp[index] = arr[right];
-            right++;index++;
+            temp[index++] = arr[right++];
         }
         for(int i=low;i<=high;i++){
             arr[i] = temp[i-low];
         }
     }
+
     public static void sort(int []arr,int low,int high){
         if(low>=high){
             return;
@@ -476,6 +642,7 @@ public class MergeSort {
         sort(arr,mid+1,high);
         merge(arr,low,high,mid);
     }
+
     public static void main(String[] args){
         int []arr = {6,3,5,2,2,8,1,3,2,9};
         sort(arr,0,arr.length-1);

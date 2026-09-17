@@ -9,6 +9,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="ca-java" target="25" />
       <module name="LastTestPep" target="25" />
     </bytecodeTargetLevel>
   </component>

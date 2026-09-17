@@ -137,26 +137,47 @@ import java.util.List;
 //    }
 //}
 
+//public class SegregateZerosAndOnes {
+//    public static void calcSegregateZeroesAndOnes(int []arr){
+//        int fast = 0;
+//        int slow = 0;
+//        while(fast<arr.length){
+//            if(arr[fast]!=0){
+//                arr[slow] = arr[fast];
+//                slow++;
+//            }
+//            fast++;
+//        }
+//
+//        while(slow<arr.length){
+//            arr[slow] = 0;
+//            slow++;
+//        }
+//    }
+//    public static void main(String[] args){
+//        int []arr = {0, 1, 0, 1, 1, 0, 1, 0, 0};
+//        calcSegregateZeroesAndOnes(arr);
+//        System.out.println(Arrays.toString(arr));
+//    }
+//}
+
 public class SegregateZerosAndOnes {
-    public static void calcSegregateZeroesAndOnes(int []arr){
-        int fast = 0;
-        int slow = 0;
-        while(fast<arr.length){
+    public static int[] calcSegregateZeroesAndOnes(int[]arr){
+        int slow = 0,fast = 0;
+        for(int i=0;i<arr.length-1;i++){
             if(arr[fast]!=0){
-                arr[slow] = arr[fast];
+                arr[slow] =arr[fast];
                 slow++;
             }
             fast++;
         }
-
-        while(slow<arr.length){
-            arr[slow] = 0;
-            slow++;
+        for(int i=slow;i<arr.length;i++){
+            arr[i] = 0;
         }
+        return arr;
     }
     public static void main(String[] args){
         int []arr = {0, 1, 0, 1, 1, 0, 1, 0, 0};
-        calcSegregateZeroesAndOnes(arr);
-        System.out.println(Arrays.toString(arr));
+        System.out.println(Arrays.toString(calcSegregateZeroesAndOnes(arr)));
     }
 }

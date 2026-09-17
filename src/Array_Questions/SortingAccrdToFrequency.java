@@ -1,10 +1,7 @@
 package Array_Questions;
 
 import java.net.Inet4Address;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 //public class SortingAccrdToFrequency {
 //    public static int[] calcSortingAccrdToFrequency(int arr[]){
@@ -267,19 +264,40 @@ import java.util.List;
 //    }
 //}
 
+//public class SortingAccrdToFrequency {
+//    public static List<Integer> calcSortingAccrdToFrequency(int []arr){
+//        HashMap<Integer,Integer> map = new HashMap<>();
+//        for(int X:arr)
+//            map.put(X,map.getOrDefault(X,0)+1);
+//        List<Integer> list = new ArrayList<>();
+//        for(int X:map.keySet())
+//            list.add(X);
+//        Collections.sort(list,(a,b)->Integer.compare(map.get(b),map.get(a)));
+//        return list;
+//    }
+//    public static void main(String[] args){
+//        int []arr = {1,1,1,1,1,1,1,9,9,9,9,4,4,4,4,4,6,6,6,6,7,77,7,};
+//        System.out.println(calcSortingAccrdToFrequency(arr));
+//    }
+//}
+
+
 public class SortingAccrdToFrequency {
-    public static List<Integer> calcSortingAccrdToFrequency(int []arr){
+    public static void calSortingAccrdToFrequency(int []arr){
         HashMap<Integer,Integer> map = new HashMap<>();
-        for(int X:arr)
+        for(int X:arr){
             map.put(X,map.getOrDefault(X,0)+1);
+        }
         List<Integer> list = new ArrayList<>();
-        for(int X:map.keySet())
-            list.add(X);
         Collections.sort(list,(a,b)->Integer.compare(map.get(b),map.get(a)));
-        return list;
+        for(int key:map.keySet()){
+            list.add(key);
+        }
+        System.out.println(map);
+        System.out.println(list);
     }
     public static void main(String[] args){
         int []arr = {1,1,1,1,1,1,1,9,9,9,9,4,4,4,4,4,6,6,6,6,7,77,7,};
-        System.out.println(calcSortingAccrdToFrequency(arr));
+        calSortingAccrdToFrequency(arr);
     }
 }

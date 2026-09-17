@@ -1,109 +1,17 @@
 package Array_Questions;
 
+
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-
-//public class FindNonRepeatingElements {
-//    public static List<Integer> calcFindNonRepeatingElements(int []arr){
-//        HashMap<Integer,Integer> map = new HashMap<>();
-//        for(int X : arr)
-//            map.put(X,map.getOrDefault(X,0)+1);
-//        List<Integer> list = new ArrayList<>();
-//        for(int Key : map.keySet()){
-//            if(map.get(Key)==1)
-//                list.add(Key);
-//        }
-//        return list;
-//    }
-//    public static void main(String[] args){
-//        int []arr = {1,1,1,1,1,1,1,9,9,9,9,4,4,4,4,4,6,6,6,6,7,77,7,5,8};
-//        System.out.println(calcFindNonRepeatingElements(arr));
-//    }
-//}
-
-//public class FindNonRepeatingElements {
-//    public static List<Integer> calcFindNonRepeatingElements(int []arr){
-//        HashMap<Integer,Integer> map = new HashMap<>();
-//        List<Integer> list = new ArrayList<>();
-//        for(int X:arr)
-//            map.put(X,map.getOrDefault(X,0)+1);
-//        for(int Key : map.keySet()){
-//            if(map.get(Key)==1)
-//                list.add(Key);
-//        }
-//        return list;
-//    }
-//    public static void main(String[] args){
-//        int []arr = {1,1,1,2,2,3,3,5,8,9,6,7};
-//        System.out.println(calcFindNonRepeatingElements(arr));
-//    }
-//}
-
-//public class FindNonRepeatingElements {
-//    public static List<Integer> calcFindNonRepeatingElements(int []arr){
-//        HashMap<Integer,Integer> map = new HashMap<>();
-//        List<Integer> list = new ArrayList<>();
-//        for(int X:arr)
-//            map.put(X,map.getOrDefault(X,0)+1);
-//        for(int Key : map.keySet()){
-//            if(map.get(Key)==1){
-//                list.add(Key);
-//            }
-//        }
-//        return list;
-//    }
-//    public static void main(String[] args){
-//        int [] arr = {1,1,1,2,2,3,3,5,8,9,6,7};
-//        System.out.println(calcFindNonRepeatingElements(arr));
-//    }
-//}
-//
-//public class FindNonRepeatingElements {
-//    public static List<Integer> calcFindNonRepeatingElements(int []arr){
-//        HashMap<Integer,Integer> map = new HashMap<>();
-//        for(int X:arr)
-//            map.put(X,map.getOrDefault(X,0)+1);
-//        List<Integer> list = new ArrayList<>();
-//        for(int key:map.keySet()){
-//            if(map.get(key)==1){
-//                list.add(key);
-//            }
-//        }
-//        return list;
-//    }
-//    public static void main(String[] args){
-//        int []arr = {1,1,1,2,2,3,3,5,8,9,6,7};
-//        System.out.println(calcFindNonRepeatingElements(arr));
-//    }
-//}
-
-//public class FindNonRepeatingElements {
-//    public static void calcFindNonRepeatingElements(int []arr){
-//        HashMap<Integer,Integer> map = new HashMap<>();
-//        for(int X:arr)
-//            map.put(X,map.getOrDefault(X,0)+1);
-//        for(int key: map.keySet()){
-//            if(map.get(key)==1){
-//                System.out.print(key +" ");
-//            }
-//        }
-//    }
-//    public static void main(String[] args){
-//        int []arr = {1,1,1,2,2,3,3,5,8,9,6,7};
-//        calcFindNonRepeatingElements(arr);
-//    }
-//}
 
 public class FindNonRepeatingElements {
     public static List<Integer> calcFindNonRepeatingElements(int []arr){
-        HashMap<Integer,Integer> map = new HashMap<>();
         List<Integer> list = new ArrayList<>();
-        for(int X:arr)
-            map.put(X,map.getOrDefault(X,0)+1);
-        for(int Key : map.keySet()){
-            if(map.get(Key)>1){
-                list.add(Key);
+        for(int i=0;i<arr.length;i++){
+            boolean hasLeftNeighbour = (i>0 && arr[i]==arr[i-1]);
+            boolean hasRightNeighbour = (i<arr.length-1 && arr[i] == arr[i+1]);
+            if(!hasRightNeighbour && !hasLeftNeighbour){
+                list.add(arr[i]);
             }
         }
         return list;

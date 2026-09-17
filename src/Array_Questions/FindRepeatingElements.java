@@ -1,5 +1,7 @@
 package Array_Questions;
 
+import javax.swing.*;
+import java.net.Inet4Address;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -114,21 +116,81 @@ import java.util.List;
 //    }
 //}
 
+//public class FindRepeatingElements {
+//    public static List<Integer> calcFindRepeatingElements(int []arr){
+//        HashMap<Integer,Integer> map = new HashMap<>();
+//        List<Integer> list = new ArrayList<>();
+//        for(int X:arr)
+//            map.put(X,map.getOrDefault(X,0)+1);
+//        for(int X:map.keySet()){
+//            if(map.get(X)>1){
+//                list.add(X);
+//            }
+//        }
+//        return list;
+//    }
+//    public static void main(String[] args){
+//        int []arr = {1,1,1,2,2,3,3,5,8,9,6,7};
+//        System.out.println(calcFindRepeatingElements(arr));
+//    }
+//}
+
+//public class FindRepeatingElements {
+//    public static List<Integer> calcFindRepeatingElements(int []arr){
+//        HashMap<Integer,Integer> map = new HashMap<>();
+//        for(int X:arr){
+//            map.put(X,map.getOrDefault(X,0)+1);
+//        }
+//        List<Integer> list = new ArrayList<>();
+//       for(int key:map.keySet()){
+//           if(map.get(key)>1){
+//               list.add(key);
+//           }
+//       }
+//       return list;
+//    }
+//    public static void main(String[] args){
+//        int []arr = {1,1,1,2,2,3,3,5,8,9,6,7};
+//        System.out.println(calcFindRepeatingElements(arr));
+//    }
+//
+//}
+
+
+//public class FindRepeatingElements {
+//    public static List<Integer> calcFindRepeatingElements(int []arr){
+//        List<Integer> list = new ArrayList<>();
+//        HashMap<Integer, Integer> map = new HashMap<>();
+//        for(int X:arr)
+//            map.put(X,map.getOrDefault(X,0)+1);
+//        for(int key:map.keySet()){
+//            if(map.get(key)>1){
+//                list.add(key);
+//            }
+//        }
+//        return list;
+//    }
+//    public static void main(String[] args){
+//        int []arr = {1,1,1,2,2,3,3,5,8,9,6,7};
+//        System.out.println(calcFindRepeatingElements(arr));
+//    }
+//}
+
 public class FindRepeatingElements {
+
     public static List<Integer> calcFindRepeatingElements(int []arr){
-        HashMap<Integer,Integer> map = new HashMap<>();
         List<Integer> list = new ArrayList<>();
-        for(int X:arr)
-            map.put(X,map.getOrDefault(X,0)+1);
-        for(int X:map.keySet()){
-            if(map.get(X)>1){
-                list.add(X);
+        for(int i = 0;i<arr.length;i++){
+            boolean hasLeftNeighbour = (i>0 && arr[i]==arr[i-1]);
+            boolean hasRIghtNeighbour = (i<arr.length-1 && arr[i]==arr[i+1]);
+            if(hasRIghtNeighbour && hasLeftNeighbour){
+                list.add(arr[i]);
             }
         }
-        return list;
+       return list;
     }
     public static void main(String[] args){
-        int []arr = {1,1,1,2,2,3,3,5,8,9,6,7};
+        int []arr = {1,1,1,2,2,3,3,5,8,9};
         System.out.println(calcFindRepeatingElements(arr));
     }
 }

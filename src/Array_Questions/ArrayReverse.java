@@ -1,263 +1,49 @@
-package Array_Questions;//package Array_Questions;
-//
-//import java.util.Scanner;
-//
-//public class ArrayReverse {
-//    public static int[] reverseArray(int[]  arr){
-//        int n = arr.length;
-//        int [] rev  = new int[n];
-//        for(int i=n;i>=1;i--){
-//            rev[i] = arr[n-i-1];
-//        }
-//        return rev;
-//    }
-//    public static void main(String[] args){
-//
-//        Scanner sc = new Scanner(System.in);
-//        int n = sc.nextInt();
-//        int [] arr = new int[n];
-//        for(int i=0;i<n;i++){
-//            arr[i] = sc.nextInt();
-//        }
-//        int[] result = reverseArray(arr);
-//
-//        System.out.println("Reversed Array: ");
-//        for (int i = 0; i < n; i++) {
-//            System.out.print(result[i] + " ");
-//        }
-//        sc.close();
-//    }
-//}
-//
+package Array_Questions;
 
-import java.sql.SQLOutput;
 import java.util.Arrays;
 
-//public class ArrayReverse{
-//    public static int[] reverse(int []arr){
-//        int n = arr.length;
-//        int []revarr = new int[n];
-//        for(int i=0;i<n;i++){
-//            revarr[i] = arr[n-1-i];
-//        }
-//        return revarr;
-//    }
-//    public static void main(String[] args){
-//        int []arr = {10,20,30,40,50};
-//        int []revarr = reverse(arr);
-//        for(int i=0;i< arr.length;i++){
-//            System.out.println(revarr[i]);
-//        }
-//    }
-//}
+public class ArrayReverse{
+    public static int[] calcArrayReverse(int []arr){
+        int []rev = new int[arr.length];
+        for(int i=0;i<arr.length;i++){
+            rev[i] = arr[arr.length-1-i];
+        }
+        return rev;
+    }
+    public static void main(String[] args){
+        int []arr = {1,4,2,7};
+        System.out.println(Arrays.toString(calcArrayReverse(arr)));
+    }
+}
 
-//public class ArrayReverse{
-//    public static int[] calcReverseArray(int []arr){
-//        int rev [] = new int[arr.length];
-//        for(int i=0;i<arr.length;i++){
-//            rev[i] = arr[arr.length-i-1];
-//        }
-//        return rev;
-//    }
-//    public static void main(String[] args){
-//        int arr []= {10,20,30,40,50};
-//        int []rev=calcReverseArray(arr);
-//        for(int X : rev){
-//            System.out.print(X +" ");
-//        }
-//    }
-//}
+class ArrayReverse2{
+    public static int[] calcArrayReverse(int[]arr){
+        for(int i=0;i<arr.length/2;i++){
+            int temp = arr[i];
+            arr[i] = arr[arr.length-i-1];
+            arr[arr.length-i-1] = temp;
+        }
+        return arr;
+    }
+    public static void main(String[] args){
+        int []arr = {1,4,2,7};
+        System.out.println(Arrays.toString(calcArrayReverse(arr)));
+    }
+}
 
-//public class ArrayReverse{
-//    public static int[] calcArrayReverse(int []arr){
-//        int []revArr = new int[arr.length];
-//        for(int i=0;i<arr.length;i++){
-//            revArr[i] = arr[arr.length-i-1];
-//        }
-//        return revArr;
-//    }
-//    public static void main(String[] args){
-//        int []arr = {11,2,100,90};
-//        int []revArr = calcArrayReverse(arr);
-//        for(int X : revArr){
-//            System.out.print(X + " ");
-//        }
-//    }
-//}
-
-//public class ArrayReverse{
-//    public static int[] calcArrayReverse(int []arr){
-//        int []temp = new int[arr.length];
-//        for(int i=0;i<arr.length;i++){
-//            temp[i] = arr[arr.length-i-1];
-//        }
-//        return temp;
-//    }
-//    public static void main(String[] args){
-//        int []arr = {10,20,30,40,50};
-//        int []temp = calcArrayReverse(arr);
-//        for(int X: temp)
-//            System.out.print(X +" ");
-//    }
-//}
-
-//public class ArrayReverse {
-//    public static int[] calcArrayReverse(int []arr){
-//        int []rev = new int[arr.length];
-//        for(int i=0;i<arr.length;i++){
-//            rev[i] = arr[arr.length-1-i];
-//        }
-//        return rev;
-//    }
-//    public static void main(String[] args){
-//        int []arr = {1,2,3,4,5,6};
-//        int []rev = calcArrayReverse(arr);
-//        for(int X: rev)
-//            System.out.print(X +" ");
-//    }
-//}
-
-//public class ArrayReverse {
-//    public static int[] calcArrayReverse(int []arr){
-//        int []temp = new int[arr.length];
-//        for(int i=0;i<arr.length;i++){
-//            temp[i] = arr[arr.length-i-1];
-//        }
-//        return temp;
-//    }
-//    public static void main(String[] args){
-//        int []arr = {1,2,3,4};
-//        int []temp = calcArrayReverse(arr);
-//        for(int X: temp)
-//            System.out.print(X+" ");
-//    }
-//}
-
-//public class ArrayReverse {
-//    public static int[] calcArrayReverse(int []arr){
-//        int []temp = new int[arr.length];
-//        for(int i=0;i<arr.length;i++){
-//            temp[i] = arr[arr.length-i-1];
-//        }
-//        return temp;
-//    }
-//    public static void main(String[] args){
-//        int []arr = {1,2,3,4};
-//        int []temp = calcArrayReverse(arr);
-//        for(int X:temp)
-//            System.out.print(X+" ");
-//    }
-//}
-
-//
-//class Solution {
-//    public int reverse(int x) {
-//        int sum = 0;
-//        while(x != 0){
-//            int digit = x % 10;
-//            if (sum > Integer.MAX_VALUE / 10 || (sum == Integer.MAX_VALUE / 10 && digit > 7)) {
-//                return 0;
-//            }
-//
-//            if (sum < Integer.MIN_VALUE / 10 || (sum == Integer.MIN_VALUE / 10 && digit < -8)) {
-//                return 0;
-//            }
-//            sum = sum * 10 + digit;
-//            x = x / 10;
-//        }
-//        return sum;
-//    }
-//}
-
-//public class ArrayReverse {
-//    public static int calcArrayReverse(int num){
-//        int sum = 0;
-//        while(num!=0){
-//            int digit = num % 10;
-//            if(sum > Integer.MAX_VALUE/10 || (sum == Integer.MAX_VALUE/10 && digit>7 )){
-//                return 0;
-//            }
-//            if(sum <Integer.MIN_VALUE/10 || (sum == Integer.MIN_VALUE/10 && digit<-8)){
-//                return 0;
-//            }
-//            sum = sum * 10 + digit;
-//            num = num / 10;
-//        }
-//        return sum;
-//    }
-//    public static void main(String[] args){
-//        int num = -123;
-//        System.out.println(calcArrayReverse(num));
-//    }
-//}
-
-//public class ArrayReverse {
-//    public static int[] calcArrayReverse(int []arr){
-//        int []temp = new int[arr.length];
-//        for(int i=0;i<arr.length;i++){
-//            temp[i] = arr[arr.length-i-1];
-//        }
-//        return temp;
-//    }
-//    public static void main(String[] args){
-//        int[]arr = {1,3,2,5};
-//        int []temp = calcArrayReverse(arr);
-//        for(int X:temp)
-//            System.out.print(X+" ");
-//    }
-//}
-
-//public class ArrayReverse {
-//    public static void calcArrayReverse(int []arr){
-//        int left = 0; int right = arr.length-1;
-//        while (left<right){
-//            int temp = arr[left];
-//            arr[left] = arr[right];
-//            arr[right] = temp;
-//            left++;right--;
-//        }
-//    }
-//    public static void main(String[] args){
-//        int []arr = {2,2,1,9,7};
-//        calcArrayReverse(arr);
-//        for(int X: arr)
-//            System.out.print(X + " ");
-//    }
-//}
-//public class ArrayReverse {
-//    public static void calArrayReverse(int []arr){
-//        int left = 0;
-//        int right = arr.length-1;
-//        while(left<=right){
-//            int temp = arr[left];
-//            arr[left] = arr[right];
-//            arr[right] = temp;
-//            left++;right--;
-//        }
-//    }
-//    public static void main(String[] args){
-//        int []arr = {2,2,1,9,7};
-//        calArrayReverse(arr);
-//        System.out.println(Arrays.toString(arr));
-//    }
-//}
-
-//public class ArrayReverse {
-//    public static int[] calcArrayReverse(int []arr){
-//        int []temp = new int[arr.length];
-//        for(int i=0;i<arr.length;i++){
-//            temp[i] = arr[arr.length-i-1];
-//        }
-//        return temp;
-//    }
-//    public static void main(String[] args){
-//        int []arr = {2,2,1,9,7};
-//        System.out.println(Arrays.toString(calcArrayReverse(arr)));
-//    }
-//}
-
-//class Solution{
-//    public static void main(String[] args){
-//        int []arr = {}
-//    }
-//}
+class ArrayReverse3{
+    public static int[] calcArrayReverse(int []arr){
+        int left = 0;int right = arr.length-1;
+        while(left<right){
+            int temp = arr[left];
+            arr[left] = arr[right];
+            arr[right] = temp;
+            left++;right--;
+        }
+        return arr;
+    }
+    public static void main(String[] args){
+        int []arr = {1,4,2,7};
+        System.out.println(Arrays.toString(calcArrayReverse(arr)));
+    }
+}

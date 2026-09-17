@@ -149,24 +149,61 @@ import java.util.PriorityQueue;
 //        System.out.println(calcTopKFreqElement(arr,k));
 //    }
 //}
+//
+//public class TopKFreqElement {
+//    public static int calcTopKFreqElement(int []arr,int k){
+//        HashMap<Integer,Integer> map = new HashMap<>();
+//        for(int X: arr){
+//            map.put(X,map.getOrDefault(X,0)+1);
+//        }
+//        PriorityQueue<Integer> maxHeap = new PriorityQueue<>((a,b)->Integer.compare(map.get(b),map.get(a)));
+//        for(int key:map.keySet())
+//            maxHeap.add(key);
+//        for(int i=1;i<k;i++){
+//            maxHeap.poll();
+//        }
+//        System.out.println(map);
+//        return maxHeap.poll();
+//    }
+//    public static void main(String[] args){
+//        int []arr = {1,1,1,1,1,1,1,9,9,9,9,4,4,4,4,4,6,6,6,6,7,77,7};
+//        System.out.println(calcTopKFreqElement(arr,2));
+//    }
+//}
+
+//public class TopKFreqElement {
+//    public static int calcTopKFreqElement(int []arr){
+//        HashMap<Integer,Integer> map = new HashMap<>();
+//        for(int X:arr){
+//            map.put(X,map.getOrDefault(X,0)+1);
+//        }
+//        PriorityQueue<Integer> maxHeap = new PriorityQueue<>((a,b)->Integer.compare(map.get(b),map.get(a)));
+//        for(int key : map.keySet()){
+//            maxHeap.add(key);
+//        }
+//        System.out.println(map);
+//       return maxHeap.poll();
+//    }
+//    public static void main(String[] args){
+//        int []arr = {1,1,1,1,1,1,1,9,9,9,9,4,4,4,4,4,6,6,6,6,7,77,7};
+//        System.out.println(calcTopKFreqElement(arr));
+//    }
+//}
 
 public class TopKFreqElement {
-    public static int calcTopKFreqElement(int []arr,int k){
+    public static int calcTopKFreqElement(int []arr){
         HashMap<Integer,Integer> map = new HashMap<>();
-        for(int X: arr){
+        for(int X:arr)
             map.put(X,map.getOrDefault(X,0)+1);
-        }
         PriorityQueue<Integer> maxHeap = new PriorityQueue<>((a,b)->Integer.compare(map.get(b),map.get(a)));
-        for(int key:map.keySet())
+        for(int key:map.keySet()){
             maxHeap.add(key);
-        for(int i=1;i<k;i++){
-            maxHeap.poll();
         }
         System.out.println(map);
         return maxHeap.poll();
     }
     public static void main(String[] args){
         int []arr = {1,1,1,1,1,1,1,9,9,9,9,4,4,4,4,4,6,6,6,6,7,77,7};
-        System.out.println(calcTopKFreqElement(arr,2));
+        System.out.println(calcTopKFreqElement(arr));
     }
 }

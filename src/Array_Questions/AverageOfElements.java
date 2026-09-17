@@ -1,71 +1,11 @@
 package Array_Questions;
 
-//public class AverageOfElements {
-//    public static double calcAverageOfElements(int []arr){
-//        int n = arr.length;
-//        int sum = 0;
-//        for(int X : arr)
-//            sum += X;
-//        double avg = sum/n;
-//        return avg;
-//    }
-//    public static void main(String[] args){
-//        int []arr = {1,5,23,7,8};
-//        System.out.print(calcAverageOfElements(arr));
-//    }
-//}
-
-
-//public class AverageOfElements {
-//    public static double calcAvergaeOfElements(int[]arr){
-//        int sum = 0;
-//        for(int X:arr)
-//            sum += X;
-//        return sum/ arr.length;
-//    }
-//    public static void main(String[] args){
-//        int []arr = {4,5,8,9,1};
-//        System.out.println(calcAvergaeOfElements(arr));
-//    }
-//}
-
-//public class AverageOfElements {
-//    public static double calcAvergaeOfElements(int []arr){
-//        int sum = 0;
-//        for(int X:arr)
-//            sum += X;
-//        int n = arr.length;
-//        return sum / n;
-//    }
-//    public static void main(String[] args){
-//        int []arr = {1,2,3,4,56,7};
-//        System.out.println(calcAvergaeOfElements(arr));
-//    }
-//}
-
-//public class AverageOfElements {
-//    public static int calcAvergaeOfElements(int []arr){
-//        int sum = 0;
-//        for(int X:arr)
-//            sum += X;
-//        return sum / arr.length;
-//    }
-//    public static void main(String[] args){
-//        int []arr = {1,2,2,4,6};
-//        System.out.println(calcAvergaeOfElements(arr));
-//    }
-//}
-
-public class AverageOfElements {
-    public static double calcAvergaeOfElements(int[]arr){
-        int sum = 0;
-        for(int X:arr)
-            sum+=X;
-        int n = arr.length;
-        return sum/n;
+public class AverageOfElements{
+    public static double calcAverageOfElements(int []arr){
+        int sum = 0;for(int x:arr){sum+=x;}return (double)sum/arr.length;
     }
     public static void main(String[] args){
-        int []arr = {1,3,2,7};
-        System.out.println(calcAvergaeOfElements(arr));
+        int []arr = {1,2,6,8};
+        System.out.println(calcAverageOfElements(arr));
     }
 }

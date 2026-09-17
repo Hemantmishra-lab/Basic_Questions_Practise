@@ -1,8 +1,6 @@
 package Pointers.SlidingWindow.FixedWindow;
 
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 
 //public class FirstNegativeInWindow {
 //    public static int[] firstNegativeNumber(int[] arr, int k) {
@@ -154,34 +152,35 @@ import java.util.Queue;
 //        System.out.println(Arrays.toString(calcFirstNegativeInWindow(arr,k)));
 //    }
 //}
-public class FirstNegativeInWindow {
-    public static int[] calcFirstNegativeWindow(int []arr,int k){
-        Queue<Integer> q = new LinkedList<>();
-        int []resultArray = new int[arr.length-k+1];
-        int resultIndex = 0;
-        int left = 0;
-        for(int right = 0;right<arr.length;right++){
-            if(arr[right]<0){
-                q.add(arr[right]);
-            }
-            if(right>=k-1){
-                if(!q.isEmpty()){
-                    resultArray[resultIndex++] = q.peek();
-                }
-                else{
-                    resultArray[resultIndex++] = 0;
-                }
-            }
-            if(!q.isEmpty() && arr[left]==q.peek()){
-                q.poll();
-            }
-            left++;
-        }
-        return resultArray;
-    }
-    public static void main(String[] args){
-        int[] arr = {12, -1, -7, 8, -15, 30};
-        int k = 3;
-        System.out.println(Arrays.toString(calcFirstNegativeWindow(arr,k)));
-    }
-}
+//public class FirstNegativeInWindow {
+//    public static int[] calcFirstNegativeWindow(int []arr,int k){
+//        Queue<Integer> q = new LinkedList<>();
+//        int []resultArray = new int[arr.length-k+1];
+//        int resultIndex = 0;
+//        int left = 0;
+//        for(int right = 0;right<arr.length;right++){
+//            if(arr[right]<0){
+//                q.add(arr[right]);
+//            }
+//            if(right>=k-1){
+//                if(!q.isEmpty()){
+//                    resultArray[resultIndex++] = q.peek();
+//                }
+//                else{
+//                    resultArray[resultIndex++] = 0;
+//                }
+//            }
+//            if(!q.isEmpty() && arr[left]==q.peek()){
+//                q.poll();
+//            }
+//            left++;
+//        }
+//        return resultArray;
+//    }
+//    public static void main(String[] args){
+//        int[] arr = {12, -1, -7, 8, -15, 30};
+//        int k = 3;
+//        System.out.println(Arrays.toString(calcFirstNegativeWindow(arr,k)));
+//    }
+//}
+
